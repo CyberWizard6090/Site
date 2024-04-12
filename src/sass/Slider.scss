@@ -1,0 +1,71 @@
+@media (min-width:1200px) {
+    html{
+        --GK-indent-btn: 40px;
+    }
+
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    html{
+        --GK-indent-btn: 20px;
+    }
+}
+@media (max-width: 767px) {
+    html{
+        --GK-indent-btn: 8px;
+    }
+}
+.fancybox__viewport{
+ width: 100%;
+ height: 100%;
+//  overflow: hidden;
+    // display: grid;
+    // grid-template-rows: 1fr 300px;
+}
+.arrows{
+    position: absolute;
+    top: 50%;
+    // transform: translateY(-50%);
+    z-index: 40;
+    width: 100%;
+    .arrow{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        svg{
+            width: 40px;
+        height: 40px;
+        }
+    }
+    .left{
+left: var(--GK-indent-btn);
+    }
+    .right{
+        right: var(--GK-indent-btn);
+    }
+}
+.fancybox__track{
+    display: flex;
+    height: 100%;
+    transition:  transform 1s;
+}
+.fancybox__slide {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 48px 8px 8px;
+    position: relative;
+    overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
+    outline: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+ align-items: center;
+ justify-content: center;
+}
+.fancybox__content{
+    width: 80%;
+    max-width: 80%;
+    overflow: hidden;
+}

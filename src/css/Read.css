@@ -1,0 +1,80 @@
+.read__wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Post-Card {
+  border-radius: 24px;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+.gk-post-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  height: 40px;
+}
+
+.gk-post-card__title {
+  margin-bottom: 10px;
+}
+
+.gk-post-card__thumbnail {
+  display: flex;
+  margin-top: 20px;
+}
+
+.gk-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: inline-flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.gk-info-date {
+  font-weight: bold;
+  font-size: 90%;
+}
+
+.gk-btn-read {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 0 24px 0 24px;
+  height: 52px;
+  border-radius: 8px;
+}
+.gk-btn-read span {
+  height: 24px;
+}
+
+html[data-size=small] .gk-btn-read {
+  font-size: 12px;
+}
+
+html[data-size=medium] .gk-btn-read {
+  font-size: 14px;
+}
+
+html[data-size=large] .gk-btn-read {
+  font-size: 18px;
+}
+
+html[data-size=extra-large] .gk-btn-read {
+  font-size: 20px;
+  font-weight: 800;
+  padding: 0 24px 0 24px;
+  height: 56px;
+  border-radius: 8px;
+}
+html[data-size=extra-large] .gk-btn-read span {
+  height: 24px;
+}
+
+/*# sourceMappingURL=Read.css.map */
