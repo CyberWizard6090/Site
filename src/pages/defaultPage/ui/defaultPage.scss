@@ -1,0 +1,20 @@
+.Page{
+   
+    display: block;
+    background-color: var(--bg-color-02);
+    color: var(--font-color-light);
+    width: 100%;
+    padding: var(--pm-x);
+    min-height: 100vh;
+    border-radius: var(--cr-x);
+
+    &__content{
+        height: min-content;
+         display: flex;
+         flex-direction: column;
+        gap: var(--pm-x);
+    }
+img{
+    border-radius: calc(var(--cr-x) - var(--pm-x));
+}
+}

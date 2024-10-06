@@ -1,0 +1,15 @@
+.footer{
+   margin-top: var(--pm-x);
+    grid-area: footer;
+   width: 100%;
+   height: min-content;
+   display: flex;
+   justify-content: center;
+ &_wrap{
+    height: 100%;
+    width: calc(100% - var(--pm-x3) * 2);
+    background-color: var(--bg-color-02);
+    border-radius: var(--cr-m) var(--cr-m) 0 0;
+    padding: var(--pm-x);
+ }
+}

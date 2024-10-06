@@ -1,0 +1,9 @@
+.itemMenu{
+
+padding:  var(--pm-s) var(--pm-l) var(--pm-s) var(--pm-l);
+border-radius: var(--cr-m);
+&:hover{
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+}
+}

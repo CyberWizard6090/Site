@@ -1,0 +1,60 @@
+.aside-left {
+  grid-area: nav;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color-01);
+  padding: 20px;
+  display: grid;
+  grid-template-rows: 1fr 60px;
+  row-gap: 10px;
+  position: sticky;
+  top: 0px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+  // &__top {
+  // }
+  &__container-nav {
+    font-size: 20px;
+    color: var(--font-color-light);
+    a {
+      color: var(--font-color-light);
+    }
+    overflow: hidden;
+  }
+
+  // &__bottom {
+  // }
+  ul,
+  ol,
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .ui-vertical-navigation__list-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--pm-s);
+  }
+  .ui-vertical-navigation-item__wrapper {
+    padding: var(--pm-s) var(--pm-x);
+    border-radius: var(--cr-s);
+    color: var(--item-menu-color);
+    &:hover {
+      background-color: var(--btn-bg-h);
+      color: var(--btn-color);
+    }
+  }
+  .Tree {
+    display: flex;
+    align-items: center;
+  }
+  .hover__item {
+    // background-color: red;
+  }
+}

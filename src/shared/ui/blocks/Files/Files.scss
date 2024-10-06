@@ -1,0 +1,25 @@
+.block__files { 
+  .btn__wrap{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .file__wrap {
+    display: flex;
+    height: 60px;
+    margin-top: var(--pm-x);
+    justify-content: space-between;
+  }
+  .name-file {
+    width: 100%;
+    padding-left: var(--pm-x);
+    display: flex;
+    align-items: center;
+  }
+  .file__icon {
+    svg {
+      width: var(--size-svg-icon);
+      height: var(--size-svg-icon);
+    }
+  }
+}

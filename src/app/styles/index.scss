@@ -1,0 +1,22 @@
+@import 'themes/light.scss';
+@import 'themes/dark.scss';
+@import 'whitespace.scss';
+@import 'font-size.scss';
+@font-face {
+    font-family: "Montserrat";
+   src: url(./../../shared/assets/fonts/Montserrat/static/Montserrat-Regular.ttf);
+  }
+.app {
+    height: 100%;
+    
+    font-family: Montserrat;
+    .button {
+        font-family: Montserrat;
+    }
+}
+// * {
+//     scrollbar-width: thin;
+//     scrollbar-color: blue var(--bg-color-00);
+//   }
+  
+  // /* для Chrome/Edge/Safari */

@@ -1,0 +1,10 @@
+.home {
+  color: var(--font-color-light);
+  display: flex;
+  flex-direction: column;
+  &__content{
+display: grid;
+gap: var(--pm-x);
+  }
+ 
+}

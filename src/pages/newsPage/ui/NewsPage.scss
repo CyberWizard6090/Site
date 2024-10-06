@@ -1,0 +1,10 @@
+.Tape__News{
+    display: flex;
+    justify-content: center;
+    .Tape{
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--pm-x);
+    }
+}

@@ -1,0 +1,59 @@
+import Map from "../components/Map";
+import NOK from "../components/Widget/NOK";
+import Gosuslugi from "../components/Widget/Gosuslugi";
+import National from "../components/Widget/National";
+import ImageView from "../widgets/imageView/ui/ImageView";
+import photo from "../asset/image/ALjDyRGtIZQ.jpg";
+import Video from "../components/Videoplayer/VideoPlayer";
+import { Button } from "../components/buttons/Button";
+import NewHome from "../components/NewHome";
+import QR from "../components/QR/QR";
+import BusGov from "../components/Widget/BusGov";
+const HomeScreen = () => {
+  return (
+    <div className="home-box">
+      {/* <div className="photo_org_wrap">
+        <img src={photo} alt="" />
+      </div> */}
+      <div className="color_lv_1-2 " id="info">
+        <span>
+          {" "}
+          Юридический адрес Забайкальский край, Г. Чита, улица Ленинградская, д
+          104{" "}
+        </span>
+        <span> График работы медицинского учреждения</span>
+        <span> Пн - Чт: 08:45 - 17:00</span>
+        <span>Пт: 08:45 - 16:45</span>
+        <span> Сб, Вс: Выходной</span>
+      </div>
+      <div className="box-content">
+        <div id="Video" className="color_lv_1-2">
+          <Video
+            List={[
+              {
+                Title: "Clovew",
+                Preview: "",
+                Video: "1.mp4",
+              },
+            ]}
+          />
+        </div>
+
+        <NewHome />
+        <Map />
+      </div>
+      <div className="widget-box">
+        <div id="QR" className="color_lv_1-2">
+          <ImageView src={"QR_CODE.png"} />
+        </div>
+        <BusGov />
+
+        <National />
+        <Gosuslugi />
+        {/* <NOK/> */}
+      </div>
+    </div>
+  );
+};
+
+export default HomeScreen;

@@ -1,0 +1,13 @@
+.NewsBlock{
+    color: var(--font-color-light);
+    width: 100%;
+    h2{
+        margin-bottom: var(--pm-x);
+        font-weight: bold;
+    }
+&_wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:var(--pm-x);
+}
+}

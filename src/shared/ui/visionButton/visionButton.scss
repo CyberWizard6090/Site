@@ -1,0 +1,14 @@
+.VisionButton{
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    color: white;
+    padding: var(--pm-s) var(--pm-x);
+    border-radius: var(--cr-x);
+    .icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right:var(--pm-s) ;
+    }
+}
