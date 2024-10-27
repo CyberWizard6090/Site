@@ -1,7 +1,7 @@
 
 .Card {
   overflow: hidden;
-  width: 380px;
+  width: 100%;
 }
 .CardInner {
   background-color: var(--bg-color-02);
@@ -28,26 +28,27 @@
 
 .InputContainer {
   width: 100%;
-}
-
-input {
-  background-color: var(--bg-color-02);
-  border: none;
-  display: block;
-  color: #6d7f8f;
-  font-weight: 600;
-  -webkit-appearance: none;
-  width: 100%;
-  padding: var(--pm-m) var(--pm-x);
-  &::placeholder {
+  input {
+    background-color: var(--bg-color-02);
+    border: none;
+    display: block;
     color: #6d7f8f;
-  }
-
-  &:focus {
-    outline: none;
-    color: var(--font-color-light);
+    font-weight: 600;
+    -webkit-appearance: none;
+    width: 100%;
+    padding: var(--pm-m) var(--pm-x);
+    &::placeholder {
+      color: #6d7f8f;
+    }
+  
+    &:focus {
+      outline: none;
+      color: var(--font-color-light);
+    }
   }
 }
+
+
 
 ;
 

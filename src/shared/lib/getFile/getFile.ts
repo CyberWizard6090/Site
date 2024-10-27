@@ -1,11 +1,6 @@
-import { toast } from "react-toastify";
-import { options } from "shared/consts";
-
 export async function GetFile(Url: any, Name: any) {
 
     try {
-        alert("Работает")
-        // toast.error("Ошибка в загрузке файла", options);
         fetch(Url, {
             
             method: 'GET',
@@ -33,13 +28,13 @@ export async function GetFile(Url: any, Name: any) {
             link.click();
 
             // Clean up and remove the link
-            link.parentNode.removeChild(link);
+            link!.parentNode!.removeChild(link);
         });
     }
     catch (error) {
-        alert("НЕ Работает")
-        // console.error(error.message);
-        toast.error("Ошибка в загрузке файла", options);
+       
+        console.error(error);
+     
     }
     
 };

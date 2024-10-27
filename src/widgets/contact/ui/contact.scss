@@ -1,9 +1,26 @@
 .information_container {
   color: var(--font-color-light);
+ 
+/* Для мобильных устройств */
+@media screen and (max-width: 768px) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pm-x);
+}
+
+/* Для планшетов */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/* Для ПК */
+@media screen and (min-width: 1200px) {
+  /* Ваш CSS код для ПК */
   display: grid;
   grid-template-columns: 500px 1fr;
   grid-template-areas: "title title" ". .";
   gap: var(--pm-x);
+}
   h2 {
     font-weight: bold;
     // margin-bottom: var(--pm-x);

@@ -16,7 +16,7 @@ interface IButton {
     readonly className?: string
 
     /** The function is executed when the button is pressed. */
-    readonly onClick?: () => void 
+    readonly onClick?: () => void | any
 }
 
 export const Button: FC<IButton> = (props) => {

@@ -1,13 +1,30 @@
-.NewsBlock{
+.NewsBlock {
     color: var(--font-color-light);
     width: 100%;
-    h2{
+
+    h2 {
         margin-bottom: var(--pm-x);
         font-weight: bold;
     }
-&_wrap{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap:var(--pm-x);
+
+
+    &_wrap {
+        @media screen and (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            gap: var(--pm-x);
+        }
+
+        /* Для планшетов */
+        @media screen and (min-width: 768px) and (max-width: 1024px) {}
+    
+
+    /* Для ПК */
+    @media screen and (min-width: 1200px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--pm-x);
+    }
+
 }
 }

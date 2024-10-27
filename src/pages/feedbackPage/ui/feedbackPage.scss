@@ -1,0 +1,50 @@
+.feedback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin-bottom: var(--pm-x);
+    text-align: center;
+  }
+  &__form {
+    @media screen and (max-width: 768px) {
+     
+    width: 100%;
+    .wrap__field__form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--pm-x);
+    }
+    }
+    
+    /* Для планшетов */
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+    
+    }
+    
+    /* Для ПК */
+    @media screen and (min-width: 1200px) {
+      margin-top: 40px;
+      width: 800px;
+      .wrap__field__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--pm-x);
+      }
+      }
+   
+    padding: var(--pm-x);
+    border-radius: var(--cr-m);
+    background-color: var(--bg-color-02);
+    color: var(--font-color-light);
+    display: flex;
+    flex-direction: column;
+    gap: var(--pm-x);
+   
+    height: min-content;
+  }
+}
+

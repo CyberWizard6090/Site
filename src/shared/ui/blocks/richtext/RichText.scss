@@ -1,9 +1,5 @@
 .block__richText {
-  .richText{
-    display: flex;
-    flex-direction: column;
-    justify-content: center
-  }
+
   blockquote {
     border-left: 3px solid var(--border-secondary);
     font-size: 1.25em;
@@ -101,6 +97,9 @@ padding: var(--pm-s) 0;
   .mt-6{
     margin-top: 1.5rem;
   }
+
+  
+
   ol {
     list-style: none;
     counter-reset: list;
@@ -121,7 +120,7 @@ padding: var(--pm-s) 0;
       border-radius: 0.25rem;
     }
     & > li::before {
-      content: counter(list);
+      content: counter(list) ".";
       counter-increment: list;
       position: absolute;
       left: -2rem;
@@ -133,15 +132,15 @@ padding: var(--pm-s) 0;
       border: 0.25rem solid var(--bg-color-02);
       text-align: center;
 
-      background: var(--list-color);
-      color: var(--btn-color);
+      // background: var(--list-color);
+    //   color: var(--btn-color);
     }
   }
   ul,
   ol {
     margin-bottom: var(--pm-m);
   }
-  a {
+  .link_wrap {
     box-sizing: border-box;
     font-family: Inter, Helvetica, Arial, sans-serif;
     border: 2px solid var(--color-link);

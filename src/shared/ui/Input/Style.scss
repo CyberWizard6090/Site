@@ -1,0 +1,68 @@
+.input-container {
+  position: relative;
+  margin-top: 25px;
+}
+.input-container label {
+  padding: var(--pm-s);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--btn-bg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease-in-out;
+}
+.input-container input {
+  padding: var(--pm-m) var(--pm-x);
+  border: 2px solid var(--btn-bg);
+  border-radius: var(--cr-s);
+  background: transparent;
+  width: 100%;
+font-weight: bolder;
+  font-size: var(--font-m);
+  color: #000000;
+}
+.input-container input:focus {
+  border: none;
+  outline: none;
+  border: 2px solid var(--btn-bg);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+}
+.input-container input:focus {
+  & ~ label {
+    // background-color: red;
+    color: var(--font-color-light);
+    top: 0;
+    left: 0;
+    transform: translate(0, -100%);
+  }
+}
+.input-container input:valid ~ label {
+  color: var(--font-color-light);
+  top: 0;
+  left: 0;
+  transform: translate(0, -100%);
+}
+.TextAria {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  row-gap: var(--pm-m);
+  textarea {
+    border-radius: var(--cr-m);
+    overflow: hidden;
+    padding: var(--pm-x);
+    min-height: 200px;
+    height: auto;
+    resize: vertical;
+    outline: none;
+    border: 2px solid var(--btn-bg);
+    background-color: transparent;
+    font-size: var(--font-m);
+    color: var(--font-color-light);
+  }
+}

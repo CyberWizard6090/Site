@@ -206,6 +206,7 @@ export default function serializeLexicalRichText({
 
           case "link":
             return (
+              <div className="link_wrap">
               <a
                 className={`${classNames.a}`}
                 href={escapeHTML(
@@ -231,12 +232,14 @@ export default function serializeLexicalRichText({
                     </span>
                   </div>
                 </div>
+                </a>
                 <QR
                   URL={escapeHTML(
                     node.fields?.linkType === "custom" ? node?.fields?.url : ""
                   )}
                 />
-              </a>
+            
+              </div>
             );
           case "horizontalrule":
             return <hr />;

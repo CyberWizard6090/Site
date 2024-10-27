@@ -7,7 +7,7 @@ export const NewsBlock = (props: Props) => {
     const [pageData, setPageData] = useState([]);
 
     useEffect(() => {
-      fetch("/api/news?limit=3", {
+      fetch("/api/article?limit=3", {
         // mode: 'no-cors',
         // // method: "get",
       })

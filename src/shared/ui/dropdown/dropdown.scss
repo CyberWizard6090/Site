@@ -1,76 +1,33 @@
 .dropdown {
-    position: relative;
+  position: relative;
+  width: 100%;
+  button {
+    width: 100%;
+    color: var(--btn-color);
+    border: none;
+    background-color: var(--btn-bg);
+    padding: var(--pm-m) var(--pm-x);
+    border-radius: var(--cr-m);
+  }
+  &__list {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    border: 2px solid var(--btn-bg);
+    border-radius: var(--cr-m);
+    background-color: var(--bg-color-02);
+    padding: var(--pm-m) var(--pm-x);
 
-    &__wrapper-content {
-        position: absolute;
-        left: 20%;
-        display: none;
-
-        transform: translate(-50%);
-
-        width: auto;
-        min-width: 100px;
-        z-index: 100;
+    max-height: 400px;
+    min-height: 200px;
+    overflow: hidden;
+    z-index: 40;
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      max-height: calc(400px - var(--pm-x) * 2);
+      overflow-y: auto;
     }
-
-    &__label {
-        background: transparent;
-        border: none;
-    }
-
-    &__content {
-        position: relative;
-
-        border: 1px solid var(--border);
-        border-radius: 4px;
-        background: var(--white);
-        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.05);
-
-        transition: all 0.2s linear;
-    }
-
-    &_with-arrow {
-        .dropdown__content::before {
-            content: '';
-            position: absolute;
-            right: 45%;
-            top: -8px;
-            width: 15px;
-            height: 15px;
-
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-
-            border: 1px solid var(--border);
-            border-right: none;
-            border-bottom: none;
-            background: var(--white);
-        }
-
-        .dropdown__wrapper-content {
-            padding-top: 20px;
-        }
-    }
-
-    &_opening-state_hover {
-        .dropdown__label:hover ~ .dropdown__wrapper-content {
-            display: block;
-        }
-    }
-
-    .dropdown__wrapper-content:hover {
-        display: block;
-    }
-
-    &_open {
-        .dropdown__wrapper-content {
-            display: block;
-        }
-    }
-
-    &_close {
-        .dropdown__wrapper-content {
-            display: none;
-        }
-    }
+  }
 }

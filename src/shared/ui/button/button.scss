@@ -1,64 +1,64 @@
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-font-size: 18px;
-    transition: all 0.15s linear;
-    line-height: 1;
-    white-space: nowrap;
-    border-radius: var(--cr-s);
-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: all 0.15s linear;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: var(--cr-s);
+  
 
-    svg {
-        width: 18px;
-        height: 18px;
-        fill: var(--btn-color);
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--btn-color);
 
-        margin-right: 18px;
-    }
+    margin-right: var(--pm-m);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover svg {
+    fill: var(--btn-color);
+  }
+
+  &_theme_blue {
+    color: var(--btn-color);
+    border: none;
+    background-color: var(--btn-bg);
 
     &:hover {
-        cursor: pointer;
+      background-color: var(--btn-bg-h);
+    }
+  }
+
+  &_theme_transparent-grey {
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    background-color: transparent;
+
+    &:hover {
+      color: var(--primary-bg);
+      border-color: var(--primary-bg);
     }
 
     &:hover svg {
-        fill: var(--btn-color);
+      fill: var(--primary-bg);
     }
+  }
 
-    &_theme_blue {
-        color: var(--btn-color);
-        border: none;
-        background-color: var(--btn-bg);
+  &_theme_transparent-blue {
+    color: var(--btn-color);
+    border: 1px solid var(--primary-bg);
+    background-color: transparent;
 
-        &:hover {
-            background-color: var(--btn-bg-h);
-        }
+    &:hover {
+      color: var(--white);
+      background-color: var(--primary-bg);
     }
-
-    &_theme_transparent-grey {
-        color: var(--text-primary);
-        border: 1px solid var(--border);
-        background-color: transparent;
-
-        &:hover {
-            color: var(--primary-bg);
-            border-color: var(--primary-bg);
-        }
-
-        &:hover svg {
-            fill: var(--primary-bg);
-        }
-    }
-
-    &_theme_transparent-blue {
-        color: var(--btn-color);
-        border: 1px solid var(--primary-bg);
-        background-color: transparent;
-
-        &:hover {
-            color: var(--white);
-            background-color: var(--primary-bg);
-        }
-    }
+  }
 }

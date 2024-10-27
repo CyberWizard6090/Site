@@ -1,0 +1,26 @@
+.Tape__News{
+    display: flex;
+    justify-content: center;
+    .Tape{
+       
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--pm-x);
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      
+      }
+      
+      /* Для планшетов */
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+       
+      
+      }
+      
+      /* Для ПК */
+      @media screen and (min-width: 1200px) {
+        width: 800px;
+        }
+
+    }
+}

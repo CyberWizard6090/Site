@@ -3,6 +3,8 @@ import { FC } from "react";
 // import { Provider } from 'react-redux'
 // import store, { persistor } from 'app/store'
 import { ThemeProvider } from "entities/theme";
+import { ScreenProvider } from "features/FullScreenView";
+import { SpecialProvider } from "features/special-feature";
 
 // import { PersistGate } from 'redux-persist/integration/react'
 // import { Fallback } from 'shared/ui/fallback'
@@ -15,7 +17,9 @@ interface IProviders {
 export const Providers: FC<IProviders> = ({ children }) => {
   return (
     <ThemeProvider>
-     {children}
+      <SpecialProvider >
+        <ScreenProvider state={false}>{children}</ScreenProvider>
+      </SpecialProvider>
     </ThemeProvider>
   );
 };

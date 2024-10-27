@@ -22,8 +22,9 @@ import { HomePage } from "pages/homePage";
 
 import "../styles/index.scss";
 import { NotFound } from "pages/NotFound";
-import { NewsPage } from "pages/newsPage";
+import { ArticlePage } from "pages/articlePage";
 import { DefaultPage } from "pages/defaultPage";
+import { FeedbackPage } from "pages/feedbackPage";
 
 // const getCategoryNameByLink = (link?: string): string | undefined => {
 //     for (const values of Object.values(CATEGORIES)) {
@@ -77,17 +78,18 @@ export const AppRouter = () => {
       <Route index element={<HomePage />} />
       <Route path="*" element={<NotFound />} />
       <Route
-        path="news"
-        element={<NewsPage />}
+        path="article"
+        element={<ArticlePage />}
         handle={{
-          crumb: <Link to="/news">Cart</Link>,
+          crumb: <Link to="/article">Cart</Link>,
         }}
       />
-      <Route
-        path="prevention"
-        element={<NewsPage />}
+   
+        <Route
+        path="feedback"
+        element={<FeedbackPage />}
         handle={{
-          crumb: <Link to="/prevention">Cart</Link>,
+          crumb: <Link to="/feedback">Cart</Link>,
         }}
       />
       {/* <Route
@@ -121,12 +123,12 @@ export const AppRouter = () => {
         }}
         errorElement={<NotFound />}
       />
-       <Route
+      <Route
         path="/read/:pageId"
         element={<DefaultPage />}
         loader={async ({ params }) => {
           const res = await fetch(
-            `/api/news/${params.pageId}?locale=undefined&draft=false&depth=1`,
+            `/api/article/${params.pageId}?locale=undefined&draft=false&depth=1`,
             {
               mode: "no-cors",
               method: "get",

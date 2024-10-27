@@ -3,12 +3,36 @@
     --cr-m:20px;
     --cr-x:24px;
 
+    --size-svg-icon: 60px;
+/* Для мобильных устройств */
+@media screen and (max-width: 768px) {
+    --pm-s:5px;
+    --pm-m:10px;
+    --pm-l:15px;
+    --pm-x:10px;
+    --pm-x2: 15px;
+    --pm-x3: 20px;
+}
+
+/* Для планшетов */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Ваш CSS код для планшетов */
+    .text-block {
+        padding: 10px;
+        font-size: 12px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+}
+
+/* Для ПК */
+@media screen and (min-width: 1200px) {
     --pm-s:5px;
     --pm-m:10px;
     --pm-l:15px;
     --pm-x:20px;
     --pm-x2: 40px;
     --pm-x3: 60px;
-
-    --size-svg-icon: 60px;
+}
+  
 }

@@ -6,10 +6,9 @@ import { ReactComponent as Cross } from "./../asset//svg/bootstrap-icons-1.11.2/
 // import Slider from "../../../components/Slider/Slider";
 // import FancyBox from "../../../components/FancyBox";
 import './ImageView.scss'
+import { useFullScreen } from "features/FullScreenView";
 export const ImageView = ({ url }: any) => {
-
-  const [active, setActive] = useState(false);
- 
+  const {toggleState,children, setChildren}= useFullScreen();
   const [isLoading, setIsLoading] = useState(true);
   const LoadTrue = () => {
     setIsLoading(false);
@@ -19,48 +18,29 @@ export const ImageView = ({ url }: any) => {
   img.onload = function () {
     setIsLoading(false);
   };
+  // setChildren ( <img src={url}/>) 
   const Loader =()=>{
     return(
       <div>загрузка</div>
     )
+  }
+  function  transmission (){
+    toggleState()
+    setChildren(<img
+      src={url}/>)
   }
   const ImgLoad = () => {
     return (
       <img
         src={url}
         loading="lazy"
+        onClick={transmission}
         onLoad={LoadTrue}
-        onClick={on_off}
         alt=""
       />
     );
   };
-  function on_off() {
-    if (active) {
-      setActive(false);
-      enableScroll();
-    } else {
-      setActive(true);
-      disableScroll();
-    }
-  }
-  function disableScroll() {
-    const app = document.querySelector("app");
-    // Get the current page scroll position
-    document.body.style.overflow = "hidden";
 
-    // // if any scroll is attempted, set this to the previous value
-    // window.onscroll = function() {
-    //     window.scrollTo(scrollLeft, scrollTop);
-    // };
-  }
-
-  function enableScroll() {
-    // window.onscroll = function() {};
-    const app = document.querySelector("app");
-    // Get the current page scroll position
-    document.body.style.overflow = "scroll";
-  }
   return (
     <>
       <div className=" img__view">
