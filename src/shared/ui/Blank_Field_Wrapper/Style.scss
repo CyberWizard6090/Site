@@ -1,0 +1,9 @@
+.text__error{
+    width: 100%;
+   color: red;
+padding-left: var(--pm-x);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: var(--pm-m);
+}

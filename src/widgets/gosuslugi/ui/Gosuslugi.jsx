@@ -256,7 +256,7 @@ export const Gosuslugi = () => {
  
   return (
 
-    <div className=' gosuslugi' id='GOSUSLUGI'>
+    <div className=' gosuslugi shadow__style' id='GOSUSLUGI'>
 
       <div id='js-show-iframe-wrapper'>
         <div class='pos-banner-fluid bf-17'>

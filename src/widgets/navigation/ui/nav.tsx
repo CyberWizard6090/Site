@@ -7,8 +7,6 @@ import { IconButton } from "shared/ui/iconButton";
 
 import { useState, useEffect } from "react";
 import { elements } from "../config/elements";
-import clsx from "clsx";
-import { Tree } from "./Tree";
 import { Item } from "./Item";
 import { Button } from "shared/ui/button";
 import { ReactComponent as Logo } from "shared/assets/svg/bootstrap-icons-1.11.2/list.svg";
@@ -23,30 +21,26 @@ export const Nav = () => {
   const url = "/api/globals/nav?locale=undefined&draft=false&depth=0";
   const [layout, setPageData] = useState([]);
 
-
-  const [action, setAction] = useState('');
+  const [action, setAction] = useState("");
 
   useEffect(() => {
-    const handleClick = (event: { target: { getAttribute: (arg0: string) => any; style: { backgroundColor: string; }; }; }) => {
-      
-      const action = event.target.getAttribute('data-action');
-     
-      switch (action) {
-        case 'clicked_links':
-          setState(false)
-          break;
-        case 'changeColor':
-          event.target.style.backgroundColor = 'red';
-          break;
-        default:
-          console.log('Неизвестное действие:', action);
+    const handleClick = (event: MouseEvent) => {
+      const target = event.target as HTMLButtonElement;
+      if (target) {
+        if (target.getAttribute("data-action")) {
+          switch (target.getAttribute("data-action")) {
+            case "clicked_links":
+              setState(false);
+              break;
+          }
+        }
       }
     };
 
-    document.addEventListener('click', handleClick);
+    document.addEventListener("click", handleClick);
 
     return () => {
-      document.removeEventListener('click', handleClick);
+      document.removeEventListener("click", handleClick);
     };
   }, []);
   useEffect(() => {
@@ -63,15 +57,14 @@ export const Nav = () => {
       });
   }, []);
 
-
-  const toggleState = ()=>{
-    setState(!state)
-  }
-  const test = {
-    opacity: 0,
-    display: 'none'
+  const toggleState = () => {
+    setState(!state);
   };
-  const test2 = {
+  const test = {
+    opacity: isMobile ? 0 : 1,
+    display: isMobile ? "none" : "grid",
+  };
+  const test2:any = {
     transition: "cubic-bezier(0.075, 0.82, 0.165, 1)",
     transform: "translateX(0%)",
     opacity: 1,
@@ -91,7 +84,7 @@ export const Nav = () => {
         <></>
       )}
 
-      <aside className="aside-left" style={state ? test2 : test}>
+      <aside className="aside-left shadow__style" style={state ? test2 : test}>
         <nav className="aside-left__container-nav">
           <ul className="ui-vertical-navigation__list-item">
             <Item label={"Главная"} link={"/"} />
@@ -115,12 +108,15 @@ export const Nav = () => {
             isCounterVisible={false}
             className="layout__icon"
           />
-
-          <IconButton
-            Icon={Icon2}
-            onClick={toggleState}
-            isCounterVisible={false}
-          />
+          {isMobile ? (
+            <IconButton
+              Icon={Icon2}
+              onClick={toggleState}
+              isCounterVisible={false}
+            />
+          ) : (
+            <></>
+          )}
         </div>
       </aside>
     </>

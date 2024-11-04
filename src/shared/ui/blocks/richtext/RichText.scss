@@ -1,5 +1,4 @@
 .block__richText {
-
   blockquote {
     border-left: 3px solid var(--border-secondary);
     font-size: 1.25em;
@@ -67,8 +66,8 @@
       background: var(--list-color);
     }
   }
-  .paragraph{
-padding: var(--pm-s) 0;
+  .paragraph {
+    padding: var(--pm-s) 0;
   }
   .text-center {
     text-align: center;
@@ -76,29 +75,27 @@ padding: var(--pm-s) 0;
   .text-right {
     text-align: right;
   }
-  .font-bold{
+  .font-bold {
     font-weight: bold;
   }
-  .mt-1{
+  .mt-1 {
     margin-top: 0.25rem; /* 4px */
   }
-  .mt-2{
+  .mt-2 {
     margin-top: 0.5rem;
   }
-  .mt-3{
+  .mt-3 {
     margin-top: 0.75rem;
   }
-  .mt-4{
-    margin-top: 1rem; 
+  .mt-4 {
+    margin-top: 1rem;
   }
-  .mt-5{
-    margin-top: 1.25rem; 
+  .mt-5 {
+    margin-top: 1.25rem;
   }
-  .mt-6{
+  .mt-6 {
     margin-top: 1.5rem;
   }
-
-  
 
   ol {
     list-style: none;
@@ -133,7 +130,7 @@ padding: var(--pm-s) 0;
       text-align: center;
 
       // background: var(--list-color);
-    //   color: var(--btn-color);
+      //   color: var(--btn-color);
     }
   }
   ul,
@@ -142,41 +139,20 @@ padding: var(--pm-s) 0;
   }
   .link_wrap {
     box-sizing: border-box;
-    font-family: Inter, Helvetica, Arial, sans-serif;
-    border: 2px solid var(--color-link);
-    border-radius: var(--cr-m);
-    display: grid;
-    grid-template-columns: 1fr 150px;
-    overflow: hidden;
-    row-gap: var(--pm-x);
+    display: inline;
     width: 100%;
-    color: var(--color-link);
-    text-decoration: none;
-    margin: var(--pm-x) 0;
-    padding: var(--pm-x);
-    .embed-link__info {
-      border-right: 2px solid var(--color-link);
+    color: #2b14ac;
+    svg {
+      width: 16px;
+      height: 16px;
     }
-    .embed-link__info-domain {
-      width: min-content;
-      display: flex;
-      align-items: center;
-      column-gap: var(--pm-s);
-      svg {
-        width: 25px;
-        height: 25px;
-      }
-    }
+
     &:hover {
-      .embed-link__info-domain,
-      .embed-link__title {
-        text-decoration: underline;
-      }
+      text-decoration: underline;
     }
   }
 
-
-code{
-  background-color: aqua;
-}
+  // code {
+  //   background-color: aqua;
+  // }
 }

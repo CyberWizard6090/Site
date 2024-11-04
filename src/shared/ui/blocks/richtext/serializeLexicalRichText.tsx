@@ -17,7 +17,7 @@ export const IS_SUBSCRIPT = 1 << 5;
 export const IS_SUPERSCRIPT = 1 << 6;
 export const IS_HIGHLIGHT = 1 << 7;
 
-function generateTextAlign(node: { format: string }) {
+function generateTextAlign(node: { format: any }) {
   if (node.format === "right") return "text-right";
   if (node.format === "center") return "text-center";
   else return "";
@@ -59,7 +59,7 @@ export default function serializeLexicalRichText({
         },
         i: React.Key | null | undefined
       ) => {
-        const classNames = {
+        const classNames:any = {
           h1: "mt-6 text-5xl font-bold",
           h2: "mt-5 text-4xl font-bold",
           h3: "mt-4 text-3xl font-bold",
@@ -86,7 +86,7 @@ export default function serializeLexicalRichText({
           }
 
           if (node.format & IS_CODE) {
-            text = <code>{text}</code>
+            text = <code>{text}</code>;
           }
 
           if (node.format & IS_ITALIC) {
@@ -118,12 +118,12 @@ export default function serializeLexicalRichText({
 
         if (node.type === "heading") {
           return (
-            <node.tag
-              className={`${classNames[node.tag]} ${generateTextAlign(node)}`}
+            <h3
+              className={`${classNames} ${generateTextAlign(node)}`}
               key={i}
             >
               {serializeLexicalRichText({ children: node.children })}
-            </node.tag>
+            </h3>
           );
         }
 
@@ -202,43 +202,38 @@ export default function serializeLexicalRichText({
               </blockquote>
             );
           case "upload":
-            return    <ImageView url={node.value.url}/>;
+            return <ImageView url={node.value.url} />;
 
           case "link":
             return (
               <div className="link_wrap">
-              <a
-                className={`${classNames.a}`}
-                href={escapeHTML(
-                  node.fields?.linkType === "custom" ? node?.fields?.url : ""
-                )}
-                target={node.fields?.newTab ? "_blank" : "_self"}
-                key={i}
-              >
-                <div className="embed-link__info">
-                  <div className="embed-link__title">
-                    {serializeLexicalRichText({ children: node.children })}
-                  </div>
-                  <div className="embed-link__info-domain">
-                    <IconLink />
-                    <span className="embed-link__info-text">
-                      {ExtractHostname(
-                        escapeHTML(
-                          node.fields?.linkType === "custom"
-                            ? node?.fields?.url
-                            : ""
-                        )
-                      )}
-                    </span>
-                  </div>
-                </div>
-                </a>
-                <QR
-                  URL={escapeHTML(
+                <IconLink />{" "}
+                <a
+                  className={`${classNames.a}`}
+                  href={escapeHTML(
                     node.fields?.linkType === "custom" ? node?.fields?.url : ""
                   )}
-                />
-            
+                  target={node.fields?.newTab ? "_blank" : "_self"}
+                  key={i}
+                >
+                  {" "}
+                </a>
+                <span>
+                  {" "}
+                  {serializeLexicalRichText({ children: node.children })}
+                </span>
+                <span className="embed-link__info-text">
+                  {" "}
+                  [
+                  {ExtractHostname(
+                    escapeHTML(
+                      node.fields?.linkType === "custom"
+                        ? node?.fields?.url
+                        : ""
+                    )
+                  )}
+                  ]
+                </span>
               </div>
             );
           case "horizontalrule":
@@ -255,7 +250,7 @@ export default function serializeLexicalRichText({
 
           default:
             return (
-              <span  key={i}>
+              <span key={i}>
                 {serializeLexicalRichText({ children: node.children })}
               </span>
             );

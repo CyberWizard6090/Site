@@ -22,5 +22,5 @@ export const Galloper = ({ children }: Props) => {
   );
 };
 const Paper = ({ children }: Props) => {
-  return <div className="Paper">{children}</div>;
+  return <div className="Paper shadow__style">{children}</div>;
 };

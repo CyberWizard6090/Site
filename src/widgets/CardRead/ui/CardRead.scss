@@ -1,6 +1,6 @@
 .CardRead {
   background-color: var(--bg-color-02);
-  padding: var(--pm-x);
+
   display: flex;
   flex-direction: column;
   color: var(--font-color-light);
@@ -8,13 +8,28 @@
   overflow: hidden;
   row-gap: 10px;
   border-radius: var(--cr-x);
+  &_content {
+    padding: 0 var(--pm-x) var(--pm-x) var(--pm-x);
+  }
   // box-shadow: 0 12px 20px var(--shadow-color), 0 0 2px var(--shadow-color);
   &__img__wrap {
     width: 100%;
     overflow: hidden;
   }
+  &_top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__type {
+    background-color:#068606 ;
+    color: white;
+    border-radius: var(--cr-s);
+    padding: var(--pm-s) var(--pm-x);
+  }
   &_title{
-    height: 100px;
+ font-weight: bold;
+ margin-bottom: var(--pm-s);
   }
   img {
     border-radius: calc(var(--cr-x) - var(--pm-x));
@@ -24,7 +39,7 @@
   &_bottom-bar {
     padding-top: var(--pm-m);
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     // border-top: 1px solid #585858;
   }
   &_wrap_date {
@@ -33,7 +48,7 @@
     align-items: center;
   }
   &_text-container {
- width: 100%;
+    width: 100%;
 
     .truncate-text {
       overflow: hidden;

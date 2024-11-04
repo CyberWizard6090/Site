@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { GanerateID } from "shared/lib/GanerateID";
 
 type Props = {
+  id?: string
   Name: string;
 };
 
-export const TextAria = ({ Name }: Props) => {
+export const TextAria = ({ id,Name }: Props) => {
   const [text, setText] = useState("");
   const [textareaHeight, setTextareaHeight] = useState(10);
   const [remainingCharacters, setRemainingCharacters] = useState(6000);
   const [isInputDisabled, setIsInputDisabled] = useState(false);
+  const IDGEN = GanerateID(20)
+  const NUM = id? id: IDGEN
   useEffect(() => {
-    const textArea = document.getElementById("myTextArea");
-    setTextareaHeight(textArea.scrollHeight);
+    const textArea = document.getElementById(NUM);
+    if (textArea){
+      setTextareaHeight(textArea.scrollHeight);
+    }
+   
   }, [text]);
 
-  function handleChange(e) {
+  function handleChange(e: { target: { value: any; }; }) {
     setText(e.target.value);
     const { value } = e.target;
     const maxLength = 6000;
@@ -31,7 +38,7 @@ export const TextAria = ({ Name }: Props) => {
       <span> {Name}</span>
       <textarea
         name=""
-        id="myTextArea"
+        id={NUM}
         value={text}
         style={{ height: textareaHeight }}
         onChange={handleChange}

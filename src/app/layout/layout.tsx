@@ -10,7 +10,7 @@ export const Layout = () => {
   return (
     <div className="layout layout__wrapper">
       <FullScreenView />
-      <SpecialUI/>
+      {/* <SpecialUI/> */}
       <Header />
       <Nav />
      

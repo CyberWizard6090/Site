@@ -1,6 +1,6 @@
 .input-container {
   position: relative;
-  margin-top: 25px;
+  // margin-top: 25px;
 }
 .input-container label {
   padding: var(--pm-s);
@@ -17,20 +17,20 @@
 }
 .input-container input {
   padding: var(--pm-m) var(--pm-x);
-  border: 2px solid var(--btn-bg);
+  border: 1px solid var(--btn-bg);
   border-radius: var(--cr-s);
   background: transparent;
   width: 100%;
-font-weight: bolder;
-  font-size: var(--font-m);
+
+ 
   color: #000000;
 }
 .input-container input:focus {
   border: none;
   outline: none;
-  border: 2px solid var(--btn-bg);
-  background-color: var(--btn-bg);
-  color: var(--btn-color);
+  border: 1px solid var(--btn-bg);
+  // background-color: var(--btn-bg);
+  // color: var(--btn-color);
 }
 .input-container input:focus {
   & ~ label {

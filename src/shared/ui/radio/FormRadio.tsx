@@ -10,8 +10,10 @@ export const FormRadio = ({ children, Name }: Props) => {
     <div className="Radio-Form">
       <fieldset>
         <legend>{Name}</legend>
+<form > {children}
 
-        {children}
+</form>
+       
       </fieldset>
     </div>
   );

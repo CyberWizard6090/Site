@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './footer.scss'
+import { BlockFooter } from './BlockFooter';
 type Props = {}
 
 export const Footer = (props: Props) => {
   const url = "/api/globals/footer?locale=undefined&draft=false&depth=0";
-  const [layout, setPageData] = useState([]);
+  const [pageData, setPageData] = useState([]);
+
   useEffect(() => {
     fetch(url, {
       // mode: 'no-cors',
@@ -12,9 +14,8 @@ export const Footer = (props: Props) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setPageData(data);
-     console.log(data)
-       
+        console.log(data.List);
+        setPageData(data.List);
       })
       .catch((err) => {
         console.log(err.message);
@@ -22,22 +23,17 @@ export const Footer = (props: Props) => {
   }, []);
 
   return (
-    <div className='footer'>
-      <div className="footer_wrap">
-        {layout.NameBlock}
-        {/* {layout.List.map((item) => {
-    return (
-      <div key={item.id}>
-        <h3>{item.Name}</h3>
-        <p>{item.Link}</p>
-      </div>
-    );
-  })} */}
-     {/* {
-      layout.map(list => <div>kj[</div>
-
+    <div className='Footer'>
+      <div className="Footer_wrap">
+  
+      {pageData.map((item:any ) => (
+           
+           <BlockFooter Name={item.NameBlock} List={item.List}/>
       )
-     } */}
+    
+      
+      )}
+    
       </div>
     </div>
   )

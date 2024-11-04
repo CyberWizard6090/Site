@@ -5,6 +5,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .Messages{
+    position:fixed;
+    bottom: 50%;
+    padding: var(--pm-x);
+    left: 50%;
+    transform: translate(-50%,50%);
+    background-color: rgb(255, 255, 255);
+   
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    align-items: end;
+    gap: var(--pm-x);
+    border-radius: var(--cr-m);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    @media screen and (max-width: 768px) {
+      width: calc(100% - var(--pm-m) * 2);
+    }
+  }
   h1 {
     margin-bottom: var(--pm-x);
     text-align: center;

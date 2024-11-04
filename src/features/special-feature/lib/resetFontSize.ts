@@ -9,7 +9,7 @@ export const resetFontSize = () => {
     size= 100
   } else {
 
-     size = parseInt(localStorage.getItem(MyKey))
+    //  size = parseInt(localStorage.getItem(MyKey))
      
    
   }
@@ -18,17 +18,17 @@ export const resetFontSize = () => {
   const elements = document.querySelectorAll('*');
 
   // Перебираем все элементы и изменяем размер шрифта на изначальный
-  elements.forEach(element => {
-    // Получаем текущий размер шрифта
+  // elements.forEach(element => {
+  //   // Получаем текущий размер шрифта
 
-    const currentFontSize = parseInt(window.getComputedStyle(element).getPropertyValue('font-size'));
+  //   const currentFontSize = parseInt(window.getComputedStyle(element).getPropertyValue('font-size'));
 
-    // Устанавливаем размер шрифта на изначальный
-    if (element.getAttribute('Special-Fontsize') === null) {
-      element.setAttribute('Special-Fontsize', '100')
-      element.style.fontSize = currentFontSize + 'px';
-    }
+  //   // Устанавливаем размер шрифта на изначальный
+  //   if (element.getAttribute('Special-Fontsize') === null) {
+  //     element.setAttribute('Special-Fontsize', '100')
+  //     element.style.fontSize = currentFontSize + 'px';
+  //   }
  
-  });
-  UpFontSize(size);
+  // });
+  // UpFontSize(size);
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.scss";
-import { VisionButton } from "shared/ui/visionButton";
+
 import { Search } from "features/search";
 import { Toggle } from "shared/ui/toggle";
 import { Button } from "shared/ui/button";
@@ -12,7 +12,7 @@ export const Header = (props: Props) => {
   const { state, toggleState } = useSpecialFeature();
   return (
     <header className="Header">
-   <Search />
+   {/* <Search /> */}
     
 {/* {!state &&   <Button Icon={Logo} onClick={toggleState}>Версия для слабовидящих</Button>} */}
 

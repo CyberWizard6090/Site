@@ -37,6 +37,7 @@
     "react-loading-skeleton": "^3.4.0",
     "react-material-ui-carousel": "^3.4.2",
     "react-pdf": "^5.7.2",
+    "react-select": "^5.8.2",
     "react-textarea-autosize": "^8.4.0",
     "react-toastify": "^10.0.5",
     "react-token-auth": "^2.3.8",

@@ -49,7 +49,7 @@ export const ArticlePage = () => {
           
             date={item.date}
             title={item.title}
-           
+           type={item.type}
             text={item.text}
             src={item.wallpaper.sizes.tablet.url}
             url={item.id}

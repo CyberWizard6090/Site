@@ -6,6 +6,7 @@
   padding: 20px;
   display: grid;
   grid-template-rows: 1fr 60px;
+
   row-gap: 10px;
   position: sticky;
   top: 0px;
@@ -35,7 +36,11 @@
 /* Для ПК */
 @media screen and (min-width: 1200px) {
   /* Ваш CSS код для ПК */
-
+  background-color: var(--bg-color-02);
+  border-radius: var(--cr-m);
+  margin: var(--pm-x) ;
+  top: var(--pm-x) ;
+  height:calc(100vh - var(--pm-x)*2) ;
 }
                                 // &__top {
   // }
@@ -75,9 +80,9 @@
     display: flex;
     align-items: center;
   }
-  .hover__item {
-    // background-color: red;
-  }
+  // .hover__item {
+  //   // background-color: red;
+  // }
 }
 .wrap__nav___btn{
   width: 100%;
@@ -93,5 +98,6 @@
 .menu__bottom {
   width: 100%;
   display: flex;
+  justify-content: space-between;
 
 }
