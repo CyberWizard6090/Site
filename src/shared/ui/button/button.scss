@@ -52,13 +52,15 @@
   }
 
   &_theme_transparent-blue {
-    color: var(--btn-color);
-    border: 1px solid var(--primary-bg);
+    color:  var(--btn-bg);
+    border: 1px solid  var(--btn-bg);
     background-color: transparent;
+    // background-color: red;
 
     &:hover {
-      color: var(--white);
-      background-color: var(--primary-bg);
+      color: var(--btn-color);
+     
+      background-color: var(--btn-bg);
     }
   }
 }

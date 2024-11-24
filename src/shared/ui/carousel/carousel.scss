@@ -1,17 +1,51 @@
-.Paper{
-    height: 500px;
+.Paper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color-02);
+  // background-color: rgb(16, 151, 151);
+  padding: var(--pm-x);
+
+  width: 100%;
+  height: 500px;
+
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none; /* Стандартный синтаксис */
+}
+.carousel {
+  &-content {
+    border-radius: var(--cr-x);
+    overflow: hidden;
+    position: relative;
+  }
+  &-arrow {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+    color: var(--btn-color);
+
+    background-color: var(--btn-bg);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--bg-color-02);
-    padding: var(--pm-x);
-    border-radius: var(--cr-x);
+  }
 
+  width: 100%;
+  overflow: hidden;
+  h2 {
+    margin-bottom: var(--pm-x);
+    font-weight: bold;
+  }
 }
-.carousel{
-    
-    h2{
-        margin-bottom: var(--pm-x);
-        font-weight: bold;
-    }
+.arrow-right {
+  right: var(--pm-m);
+}
+.arrow-left {
+  left: var(--pm-m);
 }

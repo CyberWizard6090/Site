@@ -9,7 +9,7 @@ import {
 import { Layout } from "app/layout";
 import clsx from "clsx";
 // import { selectBookDescriptionBook } from 'entities/book/bookDescripton'
-import { useTheme } from "entities/theme";
+import { useTheme } from "app/theme";
 // import { BookDescription } from 'pages/bookDescription'
 // import { Cart } from 'pages/cart'
 // import { Categories } from 'pages/categories'

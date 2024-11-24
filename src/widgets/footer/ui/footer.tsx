@@ -14,7 +14,6 @@ export const Footer = (props: Props) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.List);
         setPageData(data.List);
       })
       .catch((err) => {
@@ -23,8 +22,9 @@ export const Footer = (props: Props) => {
   }, []);
 
   return (
-    <div className='Footer'>
-      <div className="Footer_wrap">
+    <div className='footer'>
+      <div className="footer-menu shadow__style">
+      <div className="footer-menu__container">
   
       {pageData.map((item:any ) => (
            
@@ -34,6 +34,7 @@ export const Footer = (props: Props) => {
       
       )}
     
+      </div>
       </div>
     </div>
   )

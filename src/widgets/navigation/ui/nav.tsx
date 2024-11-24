@@ -1,6 +1,6 @@
 import "./nav.scss";
 
-import { Theme, useTheme } from "entities/theme";
+import { Theme, useTheme } from "app/theme";
 import { ReactComponent as Moon } from "shared/assets/svg/bootstrap-icons-1.11.2/moon-stars-fill.svg";
 import { ReactComponent as Sun } from "shared/assets/svg/bootstrap-icons-1.11.2/sun-fill.svg";
 import { IconButton } from "shared/ui/iconButton";
@@ -21,7 +21,7 @@ export const Nav = () => {
   const url = "/api/globals/nav?locale=undefined&draft=false&depth=0";
   const [layout, setPageData] = useState([]);
 
-  const [action, setAction] = useState("");
+  // const [action, setAction] = useState("");
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -85,6 +85,7 @@ export const Nav = () => {
       )}
 
       <aside className="aside-left shadow__style" style={state ? test2 : test}>
+        <div className="nav-container shadow__style">
         <nav className="aside-left__container-nav">
           <ul className="ui-vertical-navigation__list-item">
             <Item label={"Главная"} link={"/"} />
@@ -118,6 +119,8 @@ export const Nav = () => {
             <></>
           )}
         </div>
+        </div>
+      
       </aside>
     </>
   );

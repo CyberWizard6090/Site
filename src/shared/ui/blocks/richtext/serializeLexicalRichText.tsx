@@ -3,9 +3,8 @@ import React, { Fragment } from "react";
 import { ReactComponent as Icon } from "shared/assets/svg/quote_afda747qq7nf.svg";
 import { ReactComponent as IconLink } from "shared/assets/svg/bootstrap-icons-1.11.2/link-45deg.svg";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
-import { QR } from "shared/ui/QR";
+// import { QR } from "shared/ui/QR";
 import { ExtractHostname } from "shared/lib/extractHostname";
-import { Image } from "../Image/Image";
 import { ImageView } from "shared/ui/imageView";
 
 export const IS_BOLD = 1;
@@ -43,10 +42,10 @@ export default function serializeLexicalRichText({
             | null
             | undefined;
           format: number;
-          tag: string | number | JSX.IntrinsicAttributes;
+          tag: any ;
           children: any;
           listType: string;
-          checked: any;
+          checked: React.ReactNode;
           fields: {
             linkType: string;
             url: string | null | undefined;
@@ -116,14 +115,11 @@ export default function serializeLexicalRichText({
           return null;
         }
 
-        if (node.type === "heading") {
+        if (node.type === 'heading') {
           return (
-            <h3
-              className={`${classNames} ${generateTextAlign(node)}`}
-              key={i}
-            >
+            <node.tag className={`${classNames[node.tag]} ${generateTextAlign(node)}`} key={i}>
               {serializeLexicalRichText({ children: node.children })}
-            </h3>
+            </node.tag>
           );
         }
 
@@ -214,7 +210,7 @@ export default function serializeLexicalRichText({
                     node.fields?.linkType === "custom" ? node?.fields?.url : ""
                   )}
                   target={node.fields?.newTab ? "_blank" : "_self"}
-                  key={i}
+                  key={i} rel="noreferrer"
                 >
                   {" "}
                 </a>
@@ -250,9 +246,9 @@ export default function serializeLexicalRichText({
 
           default:
             return (
-              <span key={i}>
+              <p key={i}>
                 {serializeLexicalRichText({ children: node.children })}
-              </span>
+              </p>
             );
         }
       }

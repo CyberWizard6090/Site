@@ -14,12 +14,18 @@ export const Tree = ({ children, label, list }: Props) => {
     setShowChildren(!showChildren);
   };
   return (
-    <>
-      <div onClick={handleClick} className="Tree hover__item ui-vertical-navigation-item__wrapper">
-        <span>{label}</span><Icon/>
+    <div className="nav_menu-content_tree">
+      <div
+        onClick={handleClick}
+        className="nav_menu_tree-header Tree hover__item ui-vertical-navigation-item__wrapper"
+      >
+        <span>{label}</span>
+        <div className="nav_menu_tree-header-icon">
+        <Icon />
+        </div>
+       
       </div>
-
-      <ul className="ui-vertical-navigation__list-item" style={{ paddingLeft: "10px"}}>
+      <div className="nav_menu-content_tree-list">
         {showChildren ? children : <></>}
 
         {showChildren ? (
@@ -30,7 +36,7 @@ export const Tree = ({ children, label, list }: Props) => {
         ) : (
           <></>
         )}
-      </ul>
-    </>
+      </div>
+    </div>
   );
 };

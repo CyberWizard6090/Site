@@ -8,6 +8,7 @@ export enum Theme {
 export interface IThemeContext {
     theme?: Theme
     setTheme?: (theme: Theme) => void
+   
 }
 
 export const ThemeContext = createContext<IThemeContext>({})

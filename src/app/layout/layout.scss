@@ -11,7 +11,7 @@
     padding: 0 var(--pm-x3);
   }
   @media (min-width: 1200px) {
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 350px 1fr;
     grid-template-areas:
       "nav header"
       "nav main "
@@ -19,6 +19,13 @@
       ". footer ";
   }
   @media (min-width: 992px) and (max-width: 1199px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main "
+      "main "
+      "footer ";
+    padding-bottom: 60px;
   }
   @media (max-width: 767px) {
     grid-template-columns: 1fr;

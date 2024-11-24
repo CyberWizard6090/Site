@@ -1,4 +1,4 @@
-import { QRCodeSVG } from "qrcode.react";
+import { QRCode } from 'antd';
 import "./QR.scss";
 import { useFullScreen } from "features/FullScreenView";
 type Props = {
@@ -6,19 +6,20 @@ type Props = {
   Size?: number;
 };
 
-export const QR = ({ URL, Size = 128 }: Props) => {
-  const { toggleState, children, setChildren } = useFullScreen();
+export const QR = ({ URL, Size = 300 }: Props) => {
+  const { toggleState, setChildren } = useFullScreen();
   function transmission() {
     toggleState();
     setChildren(
       <div className="qr_code__wrap">
-        <QRCodeSVG value={URL} size={524} bgColor={"transparent"} />
+         <QRCode type={"svg"} value={URL} size={600} bgColor={"transparent"} color={"var( --QRClolor)"}/>
+        {/* <QRCodeSVG  /> */}
       </div>
     );
   }
   return (
     <div className="qr-code-wrap" onClick={transmission}>
-      <QRCodeSVG value={URL} size={Size} bgColor={"transparent"} />
+       <QRCode type={"svg"} value={URL} size={Size} bgColor={"transparent"} color={"var( --QRClolor)"}/>
     </div>
   );
 };

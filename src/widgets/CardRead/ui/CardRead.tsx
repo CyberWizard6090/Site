@@ -35,13 +35,14 @@ export const CardRead = (props: any) => {
         <div className="CardRead_text-container">
           <div className="truncate-text">{props.text}</div>
         </div>
-        <div className="CardRead_bottom-bar">
+    
+      </div>
+      <div className="CardRead_bottom-bar">
           {/* let a =  {props.url} */}
           <Link to={"/read/" + props.url}>
             <Button>Читать</Button>
           </Link>
         </div>
-      </div>
     </div>
   );
 };

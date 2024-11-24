@@ -1,25 +1,63 @@
 import { FC } from "react";
-// import { ErrorBoundary } from 'react-error-boundary'
-// import { Provider } from 'react-redux'
-// import store, { persistor } from 'app/store'
-import { ThemeProvider } from "entities/theme";
+
+import { ThemeProvider, useTheme } from "app/theme";
 import { ScreenProvider } from "features/FullScreenView";
 import { SpecialProvider } from "features/special-feature";
-
-// import { PersistGate } from 'redux-persist/integration/react'
-// import { Fallback } from 'shared/ui/fallback'
-
+import { App, ConfigProvider, theme as themeUI} from "antd";
+// import { configData } from "./../config/notification.config";
 interface IProviders {
-  /** Content that will be wrapped by providers. */
   readonly children: JSX.Element;
 }
 
+// const Icon = theme === Theme.LIGHT ? Sun : Moon;
 export const Providers: FC<IProviders> = ({ children }) => {
+  const { theme  } = useTheme();
+// const newTheme =  ;
+
   return (
-    <ThemeProvider>
-      <SpecialProvider >
-        <ScreenProvider state={false}>{children}</ScreenProvider>
-      </SpecialProvider>
-    </ThemeProvider>
+    <>
+      <ThemeProvider>
+        <SpecialProvider>
+          <ScreenProvider state={false}>
+            <ConfigProvider
+              prefixCls="guzkod"
+              theme={{
+                cssVar: true,
+             
+                token: {
+                  borderRadius: 12,
+                },
+                components: {
+                  Carousel: {
+                    arrowSize: 32,
+                    arrowOffset:32,
+                    
+                    dotWidth: 20,
+                      dotHeight: 20,
+                      dotActiveWidth: 30,
+                  },
+                  Notification: {
+                    width: 600,
+                  },
+                },
+              }}
+            >
+              <App
+                notification={{
+                  placement: "top",
+                  top: 20,
+                  duration: 300,
+                  maxCount:6
+               
+                
+                }}
+              >
+                {children}
+              </App>
+            </ConfigProvider>
+          </ScreenProvider>
+        </SpecialProvider>
+      </ThemeProvider>
+    </>
   );
 };

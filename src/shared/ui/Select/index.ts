@@ -1,1 +1,0 @@
-export {Сhoose  as Select} from './Select'

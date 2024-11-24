@@ -17,3 +17,7 @@ declare module "\*.svg" {
     const content: string;
     export default content;
   }
+  declare module "\*.config" {
+    const content: string;
+    export default content;
+  }
