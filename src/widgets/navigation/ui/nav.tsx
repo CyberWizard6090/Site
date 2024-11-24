@@ -103,12 +103,12 @@ export const Nav = () => {
           </ul>
         </nav>
         <div className="menu__bottom">
-          <IconButton
+          {/* <IconButton
             Icon={Icon}
             onClick={toggleTheme}
             isCounterVisible={false}
             className="layout__icon"
-          />
+          /> */}
           {isMobile ? (
             <IconButton
               Icon={Icon2}
