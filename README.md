@@ -13,7 +13,7 @@ To install the project, follow these steps::
 To use the site, follow these steps::
 1. Open your browser and go to the URL of your site.
 2. Start using the basic functions and elements provided by the project.
-3. Read the detailed documentation available at.
+
 
 ## Co-authors
 Maxim Bakhmetiev
