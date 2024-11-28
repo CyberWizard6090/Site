@@ -31,11 +31,11 @@ Email: mail.maxim6090@yandex.ru
 
 
 ## License
-The project is distributed under the license name\license.
+
 
 ## Change history
 
-\ # \ # Links
+## Links
 
 ## Thanks
 Thank you to everyone who helped and supported this project!
