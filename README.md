@@ -31,7 +31,7 @@ Email: mail.maxim6090@yandex.ru
 
 
 ## License
-
+https://github.com/Cyber-Wizard03/Site/blob/main/LICENSE
 
 ## Change history
 
