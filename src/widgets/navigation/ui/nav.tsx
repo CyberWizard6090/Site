@@ -1,8 +1,6 @@
 import "./nav.scss";
 
-import { Theme, useTheme } from "app/theme";
-import { ReactComponent as Moon } from "shared/assets/svg/bootstrap-icons-1.11.2/moon-stars-fill.svg";
-import { ReactComponent as Sun } from "shared/assets/svg/bootstrap-icons-1.11.2/sun-fill.svg";
+
 import { IconButton } from "shared/ui/iconButton";
 
 import { useState, useEffect } from "react";
@@ -12,11 +10,12 @@ import { Button } from "shared/ui/button";
 import { ReactComponent as Logo } from "shared/assets/svg/bootstrap-icons-1.11.2/list.svg";
 import { ReactComponent as Icon2 } from "shared/assets/svg/bootstrap-icons-1.11.2/x.svg";
 import { useDeviceDetect } from "shared/lib/WindowSizeListener";
+import { ButtonTheme } from "./buttonTheme";
 export const Nav = () => {
-  const { theme, toggleTheme } = useTheme();
+
   const [state, setState] = useState(false);
   const { isMobile } = useDeviceDetect();
-  const Icon = theme === Theme.LIGHT ? Sun : Moon;
+
 
   const url = "/api/globals/nav?locale=undefined&draft=false&depth=0";
   const [layout, setPageData] = useState([]);
@@ -60,17 +59,6 @@ export const Nav = () => {
   const toggleState = () => {
     setState(!state);
   };
-  const test = {
-    opacity: isMobile ? 0 : 1,
-    display: isMobile ? "none" : "grid",
-  };
-  const test2:any = {
-    transition: "cubic-bezier(0.075, 0.82, 0.165, 1)",
-    transform: "translateX(0%)",
-    opacity: 1,
-    position: "fixed",
-    top: 0,
-  };
 
   return (
     <>
@@ -84,8 +72,8 @@ export const Nav = () => {
         <></>
       )}
 
-      <aside className="aside-left shadow__style" style={state ? test2 : test}>
-        <div className="nav-container shadow__style">
+      <div className={`nav  ${state ? "active" : ""}`}>
+        <aside className="nav-menu shadow__style">
         <nav className="aside-left__container-nav">
           <ul className="ui-vertical-navigation__list-item">
             <Item label={"Главная"} link={"/"} />
@@ -103,25 +91,18 @@ export const Nav = () => {
           </ul>
         </nav>
         <div className="menu__bottom">
-          {/* <IconButton
-            Icon={Icon}
-            onClick={toggleTheme}
-            isCounterVisible={false}
-            className="layout__icon"
-          /> */}
+         <ButtonTheme/>
           {isMobile ? (
-            <IconButton
-              Icon={Icon2}
-              onClick={toggleState}
-              isCounterVisible={false}
-            />
+            <div className="nav-menu-close" onClick={toggleState}>
+              <Icon2/>
+            </div>
           ) : (
             <></>
           )}
         </div>
-        </div>
+        </aside>
       
-      </aside>
+      </div>
     </>
   );
 };

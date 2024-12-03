@@ -12,9 +12,9 @@ export const Header = (props: Props) => {
   const { state, toggleState } = useSpecialFeature();
   return (
     <header className="Header">
-   {/* <Search />
+   {/* <Search />*/}
     
-{!state &&   <Button Icon={Logo} onClick={toggleState}>Версия для слабовидящих</Button>} */}
+{!state &&   <Button Icon={Logo} onClick={toggleState}>Версия для слабовидящих</Button>} 
 
     </header>
   );

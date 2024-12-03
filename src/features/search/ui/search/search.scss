@@ -4,8 +4,8 @@
   width: 100%;
 }
 .CardInner {
-  background-color: var(--bg-color-02);
-  border-radius: var(--cr-x);
+  background-color: var( --block-bg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
 }
 
@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   margin-right: 12px;
-  margin-left: var(--pm-m);
+  margin-left: var(--spacing-xs);
   svg {
     fill: #6d7f8f;
     height: 16px;
@@ -29,14 +29,14 @@
 .InputContainer {
   width: 100%;
   input {
-    background-color: var(--bg-color-02);
+    background-color: var( --block-bg);
     border: none;
     display: block;
     color: #6d7f8f;
     font-weight: 600;
     -webkit-appearance: none;
     width: 100%;
-    padding: var(--pm-m) var(--pm-x);
+    padding: var(--spacing-xs) var(--spacing-m);
     &::placeholder {
       color: #6d7f8f;
     }

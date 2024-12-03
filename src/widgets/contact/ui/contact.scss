@@ -5,7 +5,7 @@
 @media screen and (max-width: 768px) {
   display: flex;
   flex-direction: column;
-  gap: var(--pm-x);
+  gap: var(--spacing-m);
 }
 
 /* Для планшетов */
@@ -19,28 +19,28 @@
   display: grid;
   grid-template-columns: 500px 1fr;
   grid-template-areas: "title title" ". .";
-  gap: var(--pm-x);
+  gap: var(--spacing-m);
 }
   h2 {
     font-weight: bold;
-    // margin-bottom: var(--pm-x);
+    // margin-bottom: var(--spacing-m);
     grid-area: title;
   }
   .working {
-    padding: var(--pm-x);
-    border-radius: var(--cr-x);
+    padding: var(--spacing-m);
+    border-radius: var(--radius-lg);
 
     display: flex;
     flex-direction: column;
-    background: var(--bg-color-02);
+    background: var( --block-bg);
     width: 100%;
   }
   .information_phone {
     display: flex;
     flex-direction: column;
-    padding: var(--pm-x);
-    border-radius: var(--cr-x);
-    background: var(--bg-color-02);
+    padding: var(--spacing-m);
+    border-radius: var(--radius-lg);
+    background: var( --block-bg);
     width: 100%;
     &_grid {
       display: grid;

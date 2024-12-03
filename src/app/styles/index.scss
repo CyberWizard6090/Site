@@ -36,8 +36,9 @@
     }
 }
 .shadow__style{
-    -webkit-box-shadow: 0 1px 1px rgba(32, 35, 51, .04), 0 2px 4px rgba(32, 35, 51, .02); 
-    box-shadow: 0 1px 1px rgba(32, 35, 51, .04), 0 2px 4px rgba(32, 35, 51, .02);
+    // -webkit-box-shadow: 0 1px 1px rgba(32, 35, 51, .04), 0 2px 4px rgba(32, 35, 51, .02); 
+    // box-shadow: 0 1px 1px rgba(32, 35, 51, .04), 0 2px 4px rgba(32, 35, 51, .02);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 
@@ -117,7 +118,7 @@ a {
 
 // * {
 //     scrollbar-width: thin;
-//     scrollbar-color: blue var(--bg-color-00);
+//     scrollbar-color: blue var(--background-main);
 //   }
   
   // /* для Chrome/Edge/Safari */

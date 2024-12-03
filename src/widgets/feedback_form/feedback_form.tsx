@@ -5,6 +5,7 @@ import { Organization } from "./const/Organization";
 import { Department } from "pages/feedbackPage/const/Department";
 import "./feedback_form.scss";
 import { Messege } from "./const/Messege";
+import { InputPhone } from "shared/ui/form";
 type Props = {
   ShowModal?: () => void;
 };
@@ -35,12 +36,11 @@ export const FormFeedback = ({ ShowModal }: Props) => {
     setComponentDisabled(true);
     Push(values);
     showNotification(values.type_appeal);
-
   };
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
-  const Push = (values:any) => {
+  const Push = (values: any) => {
     fetch("http://127.0.0.1:5000/api/FeedbackMessages", {
       method: "POST",
       body: JSON.stringify({
@@ -53,7 +53,7 @@ export const FormFeedback = ({ ShowModal }: Props) => {
         Messages: values.messages,
       }),
       headers: {
-      "Content-Type": "application/json",
+        "Content-Type": "application/json",
       },
     })
       .then((r) => r.json())
@@ -64,6 +64,8 @@ export const FormFeedback = ({ ShowModal }: Props) => {
 
   return (
     <>
+      {" "}
+      <InputPhone />
       <Form
         layout="vertical"
         onFinish={onFinish}

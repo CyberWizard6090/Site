@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Item } from "./Item";
+import { Collapse } from "react-collapse";
 import { ReactComponent as Icon } from "shared/assets/svg/bootstrap-icons-1.11.2/chevron-down.svg";
 type Props = {
   children?: React.ReactNode;
@@ -20,23 +21,22 @@ export const Tree = ({ children, label, list }: Props) => {
         className="nav_menu_tree-header Tree hover__item ui-vertical-navigation-item__wrapper"
       >
         <span>{label}</span>
-        <div className="nav_menu_tree-header-icon">
+        <div  className={`nav_menu_tree-header-icon ${
+            showChildren ? "open" : "closed"
+          }`}>
         <Icon />
         </div>
        
       </div>
-      <div className="nav_menu-content_tree-list">
-        {showChildren ? children : <></>}
-
-        {showChildren ? (
-          list &&
-          list?.map((item: any) => {
-            return <Item label={item.label} link={item.link} />;
-          })
-        ) : (
-          <></>
-        )}
-      </div>
+      <Collapse isOpened={showChildren}>
+        <div className="nav_menu-content_tree-list">
+          {children}
+          {list &&
+            list.map((item: any) => (
+              <Item key={item.label} label={item.label} link={item.link} />
+            ))}
+        </div>
+      </Collapse>
     </div>
   );
 };

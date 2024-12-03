@@ -1,12 +1,12 @@
 .BUSGOV {
-  background-color: var(--bg-color-02);
-  padding: var(--pm-x);
+  background-color: var( --block-bg);
+  padding: var(--spacing-m);
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--font-color-light);
   overflow: hidden;
   row-gap: 10px;
-  border-radius: var(--cr-x);
+  border-radius: var(--radius-xl);
  
 }

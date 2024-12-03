@@ -1,15 +1,12 @@
 .layout {
-  background-color: var(--bg-color-00);
-  
-  display: grid;
-  position: relative;
-  //    overflow: hidden;
+  background-color: var(--background-main);
 
-  &__content {
-    width: 100%;
-    grid-area: main;
-    padding: 0 var(--pm-x3);
-  }
+align-items: start;
+  display: grid;
+  gap: var( --spacing-xxs);
+  position: relative;
+    //  overflow: hidden;
+
   @media (min-width: 1200px) {
     grid-template-columns: 350px 1fr;
     grid-template-areas:
@@ -17,6 +14,11 @@
       "nav main "
       "nav main "
       ". footer ";
+    &__content {
+      width: 100%;
+      grid-area: main;
+      padding: 0 var(--spacing-xl);
+    }
   }
   @media (min-width: 992px) and (max-width: 1199px) {
     grid-template-columns: 1fr;
@@ -25,7 +27,12 @@
       "main "
       "main "
       "footer ";
-    padding-bottom: 60px;
+    &__content {
+      width: 100%;
+      grid-area: main;
+      padding: 0 var(--spacing-xl);
+    }
+  
   }
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
@@ -34,7 +41,11 @@
       "main "
       "main "
       "footer ";
-    padding-bottom: 60px;
+    &__content {
+      width: 100%;
+      grid-area: main;
+    }
+    
   }
 }
 // *::-webkit-scrollbar {
@@ -42,7 +53,7 @@
 //       width: 12px;
 //     }
 //    *::-webkit-scrollbar-track {
-//     background-color: var(--bg-color-00);
+//     background-color: var(--background-main);
 //    }
 //   *::-webkit-scrollbar-thumb {
 //        background-color: rgb(66, 40, 216);

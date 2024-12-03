@@ -3,22 +3,22 @@
   // margin-top: 25px;
 }
 .input-container label {
-  padding: var(--pm-s);
+  padding: var(--spacing-xxs);
   position: absolute;
   top: 0px;
   left: 0px;
   font-size: 16px;
   font-weight: bold;
-  color: var(--btn-bg);
+  color: var(--button-bg);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.5s ease-in-out;
 }
 .input-container input {
-  padding: var(--pm-m) var(--pm-x);
-  border: 1px solid var(--btn-bg);
-  border-radius: var(--cr-s);
+  padding: var(--spacing-xs) var(--spacing-m);
+  border: 1px solid var(--button-bg);
+  border-radius: var(--radius-md);
   background: transparent;
   width: 100%;
 
@@ -28,9 +28,9 @@
 .input-container input:focus {
   border: none;
   outline: none;
-  border: 1px solid var(--btn-bg);
-  // background-color: var(--btn-bg);
-  // color: var(--btn-color);
+  border: 1px solid var(--button-bg);
+  // background-color: var(--button-bg);
+  // color: var(--button-text);
 }
 .input-container input:focus {
   & ~ label {
@@ -51,16 +51,16 @@
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  row-gap: var(--pm-m);
+  row-gap: var(--spacing-xs);
   textarea {
-    border-radius: var(--cr-m);
+    border-radius: var(--radius-lg);
     overflow: hidden;
-    padding: var(--pm-x);
+    padding: var(--spacing-m);
     min-height: 200px;
     height: auto;
     resize: vertical;
     outline: none;
-    border: 2px solid var(--btn-bg);
+    border: 2px solid var(--button-bg);
     background-color: transparent;
     font-size: var(--font-m);
     color: var(--font-color-light);

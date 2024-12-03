@@ -7,12 +7,12 @@
   .file__wrap {
     display: flex;
     height: 60px;
-    margin-top: var(--pm-x);
+    margin-top: var(--spacing-m);
     justify-content: space-between;
   }
   .name-file {
     width: 100%;
-    padding-left: var(--pm-x);
+    padding-left: var(--spacing-m);
     display: flex;
     align-items: center;
   }

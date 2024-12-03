@@ -12,14 +12,14 @@ export const QR = ({ URL, Size = 300 }: Props) => {
     toggleState();
     setChildren(
       <div className="qr_code__wrap">
-         <QRCode type={"svg"} value={URL} size={600} bgColor={"transparent"} color={"var( --QRClolor)"}/>
+         <QRCode type={"svg"} value={URL} size={600} bgColor={"transparent"} color={"var(  --qr-color)"}/>
         {/* <QRCodeSVG  /> */}
       </div>
     );
   }
   return (
     <div className="qr-code-wrap" onClick={transmission}>
-       <QRCode type={"svg"} value={URL} size={Size} bgColor={"transparent"} color={"var( --QRClolor)"}/>
+       <QRCode type={"svg"} value={URL} size={Size} bgColor={"transparent"} color={"var(  --qr-color)"}/>
     </div>
   );
 };

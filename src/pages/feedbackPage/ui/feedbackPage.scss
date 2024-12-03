@@ -8,7 +8,7 @@
   .Messages{
     position:fixed;
     bottom: 50%;
-    padding: var(--pm-x);
+    padding: var(--spacing-m);
     left: 50%;
     transform: translate(-50%,50%);
     background-color: rgb(255, 255, 255);
@@ -17,15 +17,15 @@
     flex-direction: column;
     z-index: 100;
     align-items: end;
-    gap: var(--pm-x);
-    border-radius: var(--cr-m);
+    gap: var(--spacing-m);
+    border-radius: var(--radius-lg);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     @media screen and (max-width: 768px) {
-      width: calc(100% - var(--pm-m) * 2);
+      width: calc(100% - var(--spacing-xs) * 2);
     }
   }
   h1 {
-    margin-bottom: var(--pm-x);
+    margin-bottom: var(--spacing-m);
     text-align: center;
   }
   &__form {
@@ -35,7 +35,7 @@
     .wrap__field__form {
       display: flex;
       flex-direction: column;
-      gap: var(--pm-x);
+      gap: var(--spacing-m);
     }
     }
     
@@ -51,17 +51,17 @@
       .wrap__field__form {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: var(--pm-x);
+        gap: var(--spacing-m);
       }
       }
    
-    padding: var(--pm-x);
-    border-radius: var(--cr-m);
-    background-color: var(--bg-color-02);
+    padding: var(--spacing-m);
+    border-radius: var(--radius-lg);
+    background-color: var( --block-bg);
     color: var(--font-color-light);
     display: flex;
     flex-direction: column;
-    gap: var(--pm-x);
+    gap: var(--spacing-m);
    
     height: min-content;
   }

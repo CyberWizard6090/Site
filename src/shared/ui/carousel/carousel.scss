@@ -1,51 +1,95 @@
-.Paper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg-color-02);
-  // background-color: rgb(16, 151, 151);
-  padding: var(--pm-x);
-
-  width: 100%;
+.carousel {
+  position: relative;
+  width: 100%; /* Занимает 100% ширины родителя */
   height: 500px;
-
+  overflow: hidden;
+  background: var( --block-bg);
+  border-radius: var(--radius-lg);
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE/Edge */
   user-select: none; /* Стандартный синтаксис */
 }
-.carousel {
-  &-content {
-    border-radius: var(--cr-x);
-    overflow: hidden;
-    position: relative;
-  }
-  &-arrow {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 30;
-    color: var(--btn-color);
 
-    background-color: var(--btn-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
+.carousel-track {
   width: 100%;
-  overflow: hidden;
-  h2 {
-    margin-bottom: var(--pm-x);
-    font-weight: bold;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--button-bg);
+  color: var( --button-text);
+  border: none;
+ 
+  z-index: 10;
+  cursor: pointer;
+ height: 40px;
+ width: 40px;
+  border-radius: 50%;
+  &:hover {
+    background: var(--button-bg-hover)
+  }
+  &-left {
+    left: 10px;
+  }
+  &-right {
+    right: 10px;
   }
 }
-.arrow-right {
-  right: var(--pm-m);
+
+
+
+
+
+
+
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+ align-items: center;
+ padding: 10px;
+  height: 20px;
+  // background-color: rgb(0, 0, 0);
+  border-radius: 21px;
 }
-.arrow-left {
-  left: var(--pm-m);
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #717171;
 }

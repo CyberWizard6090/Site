@@ -43,8 +43,8 @@ $animation-duration: 2s;
 .cube-face {
   position: absolute;
   inset: 0;
-  background: var(    --btn-bg);
-  border: solid 2px var( --bg-color-02);
+  background: var(    --button-bg);
+  border: solid 2px var(  --block-bg);
   &.shadow {
     transform: translateZ(-$size);
     animation: bouncing-shadow $animation-duration infinite;

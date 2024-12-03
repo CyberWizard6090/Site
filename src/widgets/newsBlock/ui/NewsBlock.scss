@@ -3,7 +3,7 @@
     width: 100%;
 
     h2 {
-        margin-bottom: var(--pm-x);
+        margin-bottom: var(--spacing-m);
         font-weight: bold;
     }
 
@@ -12,7 +12,7 @@
         @media screen and (max-width: 768px) {
             display: flex;
             flex-direction: column;
-            gap: var(--pm-x);
+            gap: var(--spacing-m);
         }
 
         /* Для планшетов */
@@ -23,7 +23,7 @@
     @media screen and (min-width: 1200px) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: var(--pm-x);
+        gap: var(--spacing-m);
     }
 
 }

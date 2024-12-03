@@ -1,39 +1,40 @@
-.app{
-    --cr-xs:12px;
-    --cr-s:16px;
-    --cr-m:20px;
-    --cr-x:24px;
+.app {
+    --radius-none: 0px;       /* Без скругления */
+    --radius-sm: 4px;         /* Маленький радиус */
+    --radius-md: 8px;         /* Средний радиус */
+    --radius-lg: 16px;        /* Большой радиус */
+    --radius-xl: 24px;        /* Очень большой радиус */
+    --radius-circle: 9999px;  /* Полностью круглая форма */
+  --size-svg-icon: 60px;
+  /* Для мобильных устройств */
 
-    --size-svg-icon: 60px;
-/* Для мобильных устройств */
-@media screen and (max-width: 768px) {
-    --pm-s:5px;
-    --pm-m:10px;
-    --pm-l:15px;
-    --pm-x:10px;
-    --pm-x2: 15px;
-    --pm-x3: 20px;
-}
+  --spacing-xxs: 4px; /* Очень маленький отступ */
+  --spacing-xs: 8px; /* Маленький отступ */
+  --spacing-s: 12px; /* Небольшой отступ */
+  --spacing-m: 16px; /* Средний отступ */
+  --spacing-l: 24px; /* Большой отступ */
+  --spacing-xl: 32px; /* Очень большой отступ */
+  --spacing-xxl: 40px; /* Максимальный отступ */
 
-/* Для планшетов */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Для планшетов */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
     /* Ваш CSS код для планшетов */
     .text-block {
-        padding: 10px;
-        font-size: 12px;
-        line-height: 1.6;
-        margin-bottom: 15px;
+      padding: 10px;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-bottom: 15px;
     }
-}
+  }
 
-/* Для ПК */
-@media screen and (min-width: 1200px) {
-    --pm-s:5px;
-    --pm-m:10px;
-    --pm-l:15px;
-    --pm-x:20px;
-    --pm-x2: 40px;
-    --pm-x3: 60px;
-}
-  
+  /* Для ПК */
+  @media screen and (min-width: 1200px) {
+    --spacing-xxs: 4px; /* Очень маленький отступ */
+    --spacing-xs: 8px; /* Маленький отступ */
+    --spacing-s: 12px; /* Небольшой отступ */
+    --spacing-m: 16px; /* Средний отступ */
+    --spacing-l: 32px; /* Большой отступ */
+    --spacing-xl: 48px; /* Очень большой отступ */
+    --spacing-xxl: 64px; /* Максимальный отступ */
+  }
 }

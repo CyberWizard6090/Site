@@ -7,15 +7,15 @@
   transition: all 0.15s linear;
   line-height: 1;
   white-space: nowrap;
-  border-radius: var(--cr-s);
+  border-radius: var(--radius-md);
   
 
   svg {
     width: 18px;
     height: 18px;
-    fill: var(--btn-color);
+    fill: var(--button-text);
 
-    margin-right: var(--pm-m);
+    margin-right: var(--spacing-xs);
   }
 
   &:hover {
@@ -23,16 +23,16 @@
   }
 
   &:hover svg {
-    fill: var(--btn-color);
+    fill: var(--button-text);
   }
 
   &_theme_blue {
-    color: var(--btn-color);
+    color: var(--button-text);
     border: none;
-    background-color: var(--btn-bg);
+    background-color: var(--button-bg);
 
     &:hover {
-      background-color: var(--btn-bg-h);
+      background-color: var(--button-bg-hover);
     }
   }
 
@@ -52,15 +52,15 @@
   }
 
   &_theme_transparent-blue {
-    color:  var(--btn-bg);
-    border: 1px solid  var(--btn-bg);
+    color:  var(--button-bg);
+    border: 1px solid  var(--button-bg);
     background-color: transparent;
     // background-color: red;
 
     &:hover {
-      color: var(--btn-color);
+      color: var(--button-text);
      
-      background-color: var(--btn-bg);
+      background-color: var(--button-bg);
     }
   }
 }

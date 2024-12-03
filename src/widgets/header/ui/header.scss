@@ -6,8 +6,8 @@
   z-index: 99;
   display: flex;
   align-items: start;
-  padding: var(--pm-x) var(--pm-x3);
+  padding: var(--spacing-m) var(--spacing-xl);
   justify-content: space-between;
-  gap: var(--pm-x3);
-  background-color: var(--bg-color-00);
+  gap: var(--spacing-xl);
+  background-color: var(--background-main);
 }
