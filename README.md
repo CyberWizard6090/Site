@@ -34,8 +34,7 @@ Email: mail.maxim6090@yandex.ru
 
 
 ## Change history
-
-## Links
+--adding custom notifications [2.12]
 
 ## Thanks
 Thank you to everyone who helped and supported this project!
