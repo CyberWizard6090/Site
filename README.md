@@ -35,6 +35,7 @@ https://github.com/Cyber-Wizard03/Site/blob/main/LICENSE
 
 ## Change history
 --adding custom notifications [2.12]
+--added support for a variety of color themes[4.12]
 
 ## Thanks
 Thank you to everyone who helped and supported this project!
