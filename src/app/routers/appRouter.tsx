@@ -3,72 +3,25 @@ import {
   createRoutesFromElements,
   Link,
   Route,
-  redirect,
   RouterProvider,
 } from "react-router-dom";
 import { Layout } from "app/layout";
 import clsx from "clsx";
-// import { selectBookDescriptionBook } from 'entities/book/bookDescripton'
-import { useTheme } from "app/theme";
-// import { BookDescription } from 'pages/bookDescription'
-// import { Cart } from 'pages/cart'
-// import { Categories } from 'pages/categories'
-// import { Category } from 'pages/category'
+
 import { HomePage } from "pages/homePage";
-// import { SearchResults } from 'pages/searchResults'
-// import { CATEGORIES } from 'shared/consts'
-// import { useAppSelector } from 'shared/lib/store'
-// import { Fallback } from 'shared/ui/fallback'
+// import { SearchResults } from 'pages/searchResults''
 
 import "../styles/index.scss";
 import { NotFound } from "pages/NotFound";
 import { ArticlePage } from "pages/articlePage";
 import { DefaultPage } from "pages/defaultPage";
 import { FeedbackPage } from "pages/feedbackPage";
-
-// const getCategoryNameByLink = (link?: string): string | undefined => {
-//     for (const values of Object.values(CATEGORIES)) {
-//         const findEl = values.find((item) => item.link === link)
-
-//         if (findEl) {
-//             return findEl.title
-//         }
-//     }
-//     return undefined
-// }
-
-// /** Dynamic path parameter types for breadcrumbs. */
-// interface IParamsDynamicPath {
-//     /** Page path name. */
-//     pathname: string
-//     /** Page parameters. */
-//     params?: { categoryId: string; bookId: string }
-//     /** Additional data for the name of bread crumbs. */
-//     data?: string
-// }
+import { useSelector } from "react-redux";
+import { RootState } from "app/stores";
+import { SelectTheme } from "features/theme/model/selectors";
 
 export const AppRouter = () => {
-  const { theme } = useTheme();
-
-  // const book = useAppSelector(selectBookDescriptionBook)
-
-  // const getDynamicPathForCategory = ({
-  //     pathname,
-  //     params,
-  // }: IParamsDynamicPath): JSX.Element => {
-  //     return (
-  //         <Link to={pathname}>
-  //             {getCategoryNameByLink(params?.categoryId) ??
-  //                 params?.categoryId}
-  //         </Link>
-  //     )
-  // }
-
-  // const getDynamicPathForBook = ({
-  //     pathname,
-  //     data,
-  // }: IParamsDynamicPath): JSX.Element => <Link to={pathname}>{data}</Link>
-  //router element errorElement={<Fallback />}
+  const theme = useSelector((state: RootState) => SelectTheme(state));
   const routers = createRoutesFromElements(
     <Route
       path="/"
@@ -84,27 +37,15 @@ export const AppRouter = () => {
           crumb: <Link to="/article">Cart</Link>,
         }}
       />
-   
-        <Route
+
+      <Route
         path="feedback"
         element={<FeedbackPage />}
         handle={{
           crumb: <Link to="/feedback">Cart</Link>,
         }}
       />
-      {/* <Route
-                path='books'
-                handle={{
-                    crumb: <Link to='/page'>Books</Link>,
-                }}>
-                <Route index element={<DefaultPage />} />
-                <Route
-                    path=':categoryId'
-                    element={<Category />}
-                    handle={{
-                        crumb: getDynamicPathForCategory,
-                    }}
-                /> */}
+
       <Route
         path="/:pageId"
         element={<DefaultPage />}
@@ -141,17 +82,6 @@ export const AppRouter = () => {
         }}
         errorElement={<NotFound />}
       />
-      {/* 
-            </Route>
-
-            <Route
-                path='cart'
-                element={<Cart />}
-                handle={{
-                    crumb: <Link to='/cart'>Cart</Link>,
-                }}
-            />
-            <Route path='/search/:searchLine' element={<SearchResults />} /> */}
     </Route>
   );
 

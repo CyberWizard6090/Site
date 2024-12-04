@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import notificationReducer from '../../features/notifications/model/notificationSlice';
+import notificationReducer from 'features/notifications/model/notificationSlice';
+import themeReducer from 'features/theme/model/themeSlice';
 
 export const store = configureStore({
   reducer: {
+    theme: themeReducer,
     notifications: notificationReducer,
   },
 });

@@ -2,8 +2,11 @@
 width: 100%;
 height: 200px;
 background-color: rgb(245, 240, 240);
-padding: var(--spacing-xs);
+padding: var(--spacing-l);
 position: relative;
+border-radius: var( --radius-lg);
+margin-bottom: var(--spacing-l);
+
 &__block-wrap{
     width: 100%;
     display: flex;
@@ -14,6 +17,6 @@ position: relative;
 
 .btn__exit{
     position: absolute;
-    right: var(--spacing-xs);
-    bottom: var(--spacing-xs);
+    right: var(--spacing-l);
+    bottom: var(--spacing-l);
 }

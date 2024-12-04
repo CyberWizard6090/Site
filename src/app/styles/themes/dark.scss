@@ -1,24 +1,24 @@
 .app.dark {
-
   --red: #cb0e4e;
   --dark-red: #a00c3d;
- 
 
   --button-bg: #533ec9;
   --button-text: #ffffff;
   --button-bg-hover: rgb(97, 122, 207);
-  --menu-item-text: #9ca3af;
+  --menu-item-text: #ffffff;
   --list-item-text: #15088b;
 
   --background-main: #0a0a0a;
-    --background-alt: #201e29;
+  --background-alt: #201e29;
   --panel-bg: #151516;
-   --panel-item-bg: #252527;
-   --block-bg: #1c1c1c;
-  --shadow-color: rgba(15, 24, 27, 0.12);
+  --panel-item-bg: #252527;
+  --block-bg: #1c1c1c;
+  /* Тени */
+  --shadow-color-1: rgba(255, 128, 0, 0.3); /* Новый цвет 1 */
+  --shadow-color-2: rgba(255, 0, 0, 0.12); /* Новый цвет 2 */
   --font-color-light: #d4e5ee;
   --link-color: rgb(146, 132, 207);
-  --color-form-input: #2C2C30;
+  --color-form-input: #2c2c30;
   --color-form-input-text: #fff;
-   --qr-color:rgb(255, 255, 255);
+  --qr-color: rgb(255, 255, 255);
 }

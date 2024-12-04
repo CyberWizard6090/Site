@@ -1,0 +1,39 @@
+.app.brown-beige {
+    // Коричневый на бежевом
+    /* Основные цвета */
+    --red: #9b592a; /* Основной красный */
+    --dark-red: #6d3c15; /* Темный красный */
+  
+    /* Цвета для кнопок */
+    --button-bg: #d9a56d; /* Фон кнопки */
+    --button-text: #ffffff; /* Текст на кнопке */
+    --button-bg-hover: #c48c56; /* Фон кнопки при наведении */
+  
+    /* Цвета меню */
+    --menu-item-text: #5d4037; /* Цвет текста элементов меню */
+  
+    /* Цвета списков */
+    --list-item-text: #15088b; /* Цвет текста в списках */
+  
+    /* Фоны */
+    --background-main: #f5e0d5; /* Основной фон */
+    --background-alt: #f0e6d9; /* Альтернативный фон */
+    --panel-bg: #f0f0f0; /* Фон панели */
+    --panel-item-bg: #ffffff; /* Фон элементов панели */
+    --block-bg: #ffffff; /* Фон блоков */
+  
+    /* Тени */
+    --shadow-color-1: rgba(60, 64, 67, 0.3);
+    --shadow-color-2: rgba(9, 36, 51, 0.12);
+  
+    /* Цвета текста */
+    --font-color-light: #000000;
+  
+    /* Цвета input */
+    --color-form-input: #ffffff;
+    --color-form-input-text: #000000;
+  
+    --link-color: rgb(0, 0, 0);
+    /* Цвет для QR кодов */
+    --qr-color: rgb(0, 0, 0); /* Цвет QR кода */
+  }

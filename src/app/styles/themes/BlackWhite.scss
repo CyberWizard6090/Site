@@ -1,0 +1,38 @@
+.app.black-white {
+    /* Основные цвета */
+    --red: #000000; /* Основной красный */
+    --dark-red: #000000; /* Темный красный */
+   
+    /* Цвета для кнопок */
+    --button-bg: #000000; /* Фон кнопки */
+    --button-text: #ffffff; /* Текст на кнопке */
+    --button-bg-hover: #000000; /* Фон кнопки при наведении */
+   
+    /* Цвета меню */
+    --menu-item-text: #000000; /* Цвет текста элементов меню */
+   
+    /* Цвета списков */
+    --list-item-text: #ffffff; /* Цвет текста в списках */
+   
+    /* Фоны */
+    --background-main: #ffffff; /* Основной фон */
+    --background-alt: #ffffff; /* Альтернативный фон */
+    --panel-bg: #ffffff; /* Фон панели */
+    --panel-item-bg: #000000; /* Фон элементов панели */
+    --block-bg: #000000; /* Фон блоков */
+   
+    /* Тени */
+    --shadow-color-1: rgba(60, 64, 67, 0.3);
+    --shadow-color-2: rgba(9, 36, 51, 0.12);
+   
+    /* Цвета текста */
+    --font-color-light: #000000;
+   
+    /* Цвета input */
+    --color-form-input: #ffffff;
+    --color-form-input-text: #000000;
+   
+    --link-color: rgb(0, 0, 0);
+    /* Цвет для QR кодов */
+    --qr-color: rgb(0, 0, 0); /* Цвет QR кода */
+   }

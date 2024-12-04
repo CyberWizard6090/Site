@@ -1,7 +1,14 @@
 @import 'themes/light.scss';
 @import 'themes/dark.scss';
+@import 'themes/BlackWhite.scss';
+@import 'themes/WhiteBlack.scss';
+@import 'themes/BrownBeige.scss';
+@import 'themes/DarkBlueSky.scss';
+@import 'themes/GreenBrown.scss';
+
 @import 'whitespace.scss';
 @import 'font-size.scss';
+
 @font-face {
     font-family: "Montserrat";
    src: url(./../../shared/assets/fonts/Montserrat/static/Montserrat-Regular.ttf);
@@ -38,7 +45,7 @@
 .shadow__style{
     // -webkit-box-shadow: 0 1px 1px rgba(32, 35, 51, .04), 0 2px 4px rgba(32, 35, 51, .02); 
     // box-shadow: 0 1px 1px rgba(32, 35, 51, .04), 0 2px 4px rgba(32, 35, 51, .02);
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    box-shadow: var(--shadow-color-1) 0px 1px 2px 0px, var(--shadow-color-2) 0px 1px 3px 1px;
 }
 
 

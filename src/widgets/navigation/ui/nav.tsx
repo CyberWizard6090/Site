@@ -1,7 +1,7 @@
 import "./nav.scss";
 
 
-import { IconButton } from "shared/ui/iconButton";
+
 
 import { useState, useEffect } from "react";
 import { elements } from "../config/elements";
@@ -10,7 +10,7 @@ import { Button } from "shared/ui/button";
 import { ReactComponent as Logo } from "shared/assets/svg/bootstrap-icons-1.11.2/list.svg";
 import { ReactComponent as Icon2 } from "shared/assets/svg/bootstrap-icons-1.11.2/x.svg";
 import { useDeviceDetect } from "shared/lib/WindowSizeListener";
-import { ButtonTheme } from "./buttonTheme";
+import { ButtonTheme } from "../../../features/theme/ui/buttonTheme";
 export const Nav = () => {
 
   const [state, setState] = useState(false);
