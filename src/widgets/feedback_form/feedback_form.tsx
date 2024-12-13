@@ -64,8 +64,8 @@ export const FormFeedback = ({ ShowModal }: Props) => {
 
   return (
     <>
-      {" "}
-      <InputPhone />
+   
+      <InputPhone label={"Номер телефона"} />
       <Form
         layout="vertical"
         onFinish={onFinish}

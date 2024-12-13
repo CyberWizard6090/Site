@@ -8,7 +8,7 @@
 
   overflow: hidden;
   row-gap: 10px;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
 
   &_content {
     flex-grow: 1;
@@ -27,11 +27,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: var(--spacing-m);
   }
   &__type {
-    background-color: #068606;
+    background-color: #062f86;
     color: white;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     padding: var(--spacing-xxs) var(--spacing-m);
   }
   &_title {

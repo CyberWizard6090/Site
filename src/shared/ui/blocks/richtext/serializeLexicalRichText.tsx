@@ -1,6 +1,6 @@
 import escapeHTML from "escape-html";
 import React, { Fragment } from "react";
-import { ReactComponent as Icon } from "shared/assets/svg/quote_afda747qq7nf.svg";
+
 import { ReactComponent as IconLink } from "shared/assets/svg/bootstrap-icons-1.11.2/link-45deg.svg";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 // import { QR } from "shared/ui/QR";
@@ -191,9 +191,7 @@ export default function serializeLexicalRichText({
           case "quote":
             return (
               <blockquote className={`${classNames.blockquote}`} key={i}>
-                <i>
-                  <Icon />
-                </i>
+            
                 {serializeLexicalRichText({ children: node.children })}
               </blockquote>
             );

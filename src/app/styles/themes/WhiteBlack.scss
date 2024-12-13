@@ -1,38 +1,38 @@
 .app.white-black {
     /* Основные цвета */
-    --red: #ffffff; /* Основной красный */
-    --dark-red: #ffffff; /* Темный красный */
+    --red: #ff0000; /* Основной красный */
+    --dark-red: #000000; /* Темный красный */
    
     /* Цвета для кнопок */
-    --button-bg: #ffffff; /* Фон кнопки */
-    --button-text: #000000; /* Текст на кнопке */
-    --button-bg-hover: #ffffff; /* Фон кнопки при наведении */
+    --button-bg: #000000; /* Фон кнопки */
+    --button-text: #ffffff; /* Текст на кнопке */
+    --button-bg-hover: #000000; /* Фон кнопки при наведении */
    
     /* Цвета меню */
-    --menu-item-text: #000000; /* Цвет текста элементов меню */
+    --menu-item-text: #ffffff; /* Цвет текста элементов меню */
    
     /* Цвета списков */
-    --list-item-text: #000000; /* Цвет текста в списках */
+    --list-item-text: #ffffff; /* Цвет текста в списках */
    
     /* Фоны */
-    --background-main: #000000; /* Основной фон */
-    --background-alt: #000000; /* Альтернативный фон */
-    --panel-bg: #000000; /* Фон панели */
-    --panel-item-bg: #ffffff; /* Фон элементов панели */
-    --block-bg: #000000; /* Фон блоков */
+    --background-main: #ffffff; /* Основной фон */
+    --background-alt: #ffffff; /* Альтернативный фон */
+    --panel-bg: #ffffff; /* Фон панели */
+    --panel-item-bg: #000000; /* Фон элементов панели */
+    --block-bg: #fffdfd; /* Фон блоков */
    
     /* Тени */
-    --shadow-color-1: rgba(60, 64, 67, 0.3);
-    --shadow-color-2: rgba(9, 36, 51, 0.12);
+    --shadow-color-1: rgb(255, 255, 255);
+    --shadow-color-2: rgb(255, 255, 255);
    
     /* Цвета текста */
-    --font-color-light: #ffffff;
+    --font-color-light: #000000;
    
     /* Цвета input */
-    --color-form-input: #000000;
-    --color-form-input-text: #ffffff;
+    --color-form-input: #ffffff;
+    --color-form-input-text: #000000;
    
     --link-color: rgb(0, 0, 0);
     /* Цвет для QR кодов */
-    --qr-color: rgb(255, 255, 255); /* Цвет QR кода */
+    --qr-color: rgb(0, 0, 0); /* Цвет QR кода */
    }

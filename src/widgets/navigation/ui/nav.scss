@@ -164,6 +164,25 @@
     }
   }
 }
+.nav_menu-content-separator {
+  background-color: var( --panel-item-bg);
+
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  color: var(--menu-item-text);
+  padding: var(--spacing-xs) var(--spacing-m);
+  div{
+    text-align: center;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid rgb(138, 136, 136); /* Легкая прозрачность для гармонии с темной темой */
+    margin: 8px 0; /* Отступы сверху и снизу */
+    width: 100%; /* Полная ширина */
+  }
+}
 
 .nav_menu_tree-header-icon {
   transition: transform 0.3s ease;

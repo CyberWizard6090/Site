@@ -4,20 +4,20 @@ import { Header } from "widgets/header";
 import { Footer } from "widgets/footer";
 import { FullScreenView } from "features/FullScreenView";
 import "./layout.scss";
-import { SpecialUI } from "features/special-feature";
-import { NotificationContainer } from "features/notifications";
-export const Layout = () => {
 
+import { NotificationContainer } from "features/notifications";
+import { AccessibilityStyles, AccessibilityUI } from "features/accessibilityMode";
+export const Layout = () => {
   return (
     <div className="layout layout__wrapper">
-      <NotificationContainer/>
+      <NotificationContainer />
       <FullScreenView />
-   
+<AccessibilityStyles/>
       <Header />
       <Nav />
-     
+
       <main className="layout__content">
-      <SpecialUI/>
+        <AccessibilityUI />
         <Outlet />
       </main>
 

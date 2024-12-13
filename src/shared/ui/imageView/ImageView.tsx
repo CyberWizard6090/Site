@@ -1,12 +1,7 @@
-import React, { useState } from "react";
-// import { Spinner } from "../../../components/Spinner";
-// import Loader from "../../../components/Loader";
-
-import { ReactComponent as Cross } from "./../asset//svg/bootstrap-icons-1.11.2/x-lg.svg";
-// import Slider from "../../../components/Slider/Slider";
-// import FancyBox from "../../../components/FancyBox";
+import  { useState } from "react";
 import './ImageView.scss'
 import { useFullScreen } from "features/FullScreenView";
+import { Loader } from "../loader";
 export const ImageView = ({ url }: any) => {
   const {toggleState,children, setChildren}= useFullScreen();
   const [isLoading, setIsLoading] = useState(true);
@@ -18,16 +13,12 @@ export const ImageView = ({ url }: any) => {
   img.onload = function () {
     setIsLoading(false);
   };
-  // setChildren ( <img src={url}/>) 
-  const Loader =()=>{
-    return(
-      <div>загрузка</div>
-    )
-  }
+
   function  transmission (){
     toggleState()
-    setChildren(<img
-      src={url}/>)
+    setChildren(
+    // eslint-disable-next-line jsx-a11y/alt-text
+    <img src={url}/>)
   }
   const ImgLoad = () => {
     return (

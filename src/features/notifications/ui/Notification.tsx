@@ -16,10 +16,10 @@ const Notification: React.FC<NotificationProps> = ({ notification }) => {
   };
 
   return (
-    <div className={`notification ${notification.type}`}>
+    <output className={`notification ${notification.type}`}>
       <span>{notification.message}</span>
       <button className="close-btn" onClick={handleClose}>×</button>
-    </div>
+    </output>
   );
 };
 

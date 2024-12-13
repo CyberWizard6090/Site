@@ -1,45 +1,16 @@
 .block__richText {
   blockquote {
-    border-left: 3px solid var(--border-secondary);
-    font-size: 1.25em;
+    border-left: 2px solid var( --font-color-light);
+    font-size: var(--font-size-large);
     font-style: italic;
     line-height: 1.8em;
-    margin: 1.1em 2em;
-    padding: 1em 2em;
+    margin:var(--spacing-s);
+    padding:var( --spacing-m) var(--spacing-xs);
     position: relative;
     transition: 0.2s border ease-in-out;
     z-index: 0;
-    &:before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -4px;
-      height: 2em;
-      background-color: var( --block-bg);
-      width: 5px;
-      margin-top: -1em;
-    }
-    i {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: -0.5em;
-      color: var(--border-secondary);
-      font-family: "Ionicons";
-      font-style: normal;
-      line-height: 1em;
-      text-align: center;
-      text-indent: -2px;
-      width: 1em;
-      margin-top: -0.5em;
-      transition: 0.2s all ease-in-out, 0.4s transform ease-in-out;
-      svg {
-        width: 100%;
-        height: 100%;
-        fill: var(--border-secondary);
-        stroke: var(--border-secondary);
-      }
-    }
+ 
+
   }
   ul {
     list-style: none;

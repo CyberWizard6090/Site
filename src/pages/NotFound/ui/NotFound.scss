@@ -62,7 +62,7 @@
   flex-direction: column;
   justify-content: space-between;
   h1 {
-    font-size: 48px;
+    font-size: var(--font-size-xxl);
     font-weight: bold;
     line-height: 52px;
   }
@@ -71,7 +71,7 @@
     padding: 0;
     text-decoration: none;
     padding-top: 20px;
-    font-size: 18px;
+    font-size:var(--font-size-small);
     line-height: 22px;
   }
 }

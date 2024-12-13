@@ -88,7 +88,7 @@ export const AppRouter = () => {
   const router = createHashRouter(routers, {});
 
   return (
-    <div className={clsx("app", theme)}>
+    <div className={clsx("app", theme)} >
       <RouterProvider router={router} />
     </div>
   );
