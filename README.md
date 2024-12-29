@@ -20,7 +20,10 @@ Maxim Bakhmetiev
 
 ## Examples
 Screenshots of the working site are provided for clarity:
-![image](https://github.com/user-attachments/assets/40779c57-aa3a-4f91-a2cc-79102d689ef6)
+dark theme
+![{DF8B64A1-4186-4DA4-864E-B3B77604BC7B}](https://github.com/user-attachments/assets/7fee5e82-8d7b-444e-a6b1-b1bb7c2b49aa)
+light theme
+![{4C4DF04C-9A61-4E1C-9255-8A2B92A76C91}](https://github.com/user-attachments/assets/c18309a4-f35a-4ae3-8e2f-1a5ae2a7275f)
 
 
 ## Questions and help
