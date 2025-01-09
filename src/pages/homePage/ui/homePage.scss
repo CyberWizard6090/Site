@@ -8,3 +8,17 @@ gap: var(--spacing-m);
   }
  
 }
+.Cell{
+  display: flex;
+  flex-direction: column;
+ 
+  gap: var(--spacing-m);
+}
+.table-page{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  // h2{
+  //   margin-bottom:  var(--spacing-m);
+  // }
+}

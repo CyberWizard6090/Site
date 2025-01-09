@@ -2,17 +2,25 @@ import { Outlet, ScrollRestoration } from "react-router-dom";
 import { Nav } from "widgets/navigation";
 import { Header } from "widgets/header";
 import { Footer } from "widgets/footer";
-import { FullScreenView } from "features/FullScreenView";
+
 import "./layout.scss";
 
 import { NotificationContainer } from "features/notifications";
-import { AccessibilityStyles, AccessibilityUI } from "features/accessibilityMode";
+import {
+  AccessibilityStyles,
+  AccessibilityUI,
+} from "features/accessibilityMode";
+import { ImageViewerModal } from "features/imageViewer";
+import { SearchModal } from "features/search";
+import { StateTheme } from "features/theme";
 export const Layout = () => {
   return (
     <div className="layout layout__wrapper">
       <NotificationContainer />
-      <FullScreenView />
-<AccessibilityStyles/>
+      <ImageViewerModal />
+      <AccessibilityStyles />
+      <StateTheme/>
+      <SearchModal/>
       <Header />
       <Nav />
 

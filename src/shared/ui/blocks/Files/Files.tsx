@@ -1,4 +1,5 @@
 import { ReactComponent as DownloadIcon } from "shared/assets/svg/bootstrap-icons-1.11.2/download.svg";
+import { ReactComponent as ReadIcon } from "shared/assets/svg/bootstrap-icons-1.11.2/book.svg";
 import { ReactComponent as Excel } from "shared/assets/svg/SVG-DOCS-ICONS/excel-document-svgrepo-com.svg";
 import { ReactComponent as Powerpoint } from "shared/assets/svg/SVG-DOCS-ICONS/ppt-document-svgrepo-com.svg";
 import { ReactComponent as Word } from "shared/assets/svg/SVG-DOCS-ICONS/word-document-svgrepo-com.svg";
@@ -14,6 +15,7 @@ import { Button } from "shared/ui/button";
 import { getType } from "shared/lib/getType";
 import { GetFile } from "shared/lib/getFile";
 import { FormatFile } from "shared/consts";
+import { Link } from "react-router-dom";
 type Props = {
   files: any;
 };
@@ -53,6 +55,15 @@ export const Files = ({ files }: Props) => {
             </div>
             <div className="name-file">{item.file.name}</div>
             <div className="btn__wrap">
+            {/* {getType(item.file.filename) === "pdf" ? (
+              <Link to={""}>
+                <Button Icon={ReadIcon} theme="transparent-blue">
+                  Читать
+                </Button>
+                </Link>
+              ) : (
+                <></>
+              )} */}
               <Button
                 Icon={DownloadIcon}
                 onClick={() =>
@@ -64,6 +75,7 @@ export const Files = ({ files }: Props) => {
               >
                 Скачать
               </Button>
+            
             </div>
           </div>
         );

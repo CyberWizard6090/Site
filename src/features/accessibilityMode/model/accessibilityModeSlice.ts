@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export type FontSize =
-  | 'small'
+  |  'small'
   | 'medium'
   | 'large'
   | 'x-large'

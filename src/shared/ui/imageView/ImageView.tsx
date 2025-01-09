@@ -1,45 +1,43 @@
-import  { useState } from "react";
-import './ImageView.scss'
-import { useFullScreen } from "features/FullScreenView";
+import { useEffect, useState } from "react";
+import "./ImageView.scss";
+// import { useFullScreen } from "features/FullScreenView";
 import { Loader } from "../loader";
-export const ImageView = ({ url }: any) => {
-  const {toggleState,children, setChildren}= useFullScreen();
-  const [isLoading, setIsLoading] = useState(true);
-  const LoadTrue = () => {
-    setIsLoading(false);
-  };
-  var img = document.createElement("img");
-  img.src =  url; // здесь начинается загрузка изображения
-  img.onload = function () {
-    setIsLoading(false);
-  };
+import { useDispatch } from "react-redux";
+import { handleImageClick } from "features/imageViewer";
 
-  function  transmission (){
-    toggleState()
-    setChildren(
-    // eslint-disable-next-line jsx-a11y/alt-text
-    <img src={url}/>)
-  }
+type Props = {
+  url: string;
+  alt?: string;
+  className?:string;
+};
+
+export const ImageView = ({ url, alt , className}: Props) => {
+  // const { toggleState,setChildren } = useFullScreen();
+  const [isLoading, setIsLoading] = useState(true);
+  const dispatch = useDispatch();
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+  useEffect(() => {
+    const img = new Image();
+    img.src = url;
+    img.onload = () => setIsLoading(false);
+  }, [url]);
+
+
   const ImgLoad = () => {
     return (
       <img
         src={url}
-        loading="lazy"
-        onClick={transmission}
-        onLoad={LoadTrue}
-        alt=""
+        className={"image-view__image " +  className}
+        onClick={() => handleImageClick(url, dispatch)}
+        onLoad={handleImageLoad}
+        alt={alt || "Изображение"}
       />
     );
   };
 
   return (
-    <>
-      <div className=" img__view">
-    
-        {isLoading ? <Loader /> : <ImgLoad />}
-      </div>
-    </>
+   <> {isLoading ? <Loader /> : <ImgLoad />}</>
   );
 };
-
-

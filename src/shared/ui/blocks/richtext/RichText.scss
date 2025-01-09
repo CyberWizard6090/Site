@@ -1,16 +1,35 @@
 .block__richText {
+  h1 {
+    span {
+      font-size: var(--font-size-xxl);
+    }
+    margin-top: var( --spacing-l);
+    margin-bottom: var( --spacing-m);
+  }
+  h2 {
+    span {
+      font-size: var(--font-size-xl);
+    }
+    margin-top: var( --spacing-l);
+    margin-bottom: var( --spacing-m);
+  }
+  h3 {
+    span {
+      font-size: var(--font-size-l);
+    }
+    margin-top: var( --spacing-l);
+    margin-bottom: var( --spacing-m);
+  }
   blockquote {
-    border-left: 2px solid var( --font-color-light);
+    border-left: 2px solid var(--font-color-light);
     font-size: var(--font-size-large);
     font-style: italic;
     line-height: 1.8em;
-    margin:var(--spacing-s);
-    padding:var( --spacing-m) var(--spacing-xs);
+    margin: var(--spacing-s);
+    padding: var(--spacing-m) var(--spacing-xs);
     position: relative;
     transition: 0.2s border ease-in-out;
     z-index: 0;
- 
-
   }
   ul {
     list-style: none;
@@ -77,15 +96,11 @@
     & > li {
       position: relative;
       display: block;
-      height: 2rem;
-      line-height: 2rem;
+   
       margin-left: 1.75rem;
       margin-bottom: 0.25rem;
       padding-left: 1rem;
-      padding-right: 0.5rem;
 
-      white-space: nowrap;
-      border-radius: 0.25rem;
     }
     & > li::before {
       content: counter(list) ".";
@@ -97,7 +112,7 @@
       width: 2.5rem;
       line-height: 2rem;
       // border-radius: 1.25rem;
-      border: 0.25rem solid var( --block-bg);
+      border: 0.25rem solid var(--block-bg);
       text-align: center;
 
       // background: var(--list-item-text);

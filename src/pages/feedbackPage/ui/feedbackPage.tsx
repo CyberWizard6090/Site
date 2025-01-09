@@ -1,3 +1,4 @@
+import { Page } from "shared/ui/page";
 import "./feedbackPage.scss";
 import { FormFeedback } from "widgets/feedback_form";
 
@@ -37,8 +38,7 @@ export const FeedbackPage = (props: Props) => {
 
 
   return (
-    <div className="feedback">
-      <div className="feedback__form shadow__style">
+    <Page>
         {/* <div>       <h1>Форма обратной связи</h1>
         <div className="wrap__field__form">
           <BlankFieldWrapper status={false} error_text="Введите имя">
@@ -102,7 +102,6 @@ export const FeedbackPage = (props: Props) => {
         <TextAria Name={"Сообщение"} id={"Messages"} />
         <Button onClick={GetDATA}>Отправить</Button></div> */}
         <FormFeedback  />
-      </div>
-    </div>
+        </Page>
   );
 };

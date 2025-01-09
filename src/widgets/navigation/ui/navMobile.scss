@@ -1,0 +1,61 @@
+.NavMobile {
+  width: 100vw;
+  height: 70px;
+  position: sticky;
+  bottom: 0;
+  padding: 0 var(--spacing-m);
+  z-index: 1200;
+
+  background-color: var(--block-bg);
+  border-top: 1px solid var(--border-color2);
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr;
+  grid-template-areas: " . menu  .";
+                                                                    
+  .menu {
+    grid-area: menu;
+  }
+  &__item {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: var(--font-color-light);
+    gap: var(--spacing-xs);
+    // padding: var(--spacing-xs);
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: var(--spacing-s);
+    color: var(--font-color-light);
+  }
+  &__btn-menu {
+    position: absolute;
+    left: 50%;
+    top: -40%;
+    transform: translateX(-50%);
+    height: 60px;
+    width: 60px;
+    background-color: var(--accent-color);
+    color: var(--button-text);
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  &__logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

@@ -12,11 +12,15 @@ margin-bottom: var(--spacing-l);
     display: flex;
     gap: var(--spacing-xs);
     align-items: center;
+    @media (max-width: 767px) {
+        flex-direction: column;
+        align-items: start;
+    }
 }
 }
 
-.btn__exit{
-    position: absolute;
-    right: var(--spacing-l);
-    bottom: var(--spacing-l);
-}
+// .btn__exit{
+//     position: absolute;
+//     right: var(--spacing-l);
+//     bottom: var(--spacing-l);
+// }

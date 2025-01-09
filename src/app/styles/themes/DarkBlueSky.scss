@@ -1,15 +1,26 @@
-
-.app.dark-blue-sky {
+[data-theme="dark-blue-sky"]{
     // Темно-синий на голубом
     /* Основные цвета */
     --red: #0000ff; /* Основной красный */
     --dark-red: #000080; /* Темный красный */
    
     /* Цвета для кнопок */
-    --button-bg: #0077cc; /* Фон кнопки */
+    --accent-color: #0077cc; /* Фон кнопки */
     --button-text: #ffffff; /* Текст на кнопке */
-    --button-bg-hover: #0066cc; /* Фон кнопки при наведении */
-   
+    --accent-color-hover: #0066cc; /* Фон кнопки при наведении */
+
+
+
+     // моно цвета
+  --btn-color-alt: #03035c;
+  --btn-color-alt-hover: #788ef1;
+  --btn-text-alt: #dddbe4;
+
+
+  
+    --border-color1: #000;
+    --border-color2: #3f18cc;
+    --border-color3: #000;
     /* Цвета меню */
     --menu-item-text: #004488; /* Цвет текста элементов меню */
    

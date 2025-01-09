@@ -1,14 +1,25 @@
-.app.green-brown {
+[data-theme="green-brown"] {
     // Зеленый на темно-коричневом
     /* Основные цвета */
     --red: #008000; /* Основной красный */
     --dark-red: #403000; /* Темный красный */
    
     /* Цвета для кнопок */
-    --button-bg: #706000; /* Фон кнопки */
+    --accent-color: #706000; /* Фон кнопки */
     --button-text: #ffffff; /* Текст на кнопке */
-    --button-bg-hover: #605000; /* Фон кнопки при наведении */
-   
+    --accent-color-hover: #605000; /* Фон кнопки при наведении */
+
+
+
+     // моно цвета
+  --btn-color-alt: #1C1C1E;
+  --btn-color-alt-hover: #000000;
+  --btn-text-alt: #e4dbdb;
+
+  
+    --border-color1: #000;
+    --border-color2: #605000;
+    --border-color3: #000;
     /* Цвета меню */
     --menu-item-text: #302000; /* Цвет текста элементов меню */
    

@@ -42,7 +42,7 @@ export default function serializeLexicalRichText({
             | null
             | undefined;
           format: number;
-          tag: any ;
+          tag: any;
           children: any;
           listType: string;
           checked: React.ReactNode;
@@ -58,7 +58,7 @@ export default function serializeLexicalRichText({
         },
         i: React.Key | null | undefined
       ) => {
-        const classNames:any = {
+        const classNames: any = {
           h1: "mt-6 text-5xl font-bold",
           h2: "mt-5 text-4xl font-bold",
           h3: "mt-4 text-3xl font-bold",
@@ -115,9 +115,12 @@ export default function serializeLexicalRichText({
           return null;
         }
 
-        if (node.type === 'heading') {
+        if (node.type === "heading") {
           return (
-            <node.tag className={`${classNames[node.tag]} ${generateTextAlign(node)}`} key={i}>
+            <node.tag
+              className={`${classNames[node.tag]} ${generateTextAlign(node)}`}
+              key={i}
+            >
               {serializeLexicalRichText({ children: node.children })}
             </node.tag>
           );
@@ -191,44 +194,41 @@ export default function serializeLexicalRichText({
           case "quote":
             return (
               <blockquote className={`${classNames.blockquote}`} key={i}>
-            
                 {serializeLexicalRichText({ children: node.children })}
               </blockquote>
             );
           case "upload":
             return <ImageView url={node.value.url} />;
-
           case "link":
             return (
-              <div className="link_wrap">
-                <IconLink />{" "}
-                <a
-                  className={`${classNames.a}`}
-                  href={escapeHTML(
-                    node.fields?.linkType === "custom" ? node?.fields?.url : ""
-                  )}
-                  target={node.fields?.newTab ? "_blank" : "_self"}
-                  key={i} rel="noreferrer"
-                >
-                  {" "}
-                </a>
-                <span>
-                  {" "}
-                  {serializeLexicalRichText({ children: node.children })}
-                </span>
-                <span className="embed-link__info-text">
-                  {" "}
-                  [
-                  {ExtractHostname(
-                    escapeHTML(
-                      node.fields?.linkType === "custom"
-                        ? node?.fields?.url
-                        : ""
-                    )
-                  )}
-                  ]
-                </span>
-              </div>
+              <a
+                className={`${classNames.a}`}
+                href={escapeHTML(
+                  node.fields?.linkType === "custom" ? node?.fields?.url : ""
+                )}
+                target={node.fields?.newTab ? "_blank" : "_self"}
+                key={i}
+                rel="noreferrer"
+              >
+                <div className="link_wrap">
+                  <IconLink />
+
+                  <span>
+                    {serializeLexicalRichText({ children: node.children })}
+                  </span>
+                  <span className="embed-link__info-text">
+                    [
+                    {ExtractHostname(
+                      escapeHTML(
+                        node.fields?.linkType === "custom"
+                          ? node?.fields?.url
+                          : ""
+                      )
+                    )}
+                    ]
+                  </span>
+                </div>
+              </a>
             );
           case "horizontalrule":
             return <hr />;

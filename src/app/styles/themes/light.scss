@@ -1,29 +1,45 @@
-.app.light {
+[data-theme="light"] {
   /* Основные цвета */
   --red: #ff0055; /* Основной красный */
   --dark-red: #a00c3d; /* Темный красный */
 
   /* Цвета для кнопок */
-  --button-bg: #ff8c40; /* Фон кнопки */
-  --button-text: #ffffff; /* Текст на кнопке */
-  --button-bg-hover: #ff5d40; /* Фон кнопки при наведении */
+  --accent-color: #916107;/* Фон кнопки */
+  --button-text: #e4dbdb;/* Текст на кнопке */
+  --accent-color-hover: #917d0d;/* Фон кнопки при наведении */
+
+   // моно цвета
+   --btn-color-alt: #F8F8F8;
+   --btn-color-alt-hover: #ffffff;
+   --btn-text-alt: #000000;
+ 
+
+
+
+
+
+  --border-color1: #000;
+  --border-color2: #ccc; 
+  --border-color3: transparent;
 
   /* Цвета меню */
   --menu-item-text: #000000; /* Цвет текста элементов меню */
 
   /* Цвета списков */
   --list-item-text: #15088b; /* Цвет текста в списках */
-
+ 
+//  Цвета форм
+--form-text:#6b6b6c; 
   /* Фоны */
   --background-main: #fae3ea; /* Основной фон */
-  --background-alt: #ebebf7; /* Альтернативный фон */
-  --panel-bg: #f0f0f0; /* Фон панели */
+  --background-alt: #f5f5f5; /* Альтернативный фон */
+  --panel-bg: #F1F1F1; /* Фон панели */
   --panel-item-bg: #ffffff; /* Фон элементов панели */
   --block-bg: #ffffff; /* Фон блоков */
  
     /* Тени */
-  --shadow-color-1:  rgba(32, 35, 51, .04);
-  --shadow-color-2: rgba(32, 35, 51, .02);
+  --shadow-color-1:  rgba(0, 0, 0, 0.171);
+  --shadow-color-2: rgba(0, 0, 0, 0.226);
 
 
 
@@ -33,7 +49,7 @@
   --color-form-input: #ffffff;
   --color-form-input-text: #000000;
 
-  --link-color: rgb(0, 0, 0);
+  --link-color: rgb(92, 90, 161);
   /* Цвет для QR кодов */
   --qr-color: rgb(0, 0, 0); /* Цвет QR кода */
 }

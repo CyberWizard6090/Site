@@ -1,3 +1,4 @@
-export {Phone} from './Phone'
-export {Text} from './Text'
-export {TextAria} from './TextAria'
+export {InputPhone} from './inputPhone/inputPhone'
+export {Input} from "./input/input"
+export {InputText} from "./inputText/inputText"
+export{VoiceInput} from "./voiceInput/VoiceInput"

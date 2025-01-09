@@ -5,9 +5,20 @@
   position: sticky;
   z-index: 99;
   display: flex;
-  align-items: start;
-  padding: var(--spacing-m) var(--spacing-xl);
-  justify-content: space-between;
+  align-items: center;
+  
+  justify-content: end;
   gap: var(--spacing-xl);
-  background-color: var(--background-main);
+  background-color:var(--background-main);
+  @media (min-width: 1200px) {
+  
+    padding: var(--spacing-s) var(--spacing-xl);
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    padding: var(--spacing-s) var(--spacing-m);
+  }
+  @media (max-width: 767px) {
+ 
+   padding: var(--spacing-s) var(--spacing-m);
+  }
 }

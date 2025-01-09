@@ -1,33 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./radioGroup.scss";
 
-// Define the type for radio options
-interface RadioOption {
+type RadioOption = {
   label: string;
   value: string;
-}
+};
 
-// Props for the RadioGroup component
-interface RadioGroupProps {
+type RadioGroupProps = {
   options: RadioOption[];
   name: string;
   selectedValue?: string;
-  onChange: (value: string) => void;
-}
+  onChange?: (value: string) => void;
+  label?: string;
+    fieldName?: keyof any;
+    valueRef?: React.MutableRefObject<any>;
+};
 
-// RadioGroup functional component
-export const RadioGroup: React.FC<RadioGroupProps> = ({ options, name, selectedValue, onChange }) => {
-  const [currentValue, setCurrentValue] = useState<string | undefined>(selectedValue);
+export const RadioGroup = ({
+  options,
+  name,
+  selectedValue,
+  onChange,
+  label,fieldName, valueRef
+}: RadioGroupProps) => {
+  const [currentValue, setCurrentValue] = useState<string | undefined>(
+    selectedValue
+  );
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setCurrentValue(value);
-    onChange(value);
+    if (onChange) onChange(value);
+    if ( valueRef && fieldName)
+    valueRef.current[fieldName] = value; 
   };
 
   return (
-    <div role="radiogroup" aria-labelledby={`${name}-label`}>
-     {options.map((option) => (
-        <label key={option.value} style={{ display: 'block', margin: '4px 0' }}>
+    <div
+      role="radiogroup"
+      aria-labelledby={`${name}-label`}
+      className="radioGroup"
+    >
+      <label>{label}</label>
+      {options.map((option) => (
+        <label key={option.value}>
           <input
             type="radio"
             name={name}
@@ -35,10 +51,9 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({ options, name, selectedV
             checked={currentValue === option.value}
             onChange={handleChange}
           />
-          {option.label}
+          <span>{option.label}</span>
         </label>
       ))}
     </div>
   );
 };
-

@@ -1,0 +1,32 @@
+.Personnel{
+  display: flex;
+  flex-direction: column;
+  color: var(--font-color-light);
+  gap: var(--spacing-m);
+    &__list{
+    @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    
+      /* Для планшетов */
+      @media screen and (min-width: 769px) and (max-width: 1999px) {
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+      }
+    
+      /* Для ПК */
+      @media screen and (min-width: 1200px) {
+        // display: flex;
+        // flex-wrap: wrap;
+        // div{
+        //   width: 25%;
+        // }
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        // width: 800px;
+      }
+gap: var(--spacing-m);
+}
+}

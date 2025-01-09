@@ -1,10 +1,7 @@
-import React from "react";
-import PropTypes from "react";
-// import Image from './Image';
+
 import { Link } from "react-router-dom";
-import { Button } from "shared/ui/button";
-import "./CardRead.scss";
 import { ImageView } from "shared/ui/imageView";
+import "./CardRead.scss";
 export const CardRead = (props: any) => {
   let date = new Date(props.date);
   let options = {
@@ -13,6 +10,7 @@ export const CardRead = (props: any) => {
     day: "numeric",
   } as const;
   return (
+    <Link to={"/read/" + props.url}>
     <div className="CardRead shadow__style">
       <div className="CardRead__img__wrap">
         <ImageView url={props.src} />
@@ -22,27 +20,20 @@ export const CardRead = (props: any) => {
           <div className="CardRead_wrap_date">
             <span>{date.toLocaleString("ru-DE", options)}</span>
           </div>
-          <div className="CardRead__type">#{
-          props.type==="News"? 'Новость':'Профилактика'
-          }</div>
+          <div className="CardRead__type">
+            #{props.type === "News" ? "Новость" : "Профилактика"}
+          </div>
         </div>
-
         <div className="CardRead_title">
           {" "}
-          <h2>{props.title}</h2>
+          <h3>{props.title}</h3>
         </div>
-
         <div className="CardRead_text-container">
           <div className="truncate-text">{props.text}</div>
         </div>
-    
+     
       </div>
-      <div className="CardRead_bottom-bar">
-          {/* let a =  {props.url} */}
-          <Link to={"/read/" + props.url}>
-            <Button>Читать</Button>
-          </Link>
-        </div>
     </div>
+    </Link>
   );
 };

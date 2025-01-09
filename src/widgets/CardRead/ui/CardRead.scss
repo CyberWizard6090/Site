@@ -1,27 +1,49 @@
 .CardRead {
-  background-color: var( --block-bg);
+  background-color: var(--block-bg);
 
   display: flex;
-  flex-direction: column;
+
   justify-content: space-between;
   color: var(--font-color-light);
 
   overflow: hidden;
   row-gap: 10px;
   border-radius: var(--radius-lg);
-
-  &_content {
-    flex-grow: 1;
-    width: 100%;
-    // display: flex;
-
-    padding: 0 var(--spacing-m) var(--spacing-m) var(--spacing-m);
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    &_content {
+      flex-grow: 1;
+      width: 100%;
+      // display: flex;
+      justify-content: start;
+      padding: 0 var(--spacing-l) var(--spacing-l) var(--spacing-l);
+    }
   }
+
+  /* Для планшетов */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+  }
+
+  /* Для ПК */
+  @media screen and (min-width: 1200px) {
+    &_content {
+      flex-grow: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding: var(--spacing-l);
+    }
+  }
+
   // box-shadow: 0 12px 20px var(--shadow-color), 0 0 2px var(--shadow-color);
   &__img__wrap {
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &_top-bar {
     display: flex;
@@ -30,20 +52,17 @@
     margin-bottom: var(--spacing-m);
   }
   &__type {
-    background-color: #062f86;
+    background-color: #558606;
     color: white;
-    border-radius: var(--radius-lg);
+
     padding: var(--spacing-xxs) var(--spacing-m);
   }
   &_title {
-
     font-weight: bold;
     margin-bottom: var(--spacing-m);
   }
   img {
-    border-radius: calc(var(--radius-xl) - var(--spacing-m));
     width: 100%;
-   
   }
   &_bottom-bar {
     padding: var(--spacing-xs);

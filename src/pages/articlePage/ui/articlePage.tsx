@@ -3,23 +3,24 @@ import React, { useEffect, useState } from "react";
 import { CardRead } from "widgets/CardRead";
 
 import "./articlePage.scss";
+type Card = {
 
-export const ArticlePage = () => {
-  interface test {
-    data: {
-      id: string;
-      date: string;
-      title: string;
-      wallpaper: {
-        sizes: {
-          tablet: {
-            url: string;
-          };
+    id: string;
+    date: string;
+    title: string;
+    type: string;
+    wallpaper: {
+      sizes: {
+        tablet: {
+          url: string;
         };
       };
-      text: string;
-    }[];
-  }
+    };
+    text: string;
+ 
+}
+export const ArticlePage = () => {
+  
   const [pageData, setPageData] = useState([]);
 
   useEffect(() => {
@@ -42,21 +43,17 @@ export const ArticlePage = () => {
   //  }
 
   return (
-    <div className="Tape__News">
-      <div className="Tape">
-        {pageData.map((item:any ) => (
-            <CardRead
-          
-            date={item.date}
-            title={item.title}
-           type={item.type}
-            text={item.text}
-            src={item.wallpaper.sizes.tablet.url}
-            url={item.id}
-            />
-         
+    <div className="Page-Article">
+      {pageData.map((item: Card) => (
+        <CardRead
+          date={item.date}
+          title={item.title}
+          type={item.type}
+          text={item.text}
+          src={item.wallpaper.sizes.tablet.url}
+          url={item.id}
+        />
       ))}
-      </div>
     </div>
   );
 };

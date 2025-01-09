@@ -16,17 +16,20 @@ import { NotFound } from "pages/NotFound";
 import { ArticlePage } from "pages/articlePage";
 import { DefaultPage } from "pages/defaultPage";
 import { FeedbackPage } from "pages/feedbackPage";
-import { useSelector } from "react-redux";
-import { RootState } from "app/stores";
-import { SelectTheme } from "features/theme/model/selectors";
+import { PdfReaderPage } from "pages/pdfPage";
+import { Empty } from "shared/ui/empty";
+import { PersonnelPage } from "pages/personnelPage";
+import { DepartmentPage } from "pages/departmentPage";
+import { DepartmentsPage } from "pages/departmentsPage";
+import { EmployeePage } from "pages/EmployeePage";
 
 export const AppRouter = () => {
-  const theme = useSelector((state: RootState) => SelectTheme(state));
+ 
   const routers = createRoutesFromElements(
     <Route
       path="/"
       element={<Layout />}
-      handle={{ crumb: <Link to="/">Home</Link> }}
+      handle={{ crumb: <Link to="/">Домашняя страница</Link> }}
     >
       <Route index element={<HomePage />} />
       <Route path="*" element={<NotFound />} />
@@ -34,15 +37,74 @@ export const AppRouter = () => {
         path="article"
         element={<ArticlePage />}
         handle={{
-          crumb: <Link to="/article">Cart</Link>,
+          crumb: <Link to="/article">Новости и профилактика</Link>,
         }}
+      />
+      <Route
+        path="personnel"
+        element={<PersonnelPage />}
+        handle={{
+          crumb: <Link to="/personnel">Персонал</Link>,
+        }}
+      />
+         <Route
+        path="personnel/:employeeID"
+        element={<EmployeePage/>}
+        loader={async ({ params }) => {
+          const res = await fetch(
+           
+            ` /api/employee/${params.employeeID}?locale=undefined&draft=false&depth=1`,
+            {
+              mode: "no-cors",
+              method: "get",
+            }
+          );
+          if (res.status === 404) {
+            throw new Response("Not Found", { status: 404 });
+          }
+          return res.json();
+        }}
+        errorElement={<NotFound />}
+        handle={{
+          crumb: <Link to="/personnel">Персонал</Link>,
+        }}
+
+      />
+
+      <Route
+        path="departments"
+        element={<DepartmentsPage />}
+        
+        handle={{
+          crumb: <Link to="/department">Отделения</Link>,
+        }}
+      />
+      <Route
+        path="departments/:departmentID"
+        element={<DepartmentPage />}
+        handle={{
+          crumb: <Link to="/departments">Отделение</Link>,
+        }}
+        loader={async ({ params }) => {
+          const res = await fetch(
+            `/api/departments/${params.departmentID}?locale=undefined&draft=false&depth=2`,
+            {
+              method: "get",
+            }
+          );
+          if (res.status === 404) {
+            throw new Response("Not Found", { status: 404 });
+          }
+          return res.json();
+        }}
+        errorElement={<NotFound />}
       />
 
       <Route
         path="feedback"
         element={<FeedbackPage />}
         handle={{
-          crumb: <Link to="/feedback">Cart</Link>,
+          crumb: <Link to="/feedback">Обратная связь</Link>,
         }}
       />
 
@@ -82,13 +144,18 @@ export const AppRouter = () => {
         }}
         errorElement={<NotFound />}
       />
+      <Route
+        path="/pdf/:pdfId"
+        element={<PdfReaderPage />}
+        errorElement={<Empty text="Ошибка при загрузке PDF." />}
+      />
     </Route>
   );
 
   const router = createHashRouter(routers, {});
 
   return (
-    <div className={clsx("app", theme)} >
+    <div className={"app"}>
       <RouterProvider router={router} />
     </div>
   );

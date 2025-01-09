@@ -1,8 +1,39 @@
 .icon-button {
+    display: flex;
+  align-items: center;
+  justify-content: center;
     position: relative;
     background: none;
     border: none;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-s);
+    // height: 34px;
+    &:hover {
+        cursor: pointer;
+      }
+    &_theme_grey {
+        background: var(--cart-bg);
+        color: var(--text-primary);
+    }
 
+    &-theme__accent {
+        color: var(--button-text);
+        background-color: var(--accent-color);
+        // background: var(--red);
+        // color: var(--white);
+        &:hover{
+            background-color: var(--accent-color-hover);
+        }
+    }
+    &-theme__mono {
+        color: var( --btn-text-alt);
+        border: none;
+        background-color: var(--btn-color-alt);
+    
+        &:hover {
+          background-color: var(--btn-color-alt-hover);
+        }
+      }
     &__counter {
         position: absolute;
         top: -5px;
@@ -18,21 +49,13 @@
         border-radius: 50%;
         font-size: 9px;
 
-        &_theme_grey {
-            background: var(--cart-bg);
-            color: var(--text-primary);
-        }
-
-        &_theme_red {
-            background: var(--red);
-            color: var(--white);
-        }
+      
     }
 
     &__icon {
-        fill: var(--text-primary);
-        width: 30px;
-        height: 30px;
+      
+        width: 20px;
+        height: 20px;
     }
 
     &:hover {

@@ -238,6 +238,6 @@
 .gosuslugi{
     /* padding: var(--spacing-m); */
     overflow: hidden;
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     
 }
