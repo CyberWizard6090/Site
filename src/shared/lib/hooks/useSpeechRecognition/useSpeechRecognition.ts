@@ -39,7 +39,7 @@ export const useSpeechRecognition = (): UseSpeechRecognitionResult => {
       setError(null);
     };
 
-    recognition.onresult = (event: SpeechRecognitionEvent) => {
+    recognition.onresult = (event: any) => {
       const result = event.results[0][0].transcript;
       setTranscript(result);
       setIsListening(false);

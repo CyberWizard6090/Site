@@ -7,7 +7,7 @@
   z-index: 1200;
 
   background-color: var(--block-bg);
-  border-top: 1px solid var(--border-color2);
+ 
   display: grid;
   grid-template-columns:  1fr 1fr 1fr;
   grid-template-areas: " . menu  .";
@@ -21,14 +21,15 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
-    color: var(--font-color-light);
+    color: var(--font-color-gray);
     gap: var(--spacing-xs);
     // padding: var(--spacing-xs);
   }
   &__title {
     text-align: center;
     margin-bottom: var(--spacing-s);
-    color: var(--font-color-light);
+  
+    font-size: var(--font-size-small);
   }
   &__btn-menu {
     position: absolute;
@@ -38,15 +39,15 @@
     height: 60px;
     width: 60px;
     background-color: var(--accent-color);
-    color: var(--button-text);
+   
 
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     svg {
-      width: 30px;
-      height: 30px;
+      width: 16px;
+      height: 16px;
     }
   }
   &__logo{
@@ -54,8 +55,8 @@
     align-items: center;
     justify-content: center;
     svg{
-      width: 25px;
-      height: 25px;
+      // width: 16px;
+      height: 18px;
     }
   }
 }

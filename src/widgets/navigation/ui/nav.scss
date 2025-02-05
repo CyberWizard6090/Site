@@ -41,6 +41,7 @@
   &__container {
     // font-size: var(--spacing-xxs);
     color: var(--font-color-light);
+    overflow-y: auto;
     a {
       color: var(--font-color-light);
     }

@@ -9,7 +9,7 @@ type DepartmentProps = {
 };
 
 export const DepartmentsPage = () => {
-  const url = "/api/departments";
+  const url = "/api/departments?limit=100";
   const [data, setData] = useState<DepartmentProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
