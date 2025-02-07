@@ -22,6 +22,7 @@ import { PersonnelPage } from "pages/personnelPage";
 import { DepartmentPage } from "pages/departmentPage";
 import { DepartmentsPage } from "pages/departmentsPage";
 import { EmployeePage } from "pages/EmployeePage";
+import { ChatPage } from "pages/ChatPage";
 
 export const AppRouter = () => {
  
@@ -39,6 +40,11 @@ export const AppRouter = () => {
         handle={{
           crumb: <Link to="/article">Новости и профилактика</Link>,
         }}
+      />
+         <Route
+        path="chat"
+        element={<ChatPage />}
+      
       />
       <Route
         path="personnel"

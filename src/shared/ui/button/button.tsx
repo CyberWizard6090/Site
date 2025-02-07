@@ -4,25 +4,27 @@ import clsx from "clsx";
 import "./button.scss";
 
 type IButton = {
-  readonly children: string | string[];
-  readonly Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  readonly theme?: "blue" | "transparent-grey" | "transparent-blue"| "mono";
-  readonly disabled?: boolean;
-  readonly className?: string;
-  readonly onClick?: () => void | any;
+  children: string | string[];
+ Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+ theme?: "blue" | "transparent-grey" | "transparent-blue"| "mono";
+type?: "button" | "submit";
+ disabled?: boolean;
+ className?: string;
+ onClick?: () => void | any;
 };
 
 export const Button = ({
   children,
   Icon,
   theme = "blue",
+  type = "button",
   disabled = false,
   className,
   onClick,
 }: IButton) => {
   return (
     <button
-      type="button"
+      type={type}
       onClick={onClick}
       className={clsx(
         "button",
