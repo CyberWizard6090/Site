@@ -1,12 +1,9 @@
-
 import { useLoaderData } from "react-router-dom";
-
-import "./departmentPage.scss";
 import { Block } from "shared/ui/block";
 import { SimpleRichText } from "shared/ui/blocks";
 import { ImageView } from "shared/ui/imageView";
 import { EmployeeList } from "widgets/EmployeeList";
-
+import "./departmentPage.scss";
 
 type Props = {};
 

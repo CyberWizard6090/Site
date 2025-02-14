@@ -51,7 +51,7 @@ export const Nav = () => {
   return (
 <>
 <NavMobile toggleState={toggleState} state={state}/>
-      <aside className={`nav  ${state ? "nav--active" : ""} shadow__style` }>
+      <aside className={`nav  ${state ? "nav--active" : ""} ` }>
        
           <nav className="nav__container">
             <ul className="nav__list-item">

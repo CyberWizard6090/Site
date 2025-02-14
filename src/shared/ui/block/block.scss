@@ -5,4 +5,7 @@
     background: var(--block-bg);
     color: var(--font-color-light);
     width: 100%;
+    img{
+        max-width: 100%;
+    }
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { CardRead } from 'widgets/CardRead';
+
 import './NewsBlock.scss'
+import { CardRead } from 'entities/CardRead';
 type Props = {}
 
 export const NewsBlock = (props: Props) => {

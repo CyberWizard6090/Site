@@ -4,36 +4,31 @@ import {
   Link,
   Route,
   RouterProvider,
-} from "react-router-dom";
-import { Layout } from "app/layout";
-import clsx from "clsx";
+} from 'react-router-dom';
+import { Layout } from 'app/layout';
 
-import { HomePage } from "pages/homePage";
-// import { SearchResults } from 'pages/searchResults''
+import { HomePage } from 'pages/homePage';
 
-import "../styles/index.scss";
-import { NotFound } from "pages/NotFound";
-import { ArticlePage } from "pages/articlePage";
-import { DefaultPage } from "pages/defaultPage";
-import { FeedbackPage } from "pages/feedbackPage";
-import { PdfReaderPage } from "pages/pdfPage";
-import { Empty } from "shared/ui/empty";
-import { PersonnelPage } from "pages/personnelPage";
-import { DepartmentPage } from "pages/departmentPage";
-import { DepartmentsPage } from "pages/departmentsPage";
-import { EmployeePage } from "pages/EmployeePage";
-import { ChatPage } from "pages/ChatPage";
+
+import '../styles/index.scss';
+
+import { ArticlePage } from 'pages/articlePage';
+import { DefaultPage } from 'pages/defaultPage';
+import { FeedbackPage } from 'pages/feedbackPage';
+import { PdfReaderPage } from 'pages/pdfPage';
+import { Empty } from 'shared/ui/empty';
+import { PersonnelPage } from 'pages/personnelPage';
+import { DepartmentPage } from 'pages/departmentPage';
+import { DepartmentsPage } from 'pages/departmentsPage';
+import { EmployeePage } from 'pages/EmployeePage';
+import { ChatPage } from 'pages/ChatPage';
+import { Error404 } from 'pages/ErrorPages';
 
 export const AppRouter = () => {
- 
   const routers = createRoutesFromElements(
-    <Route
-      path="/"
-      element={<Layout />}
-      handle={{ crumb: <Link to="/">Домашняя страница</Link> }}
-    >
+    <Route path="/" element={<Layout />} handle={{ crumb: <Link to="/">Домашняя страница</Link> }}>
       <Route index element={<HomePage />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="*" element={<Error404 />} />
       <Route
         path="article"
         element={<ArticlePage />}
@@ -41,11 +36,7 @@ export const AppRouter = () => {
           crumb: <Link to="/article">Новости и профилактика</Link>,
         }}
       />
-         <Route
-        path="chat"
-        element={<ChatPage />}
-      
-      />
+      <Route path="chat" element={<ChatPage />} />
       <Route
         path="personnel"
         element={<PersonnelPage />}
@@ -53,34 +44,31 @@ export const AppRouter = () => {
           crumb: <Link to="/personnel">Персонал</Link>,
         }}
       />
-         <Route
+      <Route
         path="personnel/:employeeID"
-        element={<EmployeePage/>}
+        element={<EmployeePage />}
         loader={async ({ params }) => {
           const res = await fetch(
-           
             ` /api/employee/${params.employeeID}?locale=undefined&draft=false&depth=1`,
             {
-              mode: "no-cors",
-              method: "get",
-            }
+              mode: 'no-cors',
+              method: 'get',
+            },
           );
           if (res.status === 404) {
-            throw new Response("Not Found", { status: 404 });
+            throw new Response('Not Found', { status: 404 });
           }
           return res.json();
         }}
-        errorElement={<NotFound />}
+        errorElement={<Error404 />}
         handle={{
           crumb: <Link to="/personnel">Персонал</Link>,
         }}
-
       />
 
       <Route
         path="departments"
         element={<DepartmentsPage />}
-        
         handle={{
           crumb: <Link to="/department">Отделения</Link>,
         }}
@@ -95,15 +83,15 @@ export const AppRouter = () => {
           const res = await fetch(
             `/api/departments/${params.departmentID}?locale=undefined&draft=false&depth=2`,
             {
-              method: "get",
-            }
+              method: 'get',
+            },
           );
           if (res.status === 404) {
-            throw new Response("Not Found", { status: 404 });
+            throw new Response('Not Found', { status: 404 });
           }
           return res.json();
         }}
-        errorElement={<NotFound />}
+        errorElement={<Error404 />}
       />
 
       <Route
@@ -121,16 +109,16 @@ export const AppRouter = () => {
           const res = await fetch(
             `/api/pages/${params.pageId}?locale=undefined&draft=false&depth=1`,
             {
-              mode: "no-cors",
-              method: "get",
-            }
+              mode: 'no-cors',
+              method: 'get',
+            },
           );
           if (res.status === 404) {
-            throw new Response("Not Found", { status: 404 });
+            throw new Response('Not Found', { status: 404 });
           }
           return res.json();
         }}
-        errorElement={<NotFound />}
+        errorElement={<Error404 />}
       />
       <Route
         path="/read/:pageId"
@@ -139,29 +127,29 @@ export const AppRouter = () => {
           const res = await fetch(
             `/api/article/${params.pageId}?locale=undefined&draft=false&depth=1`,
             {
-              mode: "no-cors",
-              method: "get",
-            }
+              mode: 'no-cors',
+              method: 'get',
+            },
           );
           if (res.status === 404) {
-            throw new Response("Not Found", { status: 404 });
+            throw new Response('Not Found', { status: 404 });
           }
           return res.json();
         }}
-        errorElement={<NotFound />}
+        errorElement={<Error404 />}
       />
       <Route
         path="/pdf/:pdfId"
         element={<PdfReaderPage />}
         errorElement={<Empty text="Ошибка при загрузке PDF." />}
       />
-    </Route>
+    </Route>,
   );
 
   const router = createHashRouter(routers, {});
 
   return (
-    <div className={"app"}>
+    <div className={'app'}>
       <RouterProvider router={router} />
     </div>
   );

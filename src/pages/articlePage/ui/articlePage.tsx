@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import { CardRead } from "widgets/CardRead";
+
 
 import "./articlePage.scss";
+import { CardRead } from "entities/CardRead";
 type Card = {
 
     id: string;

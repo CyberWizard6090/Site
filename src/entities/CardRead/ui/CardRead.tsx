@@ -1,6 +1,4 @@
-
 import { Link } from "react-router-dom";
-import { ImageView } from "shared/ui/imageView";
 import "./CardRead.scss";
 export const CardRead = (props: any) => {
   let date = new Date(props.date);
@@ -13,7 +11,7 @@ export const CardRead = (props: any) => {
     <Link to={"/read/" + props.url}>
     <div className="CardRead shadow__style">
       <div className="CardRead__img__wrap">
-        <ImageView url={props.src} />
+        <img src={props.src} alt="" />
       </div>
       <div className="CardRead_content">
         <div className="CardRead_top-bar">

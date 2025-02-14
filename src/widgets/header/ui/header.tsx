@@ -12,11 +12,16 @@ export const Header = (props: Props) => {
   return (
     <header className="Header">
       {/* <Search /> */}
-
-
+      <div className="content-container">
+        <div className="Header__logo-wrap">
+<div className="Header__logo">
+  <span className="first">ГУЗ</span>
+  <span>KOД</span>
+</div>
+</div>
           <AccessibilityButton /> 
           <ButtonTheme />
-  
+          </div>
     </header>
   );
 };

@@ -21,18 +21,19 @@
   }
 
   /* Для планшетов */
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-  }
+  // @media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  // }
 
   /* Для ПК */
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 767px) {
     &_content {
       flex-grow: 1;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: start;
-      padding: var(--spacing-l);
+      padding: var(--spacing-m) var(--spacing-l);
     }
   }
 
@@ -52,7 +53,8 @@
     margin-bottom: var(--spacing-m);
   }
   &__type {
-    background-color: #558606;
+    border-radius: var(--spacing-xs);
+    background-color: #eb8585;
     color: white;
 
     padding: var(--spacing-xxs) var(--spacing-m);
@@ -83,7 +85,7 @@
     .truncate-text {
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 5;
+      line-clamp: 5;
       -webkit-box-orient: vertical;
       line-height: 1.3em;
       height: 6.5em;

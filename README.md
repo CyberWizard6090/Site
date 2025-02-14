@@ -1,4 +1,4 @@
-#SITE
+## SITE
 
 ## Description
 
@@ -15,15 +15,10 @@ To use the site, follow these steps::
 2. Start using the basic functions and elements provided by the project.
 
 
-## Co-authors
+## Автор
 Maxim Bakhmetiev
 
-## Examples
-Screenshots of the working site are provided for clarity:
-dark theme
-![{DF8B64A1-4186-4DA4-864E-B3B77604BC7B}](https://github.com/user-attachments/assets/7fee5e82-8d7b-444e-a6b1-b1bb7c2b49aa)
-light theme
-![{4C4DF04C-9A61-4E1C-9255-8A2B92A76C91}](https://github.com/user-attachments/assets/c18309a4-f35a-4ae3-8e2f-1a5ae2a7275f)
+
 
 
 ## Questions and help
@@ -36,9 +31,16 @@ Email: mail.maxim6090@yandex.ru
 ## License
 https://github.com/Cyber-Wizard03/Site/blob/main/LICENSE
 
-## Change history
---adding custom notifications [2.12]
---added support for a variety of color themes[4.12]
+## История изменений
+<ul>
+<li>добавление пользовательских уведомлений [2.12.24]</li>
+<li>добавлена поддержка различных цветовых тем[4.12.24]</li>
+<li>обновлена мобильная версия, исправлены проблемы с макетом и оптимизирован дизайн сайта. [9.01.25]
+</li>
+<li>добавлена оптимизация под разные размеры устройств  [14.02.25]</li>
+</ul>
+
+
 
 ## Thanks
 Thank you to everyone who helped and supported this project!

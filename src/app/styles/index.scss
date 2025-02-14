@@ -8,6 +8,7 @@
 
 @import "whitespace.scss";
 @import "font-size.scss";
+@import "layout.scss";
 
 @import "kern.scss";
 @font-face {
@@ -27,14 +28,14 @@
 /* Стилизация скроллинга */
 
 *::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 3px;
+  height: 3px;
  
 }
 
 *::-webkit-scrollbar-thumb {
   background: var(--accent-color-hover);
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 *::-webkit-scrollbar-track {
@@ -56,6 +57,7 @@ body {
   text-rendering: optimizeSpeed;
 
   overflow-x: hidden;
+  background-color: var(--background-main);
 }
 
 body,
@@ -147,5 +149,17 @@ a {
 * {
   font-size: var(--font-size-medium);
 }
-
+.app{
+  position: relative;
+  height: max-content;
+}
 // /* для Chrome/Edge/Safari */
+.content-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (min-width: 1220px) {
+    padding:0 20px  ;
+  }
+}

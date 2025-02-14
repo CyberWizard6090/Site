@@ -19,6 +19,6 @@
 
     /* Для больших экранов (от 1441px и выше) - 4 колонки */
     @media screen and (min-width: 1441px) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns:  1fr 1fr 1fr;
     }
 }

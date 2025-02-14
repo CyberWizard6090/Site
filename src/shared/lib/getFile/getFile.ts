@@ -20,7 +20,7 @@ export async function GetFile(Url: any, Name: any) {
                 'download',
                 Name,
             );
-
+console.log(url);
             // Append to html link element page
             document.body.appendChild(link);
 
