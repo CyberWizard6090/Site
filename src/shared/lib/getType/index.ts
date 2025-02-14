@@ -1,1 +1,1 @@
-export {getType} from './getType'
+export { getType } from './getType';

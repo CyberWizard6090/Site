@@ -1,1 +1,1 @@
-export {ExtractHostname} from './extractHostname'
+export { ExtractHostname } from './extractHostname';

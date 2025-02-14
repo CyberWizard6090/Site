@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 type UseSpeechRecognitionResult = {
   transcript: string;
@@ -9,13 +9,13 @@ type UseSpeechRecognitionResult = {
 };
 
 export const useSpeechRecognition = (): UseSpeechRecognitionResult => {
-  const [transcript, setTranscript] = useState("");
+  const [transcript, setTranscript] = useState('');
   const [isListening, setIsListening] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!("webkitSpeechRecognition" in window || "SpeechRecognition" in window)) {
-      setError("Ваш браузер не поддерживает голосовой ввод");
+    if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+      setError('Ваш браузер не поддерживает голосовой ввод');
       return;
     }
   }, []);
@@ -25,12 +25,12 @@ export const useSpeechRecognition = (): UseSpeechRecognitionResult => {
       (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
-      setError("Ваш браузер не поддерживает голосовой ввод");
+      setError('Ваш браузер не поддерживает голосовой ввод');
       return;
     }
 
     const recognition = new SpeechRecognition();
-    recognition.lang = "ru-RU"; // Устанавливаем язык
+    recognition.lang = 'ru-RU'; // Устанавливаем язык
     recognition.interimResults = false; // Только окончательные результаты
     recognition.continuous = false; // Остановить после распознавания
 

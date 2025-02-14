@@ -1,1 +1,1 @@
-export {FormatFile} from './format'
+export { FormatFile } from './format';

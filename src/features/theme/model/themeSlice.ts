@@ -25,11 +25,9 @@ const themeSlice = createSlice({
     setTheme: (state, action: PayloadAction<Theme>) => {
       state.theme = action.payload;
       localStorage.setItem('AccessibilityTheme', state.theme); // Сохраняем тему в localStorage
-    
     },
     toggleTheme: (state) => {
-      
-      state.theme = 'light' === state.theme ? 'dark':'light';
+      state.theme = 'light' === state.theme ? 'dark' : 'light';
       localStorage.setItem('theme', state.theme); // Сохраняем тему в localStorage
     },
   },

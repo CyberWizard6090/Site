@@ -1,9 +1,8 @@
-import React from "react";
-import "./EmployeeCard.scss";
-import { Block } from "shared/ui/block";
-import { ImageView } from "shared/ui/imageView";
-import { Link } from "react-router-dom";
-import DefaultPhoto from "shared/assets/image/400x300.png"
+import './EmployeeCard.scss';
+import { Block } from 'shared/ui/block';
+import { ImageView } from 'shared/ui/imageView';
+import { Link } from 'react-router-dom';
+import DefaultPhoto from 'shared/assets/image/400x300.png';
 type PropsDepartment = {
   id: string;
   name: string;
@@ -18,49 +17,28 @@ type Props = {
   education?: string;
 };
 
-export const Employee = ({
-  id,
-  url,
-  fullName,
-  position,
-  departments,
-  education,
-}: Props) => {
+export const Employee = ({ id, url, fullName, position, departments, education }: Props) => {
   return (
     <Block>
-     
-        <div className="employee-card">
-          {/* <img
-        src={url}
-        alt={fullName}
-       
-        onError={(e) => (e.currentTarget.src = "/path/to/default-image.jpg")} // Fallback image
-      /> */}
-          <div className="employee-card__photo">
-            <ImageView url={url? url: DefaultPhoto} />
-          </div>
-          <Link to={"/personnel/" + id}>
+      <div className="employee-card">
+        <div className="employee-card__photo">
+          <ImageView url={url ? url : DefaultPhoto} />
+        </div>
+        <Link to={'/personnel/' + id}>
           <div className="employee-card__info">
-         
             <h3 className="employee-card__name">{fullName}</h3>
             <p className="employee-card__position">{position}</p>
-            {departments?.map((department) => (
-              <Link to={"/departments/" + department.id}>
+            {departments?.map((department, index) => (
+              <Link key={index} to={'/departments/' + department.id}>
                 <p key={department.id} className="employee-card__department">
                   {department.name}
                 </p>
               </Link>
             ))}
-            {education ? (
-              <p className="employee-card__education">{education}</p>
-            ) : (
-              <></>
-            )}
-            
+            {education ? <p className="employee-card__education">{education}</p> : <></>}
           </div>
-          </Link>
-        </div>
-      
+        </Link>
+      </div>
     </Block>
   );
 };

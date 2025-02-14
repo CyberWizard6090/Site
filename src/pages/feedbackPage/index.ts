@@ -1,3 +1,1 @@
-export {
-    FeedbackPage
-} from './ui/feedbackPage'
+export { FeedbackPage } from './ui/feedbackPage';

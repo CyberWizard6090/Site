@@ -1,1 +1,1 @@
-export {Gosuslugi} from './ui/Gosuslugi'
+export { Gosuslugi } from './ui/Gosuslugi';

@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./carousel.scss";
+import React, { useState, useEffect, useRef } from 'react';
+import './carousel.scss';
 
-import { ReactComponent as Left } from "shared/assets/svg/bootstrap-icons-1.11.2/arrow-left-short.svg";
-import { ReactComponent as Right } from "shared/assets/svg/bootstrap-icons-1.11.2/arrow-right-short.svg";
+import { ReactComponent as Left } from 'shared/assets/svg/bootstrap-icons-1.11.2/arrow-left-short.svg';
+import { ReactComponent as Right } from 'shared/assets/svg/bootstrap-icons-1.11.2/arrow-right-short.svg';
 
 type Props = {
   children: React.ReactNode | React.ReactNode[];
@@ -10,11 +10,7 @@ type Props = {
   enableDragging?: boolean; // Включение/отключение функции перетаскивания
 };
 
-export const Carousel = ({
-  children,
-  interval = 30000,
-  enableDragging = true,
-}: Props) => {
+export const Carousel = ({ children, interval = 30000, enableDragging = true }: Props) => {
   const items = React.Children.toArray(children); // Поддержка единственного элемента
   const [currentIndex, setCurrentIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -41,15 +37,11 @@ export const Carousel = ({
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? items.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? items.length - 1 : prevIndex - 1));
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === items.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === items.length - 1 ? 0 : prevIndex + 1));
   };
   const handleDragStart = (position: number) => {
     if (!enableDragging) return; // Проверяем, включено ли перетаскивание
@@ -109,12 +101,7 @@ export const Carousel = ({
         onTouchEnd={enableDragging ? handleTouchEnd : undefined}
       >
         {items.map((item, index) => (
-          <div
-            key={index}
-            className={`carousel-slide ${
-              index === currentIndex ? "active" : ""
-            }`}
-          >
+          <div key={index} className={`carousel-slide ${index === currentIndex ? 'active' : ''}`}>
             {item}
           </div>
         ))}
@@ -125,22 +112,16 @@ export const Carousel = ({
           {items.map((_, index) => (
             <span
               key={index}
-              className={`dot ${index === currentIndex ? "active" : ""}`}
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
               onClick={() => setCurrentIndex(index)}
             ></span>
           ))}
         </div>
         <div className="button__group">
-          <button
-            className="carousel-button carousel-button-left"
-            onClick={handlePrev}
-          >
+          <button className="carousel-button carousel-button-left" onClick={handlePrev}>
             <Left />
           </button>
-          <button
-            className="carousel-button carousel-button-right"
-            onClick={handleNext}
-          >
+          <button className="carousel-button carousel-button-right" onClick={handleNext}>
             <Right />
           </button>
         </div>

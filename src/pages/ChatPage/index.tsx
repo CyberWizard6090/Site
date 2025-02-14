@@ -8,7 +8,7 @@ export const ChatPage: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
 
   const handleSendMessage = (text: string) => {
-   console.log("ntcn")
+    console.log('ntcn');
     const newMessage: Message = {
       id: Date.now().toString(),
       text,

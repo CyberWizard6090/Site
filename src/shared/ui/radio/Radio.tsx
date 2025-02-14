@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type Props = {
   ID: string;
@@ -6,10 +6,10 @@ type Props = {
   labelElement: string;
   Value: string;
   state?: boolean;
-  onClick?: () => void | any
+  onClick?: () => void | any;
 };
 
-export const Radio = ({ ID, Name, Value, state, labelElement ,onClick}: Props) => {
+export const Radio = ({ ID, Name, Value, labelElement, onClick }: Props) => {
   const [isSelected, setisSelected] = React.useState(true);
 
   const handleChange = () => {
@@ -26,7 +26,6 @@ export const Radio = ({ ID, Name, Value, state, labelElement ,onClick}: Props) =
         name={Name}
       />
       <label htmlFor={ID}>{labelElement}</label>
-  
     </div>
   );
 };

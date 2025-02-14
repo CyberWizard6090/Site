@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
-import "./ImageView.scss";
+import { useEffect, useState } from 'react';
+import './ImageView.scss';
 // import { useFullScreen } from "features/FullScreenView";
-import { Loader } from "../loader";
-import { useDispatch } from "react-redux";
-import { handleImageClick } from "features/imageViewer";
+import { Loader } from '../loader';
+import { useDispatch } from 'react-redux';
+import { handleImageClick } from 'features/imageViewer';
 
 type Props = {
   url: string;
   alt?: string;
-  className?:string;
+  className?: string;
 };
 
-export const ImageView = ({ url, alt , className}: Props) => {
+export const ImageView = ({ url, alt, className }: Props) => {
   // const { toggleState,setChildren } = useFullScreen();
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
@@ -24,20 +24,17 @@ export const ImageView = ({ url, alt , className}: Props) => {
     img.onload = () => setIsLoading(false);
   }, [url]);
 
-
   const ImgLoad = () => {
     return (
       <img
         src={url}
-        className={"image-view__image " +  className}
+        className={'image-view__image ' + className}
         onClick={() => handleImageClick(url, dispatch)}
         onLoad={handleImageLoad}
-        alt={alt || "Изображение"}
+        alt={alt || 'Изображение'}
       />
     );
   };
 
-  return (
-   <> {isLoading ? <Loader /> : <ImgLoad />}</>
-  );
+  return <> {isLoading ? <Loader /> : <ImgLoad />}</>;
 };

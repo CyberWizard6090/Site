@@ -1,5 +1,5 @@
-import React from "react";
-import './radio.scss'
+import React from 'react';
+import './radio.scss';
 type Props = {
   Name: string;
   children?: React.ReactNode;
@@ -10,13 +10,8 @@ export const FormRadio = ({ children, Name }: Props) => {
     <div className="Radio-Form">
       <fieldset>
         <legend>{Name}</legend>
-<form > {children}
-
-</form>
-       
+        <form> {children}</form>
       </fieldset>
     </div>
   );
 };
-
-

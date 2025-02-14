@@ -1,9 +1,9 @@
-import { Files, Heading ,Image, Images, SimpleRichText} from 'shared/ui/blocks'
+import { Files, Heading, Image, Images, SimpleRichText } from 'shared/ui/blocks';
 
-export const blocks:any=  {
+export const blocks: any = {
   heading: Heading,
-  image:Image,
-  images:Images,
-  files:Files,
-  simpleRichText:SimpleRichText
-}
+  image: Image,
+  images: Images,
+  files: Files,
+  simpleRichText: SimpleRichText,
+};

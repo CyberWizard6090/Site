@@ -1,7 +1,6 @@
-import { FC } from "react";
-import { Provider } from "react-redux";
-import { store } from "../stores/store";
-
+import { FC } from 'react';
+import { Provider } from 'react-redux';
+import { store } from '../stores/store';
 
 interface IProviders {
   readonly children: JSX.Element;

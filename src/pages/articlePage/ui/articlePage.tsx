@@ -1,31 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-
-
-import "./articlePage.scss";
-import { CardRead } from "entities/CardRead";
+import './articlePage.scss';
+import { CardRead } from 'entities/CardRead';
 type Card = {
-
-    id: string;
-    date: string;
-    title: string;
-    type: string;
-    wallpaper: {
-      sizes: {
-        tablet: {
-          url: string;
-        };
+  id: string;
+  date: string;
+  title: string;
+  type: string;
+  wallpaper: {
+    sizes: {
+      tablet: {
+        url: string;
       };
     };
-    text: string;
- 
-}
+  };
+  text: string;
+};
 export const ArticlePage = () => {
-  
   const [pageData, setPageData] = useState([]);
 
   useEffect(() => {
-    fetch("/api/article", {
+    fetch('/api/article', {
       // mode: 'no-cors',
       // // method: "get",
     })
@@ -45,8 +40,9 @@ export const ArticlePage = () => {
 
   return (
     <div className="Page-Article">
-      {pageData.map((item: Card) => (
+      {pageData.map((item: Card, index) => (
         <CardRead
+          key={index}
           date={item.date}
           title={item.title}
           type={item.type}

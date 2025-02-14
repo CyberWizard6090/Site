@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./style.scss";
+import React, { useState } from 'react';
+import './style.scss';
 type MaskedInputProps = {
   mask: string; // Маска для инпута
   validate: (value: string) => boolean; // Функция проверки значения
@@ -12,9 +12,10 @@ export const MaskedInput: React.FC<MaskedInputProps> = ({
   mask,
   validate,
   onValidChange,
-  fieldName, valueRef
+  fieldName,
+  valueRef,
 }) => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>('');
   const [isValid, setIsValid] = useState<boolean>(true);
 
   /**
@@ -23,7 +24,7 @@ export const MaskedInput: React.FC<MaskedInputProps> = ({
    * @param mask - Строка маски, где "9" обозначает цифры, а остальные символы остаются неизменными.
    */
   const applyMask = (value: string, mask: string): string => {
-    let maskedValue = "";
+    let maskedValue = '';
     let valueIndex = 0;
 
     for (let i = 0; i < mask.length; i++) {
@@ -32,7 +33,7 @@ export const MaskedInput: React.FC<MaskedInputProps> = ({
       const maskChar = mask[i];
       const valueChar = value[valueIndex];
 
-      if (maskChar === "9") {
+      if (maskChar === '9') {
         if (/\d/.test(valueChar)) {
           maskedValue += valueChar;
           valueIndex++;
@@ -54,16 +55,15 @@ export const MaskedInput: React.FC<MaskedInputProps> = ({
    * @param event - Событие изменения.
    */
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const rawValue = event.target.value.replace(/\D/g, ""); // Убираем все символы, кроме цифр
+    const rawValue = event.target.value.replace(/\D/g, ''); // Убираем все символы, кроме цифр
     const maskedValue = applyMask(rawValue, mask);
 
     setValue(maskedValue);
 
     const valid = validate(maskedValue);
     setIsValid(valid);
-    valueRef.current[fieldName] = event.target.value; 
+    valueRef.current[fieldName] = event.target.value;
     if (valid && onValidChange) {
-
       onValidChange(maskedValue);
     }
   };
@@ -74,12 +74,10 @@ export const MaskedInput: React.FC<MaskedInputProps> = ({
         type="text"
         value={value}
         onChange={handleChange}
-        className={`input ${isValid ? "" : "input--error"}`}
-        placeholder={mask.replace(/9/g, "0")} // Отображаем маску в качестве placeholder
+        className={`input ${isValid ? '' : 'input--error'}`}
+        placeholder={mask.replace(/9/g, '0')} // Отображаем маску в качестве placeholder
       />
-      {!isValid && (
-        <p className="error-message">Введенное значение некорректно</p>
-      )}
+      {!isValid && <p className="error-message">Введенное значение некорректно</p>}
     </div>
   );
 };

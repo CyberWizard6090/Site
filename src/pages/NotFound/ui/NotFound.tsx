@@ -1,29 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./NotFound.scss";
-import { Button } from "shared/ui/button";
+import { Link } from 'react-router-dom';
+import './NotFound.scss';
+import { Button } from 'shared/ui/button';
 
-// import { ReactComponent as Error404 } from "./../asset/svg/404_error_8hboj5xham1z.svg";
-
-// import { LogoView } from "../components/LogoView";
-
-type Props = {};
-
-export const NotFound = (props: Props) => {
+export const NotFound = () => {
   return (
     <div className="color_lv_0 error-page">
       <div className="error-page__container">
         <div className="error-page__logo-wrapper">
-          <Link to={"/"}>{/* <LogoView/> */}</Link>
+          <Link to={'/'}>{/* <LogoView/> */}</Link>
         </div>
         <div className="error-page__container-left color_lv_2-0">
           <h1>404. Страница не найдена</h1>
           <p className="desc">
-            Возможно, она была перемещена, или вы&nbsp;просто неверно указали
-            адрес страницы.
+            Возможно, она была перемещена, или вы&nbsp;просто неверно указали адрес страницы.
           </p>
           <div className="links">
-            <Link to={"/"}>
+            <Link to={'/'}>
               <Button> На главную</Button>
             </Link>
           </div>
@@ -39,7 +31,7 @@ export const NotFound = (props: Props) => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g id="Group 688 1" clip-path="url(#clip0)">
+                <g id="Group 688 1" clipPath="url(#clip0)">
                   <g id="404-animation">
                     <g id="Group">
                       <path
@@ -821,8 +813,8 @@ export const NotFound = (props: Props) => {
                         id="Vector_133"
                         d="M444.744 83.182C449.524 85.7055 455.103 86.2496 460.28 84.697"
                         stroke="#FCFEFF"
-                        stroke-width="1.299"
-                        stroke-miterlimit="10"
+                        strokeWidth="1.299"
+                        strokeMiterlimit="10"
                       />
                       <g id="Group_30">
                         <path
@@ -1125,8 +1117,8 @@ export const NotFound = (props: Props) => {
                         id="Vector_188"
                         d="M505.777 108.413C511.194 108.983 516.617 107.401 520.877 104.007"
                         stroke="#FCFEFF"
-                        stroke-width="1.309"
-                        stroke-miterlimit="10"
+                        strokeWidth="1.309"
+                        strokeMiterlimit="10"
                       />
                       <path
                         id="Vector_189"

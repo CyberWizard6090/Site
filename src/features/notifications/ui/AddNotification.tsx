@@ -1,7 +1,5 @@
-import React from 'react'
 import { useDispatch } from 'react-redux';
 import { addNotification } from '../model/notificationSlice';
-
 
 type NotificationType = 'info' | 'success' | 'warning' | 'error';
 

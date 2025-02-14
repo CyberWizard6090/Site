@@ -19,5 +19,3 @@ export const ImageViewerModal: React.FC = () => {
     </div>
   );
 };
-
-

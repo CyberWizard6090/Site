@@ -1,5 +1,5 @@
-import React from "react";
-import "./block.scss";
+import React from 'react';
+import './block.scss';
 type Props = {
   children: React.ReactNode | React.ReactNode[];
 };

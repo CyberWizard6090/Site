@@ -9,7 +9,6 @@ import { Layout } from 'app/layout';
 
 import { HomePage } from 'pages/homePage';
 
-
 import '../styles/index.scss';
 
 import { ArticlePage } from 'pages/articlePage';

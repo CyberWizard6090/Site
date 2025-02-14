@@ -1,1 +1,1 @@
-export {PdfReaderPage} from "./ui/pdfPage"
+export { PdfReaderPage } from './ui/pdfPage';

@@ -1,1 +1,1 @@
-export {ImageView} from './ImageView'
+export { ImageView } from './ImageView';

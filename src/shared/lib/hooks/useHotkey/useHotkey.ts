@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 type HotkeyHandler = () => void;
 
 export function useHotkey(keys: string[], handler: HotkeyHandler) {
   useEffect(() => {
-    let pressedKeys = new Set<string>();
+    const pressedKeys = new Set<string>();
 
     const downHandler = (event: KeyboardEvent) => {
       pressedKeys.add(event.key.toLowerCase());
@@ -19,12 +19,12 @@ export function useHotkey(keys: string[], handler: HotkeyHandler) {
       pressedKeys.delete(event.key.toLowerCase());
     };
 
-    window.addEventListener("keydown", downHandler);
-    window.addEventListener("keyup", upHandler);
+    window.addEventListener('keydown', downHandler);
+    window.addEventListener('keyup', upHandler);
 
     return () => {
-      window.removeEventListener("keydown", downHandler);
-      window.removeEventListener("keyup", upHandler);
+      window.removeEventListener('keydown', downHandler);
+      window.removeEventListener('keyup', upHandler);
     };
   }, [keys, handler]);
 }

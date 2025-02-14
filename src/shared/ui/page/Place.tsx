@@ -1,5 +1,5 @@
-import React from "react";
-import "./defaultPage.scss";
+import React from 'react';
+import './defaultPage.scss';
 type Props = {
   children: React.ReactNode | React.ReactNode[];
 };

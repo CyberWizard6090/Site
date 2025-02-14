@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "./footer.scss";
+import React, { useEffect, useState } from 'react';
+import './footer.scss';
 
 interface Link {
   text: string;
@@ -17,10 +17,8 @@ interface FooterData {
   List: Column[];
 }
 
-interface Props {}
-
-export const Footer: React.FC<Props> = () => {
-  const url = "/api/globals/footer?locale=undefined&draft=false&depth=0";
+export const Footer = () => {
+  const url = '/api/globals/footer?locale=undefined&draft=false&depth=0';
   const [pageData, setPageData] = useState<Column[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -29,7 +27,7 @@ export const Footer: React.FC<Props> = () => {
     fetch(url)
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to fetch footer data");
+          throw new Error('Failed to fetch footer data');
         }
         return response.json();
       })

@@ -1,1 +1,1 @@
-export{ GanerateID} from './GanerateID'
+export { GanerateID } from './GanerateID';

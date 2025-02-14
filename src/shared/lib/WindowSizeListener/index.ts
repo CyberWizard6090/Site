@@ -1,1 +1,1 @@
-export {useDeviceDetect} from "./WindowSizeListener"
+export { useDeviceDetect } from './WindowSizeListener';

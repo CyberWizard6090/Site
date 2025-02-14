@@ -1,16 +1,10 @@
-import React from "react";
-import { Button } from "shared/ui/button";
-import { ReactComponent as Logo } from "shared/assets/svg/bootstrap-icons-1.11.2/list.svg";
-import { ReactComponent as Icon2 } from "shared/assets/svg/bootstrap-icons-1.11.2/x.svg";
-import { ReactComponent as Home } from "shared/assets/svg/bootstrap-icons-1.11.2/house-fill.svg";
-import { ReactComponent as Chat } from "shared/assets/svg/bootstrap-icons-1.11.2/chat-dots-fill.svg";
-
-import { ReactComponent as Moon } from "shared/assets/svg/bootstrap-icons-1.11.2/moon-stars-fill.svg";
-import { ReactComponent as Sun } from "shared/assets/svg/bootstrap-icons-1.11.2/sun-fill.svg";
-import { ReactComponent as Special } from "shared/assets/svg/bootstrap-icons-1.11.2/eyeglasses.svg";
-import { useDeviceDetect } from "shared/lib/WindowSizeListener";
-import "./navMobile.scss";
-import { Link } from "react-router-dom";
+import { ReactComponent as Logo } from 'shared/assets/svg/bootstrap-icons-1.11.2/list.svg';
+import { ReactComponent as Icon2 } from 'shared/assets/svg/bootstrap-icons-1.11.2/x.svg';
+import { ReactComponent as Home } from 'shared/assets/svg/bootstrap-icons-1.11.2/house-fill.svg';
+import { ReactComponent as Chat } from 'shared/assets/svg/bootstrap-icons-1.11.2/chat-dots-fill.svg';
+import { useDeviceDetect } from 'shared/lib/WindowSizeListener';
+import './navMobile.scss';
+import { Link } from 'react-router-dom';
 
 type Props = {
   toggleState: () => void;
@@ -36,12 +30,16 @@ export const NavMobile = ({ toggleState, state }: Props) => {
   if (isMobile) {
     return (
       <div className="NavMobile">
-     <Link to={"/"}>   <ItemMenu Title={"Главная"} Logo={<Home />} /> </Link> 
-        {/* <ItemMenu Title={"Тема"} Logo={<Sun />} />
-        <ItemMenu Title={"Спец"} Logo={<Special />} /> */}
-     
-        <ItemMenu Title={"Меню"} Logo={state ? <Icon2 /> : <Logo />} onClick={toggleState}/>
-        <Link to={"/feedback"}>      <ItemMenu Title={"Обращение"} Logo={<Chat />} /> </Link> 
+        <Link to={'/'}>
+          {' '}
+          <ItemMenu Title={'Главная'} Logo={<Home />} />{' '}
+        </Link>
+
+        <ItemMenu Title={'Меню'} Logo={state ? <Icon2 /> : <Logo />} onClick={toggleState} />
+        <Link to={'/feedback'}>
+          {' '}
+          <ItemMenu Title={'Обращение'} Logo={<Chat />} />{' '}
+        </Link>
       </div>
     );
   }

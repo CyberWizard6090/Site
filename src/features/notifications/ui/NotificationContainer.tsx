@@ -4,7 +4,7 @@ import { RootState } from 'app/stores';
 import { removeNotification } from '../model/notificationSlice';
 import Notification from './Notification';
 
-export  const NotificationContainer: React.FC = () => {
+export const NotificationContainer: React.FC = () => {
   const notifications = useSelector((state: RootState) => state.notifications.notifications);
   const dispatch = useDispatch();
 
@@ -17,7 +17,6 @@ export  const NotificationContainer: React.FC = () => {
   }, [notifications, dispatch]);
 
   return (
-    
     <div className="notification-container">
       {notifications.map((notification) => (
         <Notification key={notification.id} notification={notification} />
@@ -25,5 +24,3 @@ export  const NotificationContainer: React.FC = () => {
     </div>
   );
 };
-
-

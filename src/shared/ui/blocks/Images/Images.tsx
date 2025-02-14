@@ -1,16 +1,20 @@
-import { ImageView } from "shared/ui/imageView";
-import "./Images.scss";
+import { ImageView } from 'shared/ui/imageView';
+import './Images.scss';
+type ImageItem = {
+  image: {
+    url: string;
+  };
+};
+
 type Props = {
-  images: any;
+  images: ImageItem[];
 };
 
 export const Images = ({ images }: Props) => {
- console.log(images)
-    return (
+  return (
     <div className="block__images">
-        
-      {images.map((item: any) => {
-       return <ImageView url={item.image.url} />;
+      {images.map((item: any, index) => {
+        return <ImageView key={index} url={item.image.url} />;
       })}
     </div>
   );

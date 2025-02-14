@@ -1,1 +1,1 @@
-export {CardRead} from './ui/CardRead'
+export { CardRead } from './ui/CardRead';

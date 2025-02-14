@@ -1,1 +1,1 @@
-export {RenderBlocks} from './ui/RenderBlocks'
+export { RenderBlocks } from './ui/RenderBlocks';

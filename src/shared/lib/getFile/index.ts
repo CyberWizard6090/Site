@@ -1,1 +1,1 @@
-export {GetFile} from './getFile'
+export { GetFile } from './getFile';

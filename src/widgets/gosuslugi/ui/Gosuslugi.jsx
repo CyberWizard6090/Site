@@ -1,6 +1,4 @@
-import React from 'react'
-import './gosuslugi.css'
-
+import './gosuslugi.css';
 export const Gosuslugi = () => {
   // console.log('1 >>> window.parent.location: \n', window.parent.location);
   // console.log('2 >>> window.parent.location.href: \n', window.parent.location.href);
@@ -8,8 +6,6 @@ export const Gosuslugi = () => {
   // console.log('4 >>> window.location.href: \n', window.location.href);
   // console.log('5 >>> window.location.host: \n', window.location.host);
   // console.log('6 >>> window.location.origin: \n', window.location.origin);
-
-
   /* eslint-disable */
   function Widget(src, opaId, isFz59) {
     const ACTION_ID = 'js-show-iframe-wrapper';
@@ -248,12 +244,12 @@ export const Gosuslugi = () => {
           removeStyles(t, e)
       };
   })()
-  
 
- setTimeout(() => {
-      Widget("https://pos.gosuslugi.ru/form", 227531)
-    }, 10000);
- 
+
+  setTimeout(() => {
+    Widget("https://pos.gosuslugi.ru/form", 227531)
+  }, 10000);
+
   return (
 
     <div className=' gosuslugi shadow__style' id='GOSUSLUGI'>
