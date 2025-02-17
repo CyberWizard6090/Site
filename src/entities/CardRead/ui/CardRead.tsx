@@ -1,17 +1,22 @@
 import { Link } from 'react-router-dom';
 import './CardRead.scss';
-export const CardRead = (props: any) => {
-  const date = new Date(props.date);
+import { Article } from 'shared/types/article';
+import clsx from 'clsx';
+type CardReadProps = {
+  article: Article;
+};
+export const CardRead = ({ article }: CardReadProps) => {
+  const date = new Date(article.date);
   const options = {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   } as const;
   return (
-    <Link to={'/read/' + props.url}>
+    <Link to={`/read/${article.id}`} className="CardRead__link">
       <div className="CardRead shadow__style">
         <div className="CardRead__img__wrap">
-          <img src={props.src} alt="" />
+          <img src={article.wallpaper.sizes.tablet.url || ''} alt={article.title} loading="lazy" />
         </div>
         <div className="CardRead_content">
           <div className="CardRead_top-bar">
@@ -19,15 +24,19 @@ export const CardRead = (props: any) => {
               <span>{date.toLocaleString('ru-DE', options)}</span>
             </div>
             <div className="CardRead__type">
-              #{props.type === 'News' ? 'Новость' : 'Профилактика'}
+              #{article.type === 'News' ? 'Новость' : 'Профилактика'}
             </div>
           </div>
-          <div className="CardRead_title">
-            {' '}
-            <h3>{props.title}</h3>
+          <div
+            className={clsx('CardRead_title', {
+              'CardRead__type--news': article.type === 'News',
+              'CardRead__type--prevention': article.type !== 'News',
+            })}
+          >
+            <h3>{article.title}</h3>
           </div>
           <div className="CardRead_text-container">
-            <div className="truncate-text">{props.text}</div>
+            <div className="truncate-text">{article.text}</div>
           </div>
         </div>
       </div>

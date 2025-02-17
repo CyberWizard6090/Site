@@ -1,3 +1,5 @@
+import { ImageSize } from 'shared/types/image';
+
 export type EmployeeType = {
   id: string;
   fullName: string;
@@ -7,5 +9,11 @@ export type EmployeeType = {
     id: string;
     name: string;
   }[];
-  photo?: { sizes?: { thumbnail?: { url: string } } }; // Optional chaining compatibility
+  photo?: {
+    sizes: {
+      thumbnail: ImageSize;
+      card: ImageSize;
+      tablet: ImageSize;
+    };
+  };
 };

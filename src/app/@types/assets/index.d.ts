@@ -1,4 +1,5 @@
 declare module '*.svg' {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   import React, { FC, SVGProps } from 'react';
   const ReactComponent: FC<SVGProps<SVGSVGElement>>;
   export default ReactComponent;

@@ -9,7 +9,7 @@ type IButton = {
   type?: 'button' | 'submit';
   disabled?: boolean;
   className?: string;
-  onClick?: () => void | any;
+  onClick?: () => void | unknown;
 };
 
 export const Button = ({
