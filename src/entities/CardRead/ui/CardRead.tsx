@@ -23,16 +23,16 @@ export const CardRead = ({ article }: CardReadProps) => {
             <div className="CardRead_wrap_date">
               <span>{date.toLocaleString('ru-DE', options)}</span>
             </div>
-            <div className="CardRead__type">
+            <div
+              className={clsx('CardRead__type', {
+                'CardRead__type--news': article.type === 'News',
+                'CardRead__type--prevention': article.type !== 'News',
+              })}
+            >
               #{article.type === 'News' ? 'Новость' : 'Профилактика'}
             </div>
           </div>
-          <div
-            className={clsx('CardRead_title', {
-              'CardRead__type--news': article.type === 'News',
-              'CardRead__type--prevention': article.type !== 'News',
-            })}
-          >
+          <div className={'CardRead_title'}>
             <h3>{article.title}</h3>
           </div>
           <div className="CardRead_text-container">

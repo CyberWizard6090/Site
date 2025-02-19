@@ -54,10 +54,17 @@
   }
   &__type {
     border-radius: var(--spacing-xs);
-    background-color: #eb8585;
-    color: white;
+    
 
     padding: var(--spacing-xxs) var(--spacing-m);
+    &--news{
+      background-color: #ff0000;
+      color: white;
+    }
+    &--prevention{
+      background-color: #7705e2;
+      color: white;
+    }
   }
   &_title {
     font-weight: bold;

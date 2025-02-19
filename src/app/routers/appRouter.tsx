@@ -22,6 +22,9 @@ import { DepartmentsPage } from 'pages/departmentsPage';
 import { EmployeePage } from 'pages/EmployeePage';
 import { ChatPage } from 'pages/ChatPage';
 import { Error404 } from 'pages/ErrorPages';
+import { getDepartmentById, getDepartments } from 'shared/api/departments';
+import { getArticleById, getPageById } from 'shared/api/pages';
+import { getEmployeeById, getPersonnel } from 'shared/api/personnel';
 
 export const AppRouter = () => {
   const routers = createRoutesFromElements(
@@ -42,22 +45,24 @@ export const AppRouter = () => {
         handle={{
           crumb: <Link to="/personnel">Персонал</Link>,
         }}
+        loader={async () => {
+          try {
+            return await getPersonnel();
+          } catch {
+            throw new Response('Not Found', { status: 404 });
+          }
+        }}
+        errorElement={<Error404 />}
       />
       <Route
         path="personnel/:employeeID"
         element={<EmployeePage />}
         loader={async ({ params }) => {
-          const res = await fetch(
-            ` /api/employee/${params.employeeID}?locale=undefined&draft=false&depth=1`,
-            {
-              mode: 'no-cors',
-              method: 'get',
-            },
-          );
-          if (res.status === 404) {
+          try {
+            return await getEmployeeById(params.employeeID as string);
+          } catch {
             throw new Response('Not Found', { status: 404 });
           }
-          return res.json();
         }}
         errorElement={<Error404 />}
         handle={{
@@ -71,6 +76,13 @@ export const AppRouter = () => {
         handle={{
           crumb: <Link to="/department">Отделения</Link>,
         }}
+        loader={async () => {
+          try {
+            return await getDepartments();
+          } catch {
+            throw new Response('Not Found', { status: 404 });
+          }
+        }}
       />
       <Route
         path="departments/:departmentID"
@@ -79,16 +91,11 @@ export const AppRouter = () => {
           crumb: <Link to="/departments">Отделение</Link>,
         }}
         loader={async ({ params }) => {
-          const res = await fetch(
-            `/api/departments/${params.departmentID}?locale=undefined&draft=false&depth=2`,
-            {
-              method: 'get',
-            },
-          );
-          if (res.status === 404) {
+          try {
+            return await getDepartmentById(params.departmentID as string);
+          } catch {
             throw new Response('Not Found', { status: 404 });
           }
-          return res.json();
         }}
         errorElement={<Error404 />}
       />
@@ -105,17 +112,11 @@ export const AppRouter = () => {
         path="/:pageId"
         element={<DefaultPage />}
         loader={async ({ params }) => {
-          const res = await fetch(
-            `/api/pages/${params.pageId}?locale=undefined&draft=false&depth=1`,
-            {
-              mode: 'no-cors',
-              method: 'get',
-            },
-          );
-          if (res.status === 404) {
+          try {
+            return await getPageById(params.pageId as string);
+          } catch {
             throw new Response('Not Found', { status: 404 });
           }
-          return res.json();
         }}
         errorElement={<Error404 />}
       />
@@ -123,17 +124,11 @@ export const AppRouter = () => {
         path="/read/:pageId"
         element={<DefaultPage />}
         loader={async ({ params }) => {
-          const res = await fetch(
-            `/api/article/${params.pageId}?locale=undefined&draft=false&depth=1`,
-            {
-              mode: 'no-cors',
-              method: 'get',
-            },
-          );
-          if (res.status === 404) {
+          try {
+            return await getArticleById(params.pageId as string);
+          } catch {
             throw new Response('Not Found', { status: 404 });
           }
-          return res.json();
         }}
         errorElement={<Error404 />}
       />

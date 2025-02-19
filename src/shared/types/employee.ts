@@ -17,3 +17,6 @@ export type EmployeeType = {
     };
   };
 };
+export type PersonnelType = {
+  docs: EmployeeType[];
+};

@@ -4,17 +4,18 @@ import { Block } from 'shared/ui/block';
 import { ImageView } from 'shared/ui/imageView';
 import DefaultPhoto from 'shared/assets/image/400x300.png';
 import './EmployeePage.scss';
+import { EmployeeType } from 'shared/types/employee';
 
 export const EmployeePage = () => {
-  const data: any = useLoaderData();
-  const Photo = data.photo;
+  const data = useLoaderData() as EmployeeType;
+  const Photo = data.photo?.sizes.card.url ?? DefaultPhoto;
 
   return (
     <div className="employee-page">
       <Block>
         <div className="employee-page__block">
           <div className="employee-page__photo">
-            <ImageView url={Photo ? data.photo.sizes.card.url : DefaultPhoto} />
+            <ImageView url={Photo} />
           </div>
           <div className="employee-page__info">
             <header className="employee-page__header">
@@ -31,7 +32,7 @@ export const EmployeePage = () => {
                     | string
                     | number
                     | boolean
-                    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+                    | React.ReactElement<unknown, string | React.JSXElementConstructor<unknown>>
                     | Iterable<React.ReactNode>
                     | React.ReactPortal
                     | null

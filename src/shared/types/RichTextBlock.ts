@@ -1,4 +1,4 @@
-type TextNode = {
+export type TextNode = {
   detail: number;
   format: number;
   mode: string;
@@ -17,7 +17,7 @@ type Paragraph = {
   version: number;
 };
 
-type ListItem = {
+export type ListItem = {
   children: TextNode[];
   direction: string;
   format: string;
