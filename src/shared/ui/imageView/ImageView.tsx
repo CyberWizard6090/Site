@@ -9,9 +9,10 @@ type Props = {
   url: string;
   alt?: string;
   className?: string;
+  loading?: 'eager' | 'lazy' | undefined;
 };
 
-export const ImageView = ({ url, alt, className }: Props) => {
+export const ImageView = ({ url, alt, className, loading = undefined }: Props) => {
   // const { toggleState,setChildren } = useFullScreen();
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ export const ImageView = ({ url, alt, className }: Props) => {
         onClick={() => handleImageClick(url, dispatch)}
         onLoad={handleImageLoad}
         alt={alt || 'Изображение'}
+        loading={loading}
       />
     );
   };

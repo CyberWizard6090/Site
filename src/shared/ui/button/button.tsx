@@ -9,7 +9,8 @@ type IButton = {
   type?: 'button' | 'submit';
   disabled?: boolean;
   className?: string;
-  onClick?: () => void | unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onClick?: (() => void) | ((event: React.MouseEvent<HTMLButtonElement>) => void);
 };
 
 export const Button = ({

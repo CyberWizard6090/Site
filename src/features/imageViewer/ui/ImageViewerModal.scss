@@ -5,6 +5,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(55px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,6 +15,13 @@
   .image-viewer-content {
     max-width: 90%;
     max-height: 90%;
+  width: 90%;
+  height: 90%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
   }
   
   .image-viewer-image {
@@ -21,5 +29,14 @@
     max-height: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ 
   }
-  
+  .image-viewer{
+  &__controls{
+    z-index: 99;
+    display: flex;
+    position: absolute;
+    gap: var(--spacing-m);
+    top: 20px;
+
+  }}

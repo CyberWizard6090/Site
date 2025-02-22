@@ -1,4 +1,3 @@
-import React from 'react';
 import './Banner.scss';
 import { Button } from 'shared/ui/button';
 import { ImageView } from 'shared/ui/imageView';
@@ -8,28 +7,30 @@ type Props = {
   link?: string;
   title?: string;
   buttonDisabled?: boolean;
+  altText?: string;
 };
 
-export const Banner = ({ image, link = '#', title, buttonDisabled = false }: Props) => {
+export const Banner = ({ image, link, title, buttonDisabled = false, altText }: Props) => {
+  const showButton = !!link;
+  const alt = altText || title?.trim() || 'Баннер';
+
   return (
     <div className="banner">
-      <h2 className="banner__title">{title || 'Default Title'}</h2>
+      {title?.trim() && <h2 className="banner__title">{title}</h2>}
+
       <div className="banner__image-wrapper">
-        {image ? (
-          <ImageView url={image} alt={title || 'Банер'} className="banner__image" />
-        ) : (
-          <div style={{ height: '100%' }}></div> // Пустое пространство для статичности
-        )}
+        {image && <ImageView url={image} alt={alt} className="banner__image" loading="lazy" />}
       </div>
-      <div className="banner__content">
-        {buttonDisabled ? (
-          <a href={link} className="banner__link">
-            <Button disabled={buttonDisabled}>Перейти</Button>
+
+      {showButton && (
+        <div className="banner__actions">
+          <a href={link}>
+            <Button disabled={buttonDisabled} aria-label={alt}>
+              Перейти
+            </Button>
           </a>
-        ) : (
-          <></>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

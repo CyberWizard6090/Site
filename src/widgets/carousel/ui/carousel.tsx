@@ -107,7 +107,6 @@ export const Carousel = ({ children, interval = 30000, enableDragging = true }: 
         ))}
       </div>
       <div className="carousel__bottom-bar">
-        <div></div>
         <div className="carousel-dots">
           {items.map((_, index) => (
             <span

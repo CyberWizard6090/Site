@@ -16,7 +16,7 @@ interface IIconComponent {
   /** Number of products. */
   readonly counterValue?: number;
   /** Event handler when the button is clicked. */
-  readonly onClick?: () => void;
+  readonly onClick?: (() => void) | ((event: React.MouseEvent<HTMLButtonElement>) => void);
   /** Additional styles. */
   readonly className?: string;
 }
