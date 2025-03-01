@@ -19,7 +19,7 @@ export const ArticlePage = () => {
   }, []);
 
   return (
-    <div className="Page-Article">
+    <div className="Page-Article animation-reveal">
       {pageData.map((item: Article, index) => (
         <CardRead key={index} article={item} />
       ))}

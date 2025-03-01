@@ -5,31 +5,16 @@ import { elements } from '../config/elements';
 import { Item } from './Item';
 import { Tree } from './Tree';
 import { NavMobile } from './navMobile';
+import { useLocation } from 'react-router-dom';
 export const Nav = () => {
   const url = '/api/globals/nav?locale=undefined&draft=false&depth=0';
   const [layout, setPageData] = useState([]);
   const [state, setState] = useState(false);
-
+  const location = useLocation();
   useEffect(() => {
-    const handleClick = (event: MouseEvent) => {
-      const target = event.target as HTMLButtonElement;
-      if (target) {
-        if (target.getAttribute('data-action')) {
-          switch (target.getAttribute('data-action')) {
-            case 'clicked_links':
-              setState(false);
-              break;
-          }
-        }
-      }
-    };
-
-    document.addEventListener('click', handleClick);
-
-    return () => {
-      document.removeEventListener('click', handleClick);
-    };
-  }, []);
+    window.scrollTo(0, 0);
+    setState(false);
+  }, [location.pathname]);
   useEffect(() => {
     fetch(url, {
       // mode: 'no-cors',

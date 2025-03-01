@@ -11,7 +11,7 @@ export const EmployeePage = () => {
   const Photo = data.photo?.sizes.card.url ?? DefaultPhoto;
 
   return (
-    <div className="employee-page">
+    <div className="employee-page animation-reveal">
       <Block>
         <div className="employee-page__block">
           <div className="employee-page__photo">

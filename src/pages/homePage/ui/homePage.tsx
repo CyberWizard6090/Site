@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './homePage.scss';
-import { Gosuslugi } from 'widgets/gosuslugi';
 import { NewsBlock } from 'widgets/newsBlock';
 import { Carousel } from 'widgets/carousel';
 import { Banner, SimpleRichText } from 'shared/ui/blocks';
@@ -131,11 +130,10 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <div className="home">
+    <div className="home animation-reveal">
       <div className="home__content">
         <RenderBlocks blocks={pageData} />
 
-        <Gosuslugi />
         <NewsBlock />
       </div>
     </div>

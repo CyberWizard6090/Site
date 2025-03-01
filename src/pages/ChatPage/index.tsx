@@ -19,7 +19,7 @@ export const ChatPage: React.FC = () => {
   };
 
   return (
-    <div className="chat-page">
+    <div className="chat-page animation-reveal">
       <div className="chat-page__container">
         <MessageList messages={messages} />
         <SendMessageForm onSend={handleSendMessage} />

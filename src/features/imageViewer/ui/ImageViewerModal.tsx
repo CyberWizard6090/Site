@@ -13,7 +13,6 @@ import { IconButton } from 'shared/ui/iconButton';
 import { closeImage } from '../model/imageViewerSlice ';
 
 export const ImageViewerModal: React.FC = () => {
-  useDisableScroll();
   const dispatch = useDispatch();
   const { isOpen, imageUrl } = useSelector((state: RootState) => state.imageViewer);
 
@@ -93,7 +92,7 @@ export const ImageViewerModal: React.FC = () => {
       lastTouchDistance.current = newDistance;
     }
   };
-
+  useDisableScroll();
   if (!isOpen || !imageUrl) return null;
 
   return (

@@ -6,7 +6,7 @@ export const PersonnelPage = () => {
   const data = useLoaderData() as PersonnelType;
   console.log(data);
   return (
-    <div className="Personnel">
+    <div className="Personnel animation-reveal">
       <h2>Список сотрудников</h2>
       <EmployeeList List={data.docs} />
     </div>

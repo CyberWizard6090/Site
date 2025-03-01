@@ -4,11 +4,12 @@ import { SimpleRichText } from 'shared/ui/blocks';
 import { ImageView } from 'shared/ui/imageView';
 import { EmployeeList } from 'widgets/EmployeeList';
 import './departmentPage.scss';
+import { DepartmentType } from 'shared/types/departments';
 
 export const DepartmentPage = () => {
-  const data: any = useLoaderData();
+  const data = useLoaderData() as DepartmentType;
   return (
-    <div className="DepartmentPage">
+    <div className="DepartmentPage animation-reveal">
       <h1>{data.name}</h1>
 
       <Block>

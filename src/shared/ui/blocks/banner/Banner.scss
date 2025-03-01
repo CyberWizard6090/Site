@@ -8,12 +8,10 @@
   padding: var(--spacing-m) var(--spacing-l);
   background-color: var(--block-bg);
   color: var(--font-color-light);
-
+gap: var(--spacing-m);
   &__image-wrapper {
     max-width: 100%;
     overflow: hidden;
-
-    margin-bottom: 15px;
     min-height: 200px; // Резервируем место для изображения
     display: flex;
     align-items: center;
@@ -27,7 +25,7 @@
   }
 
   &__content {
-    margin-top: 10px;
+  
     min-height: 50px; // Резервируем место под кнопку
     display: flex;
     justify-content: center;
