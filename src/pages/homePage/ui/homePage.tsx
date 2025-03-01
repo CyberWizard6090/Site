@@ -4,6 +4,7 @@ import { NewsBlock } from 'widgets/newsBlock';
 import { Carousel } from 'widgets/carousel';
 import { Banner, SimpleRichText } from 'shared/ui/blocks';
 import { Block } from 'shared/ui/block';
+import { Gosuslugi } from 'widgets/gosuslugi';
 
 type TextBlock = {
   blockType: 'text';
@@ -133,7 +134,7 @@ export const HomePage = () => {
     <div className="home animation-reveal">
       <div className="home__content">
         <RenderBlocks blocks={pageData} />
-
+        <Gosuslugi />
         <NewsBlock />
       </div>
     </div>
