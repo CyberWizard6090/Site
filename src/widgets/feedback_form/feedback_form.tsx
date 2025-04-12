@@ -26,7 +26,7 @@ export const FormFeedback = () => {
   const addNotification = useAddNotification();
 
   const Push = () => {
-    fetch('http://localhost:4000/api/FeedbackMessages', {
+    fetch('/api/FeedbackMessages', {
       method: 'POST',
       body: JSON.stringify(inputRef.current),
       headers: {
