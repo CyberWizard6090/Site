@@ -23,7 +23,7 @@ type BannerBlock = {
   selectedBanners: {
     id: string;
     image: {
-      sizes: any;
+      sizes: { [key: string]: string | number };
       url: string;
     };
     text?: string;
