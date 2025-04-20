@@ -16,6 +16,7 @@ import { getType } from 'shared/lib/getType';
 import { GetFile } from 'shared/lib/getFile';
 import { FormatFile } from 'shared/consts';
 import { Key } from 'react';
+import { OpenPdfButton } from 'features/pdf-viewer';
 
 type Props = {
   files: any;
@@ -56,15 +57,11 @@ export const Files = ({ files }: Props) => {
             </div>
             <div className="name-file">{item.file.name}</div>
             <div className="btn__wrap">
-              {/* {getType(item.file.filename) === "pdf" ? (
-              <Link to={""}>
-                <Button Icon={ReadIcon} theme="transparent-blue">
-                  Читать
-                </Button>
-                </Link>
+              {getType(item.file.filename) === 'pdf' ? (
+                <OpenPdfButton path={'item.file.url'} />
               ) : (
                 <></>
-              )} */}
+              )}
               <Button
                 Icon={DownloadIcon}
                 onClick={() =>

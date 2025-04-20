@@ -62,7 +62,6 @@ export const AccessibilityUI = () => {
             ]}
             onChange={handleRadioChangeTheme}
           />
-          {/* <Toggle /> */}
         </div>
         <Button className="btn__exit" onClick={handleToggleMode}>
           Обычный режим

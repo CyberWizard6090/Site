@@ -10,6 +10,7 @@ import { AccessibilityStyles, AccessibilityUI } from 'features/accessibilityMode
 import { ImageViewerModal } from 'features/imageViewer';
 import { SearchModal } from 'features/search';
 import { StateTheme } from 'features/theme';
+import { PdfViewerModal } from 'features/pdf-viewer';
 
 export const Layout = () => {
   const location = useLocation();
@@ -23,6 +24,7 @@ export const Layout = () => {
           <AccessibilityStyles />
           <StateTheme />
           <SearchModal />
+          <PdfViewerModal />
 
           <Nav />
 

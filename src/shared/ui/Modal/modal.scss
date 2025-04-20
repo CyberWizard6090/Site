@@ -1,0 +1,121 @@
+
+
+$overlay-bg: rgba(0, 0, 0, 0.5);
+$modal-bg: #fff;
+$modal-radius: 8px;
+$modal-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$close-color: #666;
+$title-color: #333;
+
+@mixin fadeIn($duration: 0.3s) {
+  animation: fadeIn $duration ease-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin slideIn($duration: 0.3s) {
+  animation: slideIn $duration ease-out;
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $overlay-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+  @include fadeIn;
+
+  .modal {
+    background: $modal-bg;
+    border-radius: $modal-radius;
+    padding: 24px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 20px;
+    width: 100%;
+    box-shadow: $modal-shadow;
+    @include slideIn;
+  }
+  .header {
+    margin-bottom: 20px;
+    padding-right: 30px;
+  }
+  .title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: $title-color;
+  }
+  .content {
+    overflow-y: auto;
+
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+  }
+  .closeButton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: $close-color;
+    padding: 5px;
+    line-height: 1;
+
+    &:hover {
+      color: darken($close-color, 10%);
+    }
+  }
+}
+
+// Адаптивные стили
+@media (max-width: 768px) {
+  .overlay {
+    .modal {
+      margin: 10px;
+      padding: 15px;
+      max-height: 95vh;
+
+      .header {
+        margin-bottom: 15px;
+
+        .title {
+          font-size: 1.2rem;
+        }
+      }
+
+      .closeButton {
+        top: 10px;
+        right: 10px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

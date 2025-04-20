@@ -22,3 +22,11 @@ declare module '*.config' {
   const content: string;
   export default content;
 }
+declare module 'pdfjs-dist/webpack' {
+  const workerSrc: string;
+  export default workerSrc;
+}
+declare module 'pdfjs-dist/build/pdf.worker.min.js' {
+  const workerSrc: string;
+  export default workerSrc;
+}

@@ -4,6 +4,7 @@ import themeReducer from 'features/theme/model/themeSlice';
 import accessibilityModeReducer from 'features/accessibilityMode/model/accessibilityModeSlice';
 import imageViewerReducer from 'features/imageViewer/model/imageViewerSlice ';
 import searchReducer from 'features/search/model/searchSlice';
+import { pdfViewerReducer } from 'features/pdf-viewer/model/slice';
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
@@ -11,6 +12,7 @@ export const store = configureStore({
     accessibilityMode: accessibilityModeReducer,
     imageViewer: imageViewerReducer,
     search: searchReducer,
+    pdfViewer: pdfViewerReducer,
   },
 });
 
