@@ -8,7 +8,8 @@ export const Header = () => {
       <div className="content-container">
         <div className="Header__logo-wrap">
           <div className="Header__logo">
-            <span>Cyber Wizard</span>
+            <span className="first">ГУЗ</span>
+            <span>KOД</span>
           </div>
         </div>
         <AccessibilityButton />
